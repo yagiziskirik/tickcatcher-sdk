@@ -1,4 +1,4 @@
-name: Generate SDKs
+name: Generate & Push SDKs
 
 on:
   push:
@@ -11,10 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code using deploy key
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -24,15 +28,12 @@ jobs:
       - name: Generate SDKs
         run: bash build.sh
 
-      - name: Force add and commit SDKs
+      - name: Commit SDKs
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add -f typescript/* python/* swift/* kotlin/* go/* csharp/* rust/*
+          git config --local user.name "github-actions"
+          git config --local user.email "actions@github.com"
+          git add .
           git commit -m "Regenerated SDKs [skip ci]" || echo "No changes to commit"
 
       - name: Push SDKs
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GH_PAT }}
-          branch: main
+        run: git push origin main
