@@ -1,0 +1,558 @@
+openapi: 3.1.0
+info:
+  title: Tickcatcher API
+  version: 1.0.0
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  description: |
+    The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators.
+    All requests require authentication using your RapidAPI key.
+
+servers:
+  - url: https://tickcatcher.p.rapidapi.com
+    description: RapidAPI Gateway
+
+components:
+  securitySchemes:
+    rapidapiKey:
+      type: apiKey
+      in: header
+      name: X-RapidAPI-Key
+
+  schemas:
+    Candle:
+      type: object
+      properties:
+        ts:
+          type: integer
+          description: Unix timestamp in milliseconds
+        open:
+          type: number
+          description: Opening price
+        high:
+          type: number
+          description: Highest price
+        low:
+          type: number
+          description: Lowest price
+        close:
+          type: number
+          description: Closing price
+        volume:
+          type: number
+          description: Volume traded
+    SearchResult:
+      type: object
+      properties:
+        symbol:
+          type: string
+        includedIn:
+          type: array
+          description: Which packages this coin is included in.
+          items:
+            type: string
+          example: ["Pro", "Mega", "Enterprise"]
+    Metadata:
+      type: object
+      required:
+        - symbol
+        - timeframe
+        - firstCandle
+        - lastCandle
+        - totalCandles
+        - completionPercent
+        - estimatedCompletionDate
+      properties:
+        symbol:
+          type: string
+          description: The trading pair symbol.
+          example: BTCUSDT
+        timeframe:
+          type: string
+          description: The timeframe used for the candles.
+          example: 1h
+        firstCandle:
+          type: string
+          format: date-time
+          description: ISO timestamp of the first available candle.
+          example: "2025-10-01T00:00:00.000Z"
+        lastCandle:
+          type: string
+          format: date-time
+          description: ISO timestamp of the last available candle.
+          example: "2025-10-15T00:00:00.000Z"
+        totalCandles:
+          type: integer
+          description: Total number of available candles.
+          example: 816
+        completionPercent:
+          type: string
+          description: Completion percentage (0–100) as a string with two decimals.
+          example: "99.52"
+        estimatedCompletionDate:
+          type: string
+          format: date-time
+          description: Estimated date when full data collection will complete.
+          example: "2025-10-20T00:00:00.000Z"
+    Info:
+      type: object
+      required:
+        - packageName
+        - usableCoins
+        - maxCandlesOnRequest
+        - usableTimeframes
+        - customDateSelection
+      properties:
+        packageName:
+          type: string
+          description: The package that you are using.
+          enum: [Basic, Pro, Ultra, Mega, Enterprise]
+          example: Basic
+        usableCoins:
+          type: array
+          description: The usable coins list for your package.
+          items:
+            type: string
+          example: ["BTCUSDT", "SOLUSDT", "SUIUSDT"]
+        maxCandlesOnRequest:
+          type: integer
+          description: Maximum allowed candles for your package to fetch at one query.
+          example: 50000
+        usableTimeframes:
+          type: array
+          description: The timeframes that you can select on your queries.
+          items:
+            type: string
+          example: ["1m", "5m", "15m", "1h", "4h"]
+        customDateSelection:
+          type: boolean
+          description: Whether you can select start and end dates during queries.
+          example: true
+    CalendarEvent:
+      type: object
+      required:
+        - title
+        - country
+        - importance
+        - ts
+      properties:
+        title:
+          type: string
+        country:
+          type: string
+        indicator:
+          type: [string, "null"]
+        ticker:
+          type: [string, "null"]
+        comment:
+          type: [string, "null"]
+        category:
+          type: [string, "null"]
+        period:
+          type: [string, "null"]
+        reference_date:
+          type: [string, "null"]
+        source:
+          type: [string, "null"]
+        source_url:
+          type: [string, "null"]
+        actual:
+          type: [number, "null"]
+        previous:
+          type: [number, "null"]
+        forecast:
+          type: [number, "null"]
+        actual_raw:
+          type: [number, "null"]
+        previous_raw:
+          type: [number, "null"]
+        forecast_raw:
+          type: [number, "null"]
+        currency:
+          type: [string, "null"]
+        unit:
+          type: [string, "null"]
+        importance:
+          type: number
+          description: A number of importance, can be -1, 0 or 1.
+        ts:
+          type: number
+          description: Unix timestamp (ms)
+        scale:
+          type: [string, "null"]
+
+security:
+  - rapidapiKey: []
+
+paths:
+  /bcandles:
+    get:
+      tags: [Candles]
+      operationId: basicCandles
+      summary: Get candlestick data
+      description: Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+          example: BTCUSDT
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum: [5m, 15m, 1h, 4h]
+          example: 1h
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            default: 200
+          example: 150
+      responses:
+        "200":
+          description: List of candles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candle"
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /pcandles:
+    get:
+      tags: [Candles]
+      operationId: proCandles
+      summary: Get candlestick data
+      description: Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+          example: BTCUSDT
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum: [1m, 5m, 15m, 1h, 4h]
+          example: 1h
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            default: 1000
+          example: 500
+      responses:
+        "200":
+          description: List of candles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candle"
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /ucandles:
+    get:
+      tags: [Candles]
+      operationId: ultraCandles
+      summary: Get candlestick data
+      description: Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+          example: BTCUSDT
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum: [1m, 5m, 15m, 1h, 4h]
+          example: 1h
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            default: 1000
+          example: 500
+        - in: query
+          name: startTime
+          required: false
+          schema:
+            type: integer
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+        - in: query
+          name: endTime
+          required: false
+          schema:
+            type: integer
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+      responses:
+        "200":
+          description: List of candles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candle"
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /mcandles:
+    get:
+      tags: [Candles]
+      summary: Get candlestick data
+      operationId: megaCandles
+      description: Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+          example: BTCUSDT
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum:
+              [1m, 2m, 3m, 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 12h, 1d]
+          example: 1h
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            default: 1000
+          example: 500
+        - in: query
+          name: startTime
+          required: false
+          schema:
+            type: integer
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+        - in: query
+          name: endTime
+          required: false
+          schema:
+            type: integer
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+      responses:
+        "200":
+          description: List of candles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candle"
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /ecandles:
+    get:
+      tags: [Candles]
+      operationId: enterpriseCandles
+      summary: Get candlestick data
+      description: Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+          example: BTCUSDT
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum:
+              [1m, 2m, 3m, 5m, 10m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 12h, 1d]
+          example: 1h
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            default: 1000
+          example: 500
+        - in: query
+          name: startTime
+          required: false
+          schema:
+            type: integer
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+        - in: query
+          name: endTime
+          required: false
+          schema:
+            type: integer
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+      responses:
+        "200":
+          description: List of candles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candle"
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /metadata:
+    get:
+      tags: [General]
+      operationId: metadata
+      summary: Get metadata of selected timeframe/symbol pair
+      description: Retrieve metadata for a specific symbol and timeframe.
+      parameters:
+        - in: query
+          name: symbol
+          required: true
+          schema:
+            type: string
+          example: BTCUSDT
+        - in: query
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            enum: [1m, 5m, 15m, 1h, 4h]
+          example: 1h
+      responses:
+        "200":
+          description: Metadata for the requested pair
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Metadata"
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "404":
+          description: No data found
+        "500":
+          description: Server error
+  /info:
+    get:
+      tags: [General]
+      operationId: info
+      summary: Get your package information as well as your limitations
+      description: Get your current RapidAPI package, which coins you can use, maximum candles that you can request, etc.
+      responses:
+        "200":
+          description: Info for the user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Info"
+        "400":
+          description: Missing package information
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /search:
+    get:
+      tags: [General]
+      operationId: search
+      summary: Search through the list of symbols to use correct one in the query
+      description: If your queries don't work correctly, you can search the database with the coin name to get the correct symbol(s).
+      parameters:
+        - in: query
+          name: query
+          required: true
+          schema:
+            type: string
+          example: BTC
+      responses:
+        "200":
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SearchResult"
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
+  /calendar:
+    get:
+      tags: [Calendar]
+      operationId: calendar
+      summary: Get economic calendar within a selected period
+      description: Fetch economic calendar for event based trading simulations. If no dates entered, data will be from -3 days from today to +3 days.
+      parameters:
+        - in: query
+          name: startDate
+          required: false
+          schema:
+            type: integer
+            format: int64
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+        - in: query
+          name: endDate
+          required: false
+          schema:
+            type: integer
+            format: int64
+          example: 1762194992000
+          description: Javascript style epoch time with milliseconds (i.e. 1762194992000).
+      responses:
+        "200":
+          description: Economic calendar for selected time period
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CalendarEvent"
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error

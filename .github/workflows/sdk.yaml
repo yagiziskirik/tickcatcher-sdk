@@ -1,0 +1,83 @@
+# name: Generate & Publish SDKs
+
+# on:
+#   push:
+#     paths:
+#       - 'openapi/tickcatcher.yaml'
+#   workflow_dispatch:
+
+# jobs:
+#   generate-and-publish:
+#     runs-on: ubuntu-latest
+#     env:
+#       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#       PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+#     steps:
+#       # Checkout the repo
+#       - name: Checkout repo
+#         uses: actions/checkout@v3
+
+#       # Setup Node.js (for OpenAPI Generator + TS SDK)
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 20
+
+#       # Install OpenAPI Generator
+#       - name: Install OpenAPI Generator
+#         run: npm install @openapitools/openapi-generator-cli -g
+
+#       # Generate all SDKs using your build.sh
+#       - name: Generate SDKs
+#         run: bash build.sh
+
+#       # Publish TypeScript SDK
+#       - name: Publish TypeScript SDK
+#         run: |
+#           cd typescript
+#           npm ci
+#           npm publish --access public
+#         env:
+#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+#       # Publish Python SDK
+#       - name: Publish Python SDK
+#         run: |
+#           cd python
+#           python -m pip install --upgrade build twine
+#           python -m build
+#           twine upload dist/* --non-interactive --username __token__ --password ${{ secrets.PYPI_API_TOKEN }}
+
+#       # Publish Swift SDK (optional: push to GitHub Package Registry or skip if local use only)
+#       - name: Publish Swift SDK
+#         run: |
+#           cd swift5
+#           # Example: you can use Swift Package Manager or GitHub Packages
+#           echo "Swift publishing step here"
+
+#       # Publish Kotlin SDK (Maven/Gradle)
+#       - name: Publish Kotlin SDK
+#         run: |
+#           cd kotlin
+#           # Example: Gradle publish
+#           ./gradlew publish
+          
+#       # Publish Go SDK (optional: local or module push)
+#       - name: Publish Go SDK
+#         run: |
+#           cd go
+#           # Go modules are usually fetched directly from GitHub
+#           echo "Go publishing step here"
+
+#       # Publish C# SDK (NuGet)
+#       - name: Publish C# SDK
+#         run: |
+#           cd csharp
+#           dotnet pack -c Release
+#           dotnet nuget push bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+
+#       # Publish Rust SDK (Crates.io)
+#       - name: Publish Rust SDK
+#         run: |
+#           cd rust
+#           cargo publish --token ${{ secrets.CARGO_TOKEN }}
