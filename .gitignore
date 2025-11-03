@@ -68,10 +68,17 @@ $RECYCLE.BIN/
 *.lnk
 
 # Build files
-typescript/*
-python/*
-swift/*
-kotlin/*
-go/*
-csharp/*
-rust/*
+/typescript/*
+!/typescript/.gitkeep
+/python/*
+!/python/.gitkeep
+/swift/*
+!/swift/.gitkeep
+/kotlin/*
+!/kotlin/.gitkeep
+/go/*
+!/go/.gitkeep
+/csharp/*
+!/csharp/.gitkeep
+/rust/*
+!/rust/.gitkeep
