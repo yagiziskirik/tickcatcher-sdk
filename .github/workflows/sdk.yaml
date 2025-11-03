@@ -32,7 +32,7 @@ jobs:
         run: |
           git config --local user.name "github-actions"
           git config --local user.email "actions@github.com"
-          git add .
+          git add -f typescript/* python/* swift/* kotlin/* go/* csharp/* rust/*
           git commit -m "Regenerated SDKs [skip ci]" || echo "No changes to commit"
 
       - name: Push SDKs
