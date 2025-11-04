@@ -15,13 +15,13 @@ gitRepoId: tickcatcher-sdk
 # Shared generator properties
 additionalProperties:
   npmName: tickcatcher
-  npmVersion: "${packageVersion}"
+  npmVersion: 1.0.1
   packageName: tickcatcher
   supportsES6: true
   hideGenerationTimestamp: true
   artifactId: tickcatcher
   groupId: com.tickcatcher
-  artifactVersion: "${packageVersion}"
+  artifactVersion: 1.0.1
   projectName: tickcatcher
 
   # Swift-specific metadata
