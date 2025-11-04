@@ -1,6 +1,10 @@
 [project]
 name = "tickcatcher"
+<<<<<<< HEAD
+version = "1.0.1"
+=======
 version = "1.0.0"
+>>>>>>> 85e84b4da65fd4b53c01e5c1219cb9ae17445e8e
 description = "Tickcatcher API"
 authors = [
   {name = "OpenAPI Generator Community",email = "yagiz@iskirik.com"},

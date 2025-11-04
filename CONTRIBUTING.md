@@ -18,6 +18,8 @@ To get an overview of the project, read the [README](README.md) file. Here are s
 
 This project uses [OpenAPI](https://www.openapis.org) structure for the API creation. The main file is in `openapi/tickcatcher.yaml` file. According to the changes of the YAML file, the API's created automatically. Please use `npx @redocly/cli lint openapi/tickcatcher.yaml` command to lint the file, before creating a PR. Additionally, please test your API locally before commiting.
 
+> Also, please don't forget to bump the package numbers in `openapi/tickcatcher.yaml` and `openapi/config.yaml` files, otherwise the projects won't be publishing.
+
 ### Issues
 
 #### Create a new issue
