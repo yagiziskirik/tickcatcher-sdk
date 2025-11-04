@@ -1,20 +1,25 @@
-# TypeScript / Node.js
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g typescript-fetch -o typescript
+set -e
+
+INPUT=openapi/tickcatcher.yaml
+CONFIG=openapi/config.yaml
+
+# TypeScript
+openapi-generator-cli generate -i $INPUT -g typescript-fetch -o typescript -c $CONFIG
 
 # Python
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g python -o python
+openapi-generator-cli generate -i $INPUT -g python -o python -c $CONFIG
 
 # Swift
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g swift5 -o swift
+openapi-generator-cli generate -i $INPUT -g swift5 -o swift -c $CONFIG
 
 # Kotlin
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g kotlin -o kotlin
+openapi-generator-cli generate -i $INPUT -g kotlin -o kotlin -c $CONFIG
 
 # Go
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g go -o go
+openapi-generator-cli generate -i $INPUT -g go -o go -c $CONFIG
 
 # C#
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g csharp -o csharp
+openapi-generator-cli generate -i $INPUT -g csharp -o csharp -c $CONFIG
 
 # Rust
-openapi-generator-cli generate -i openapi/tickcatcher.yaml -g rust -o rust
+openapi-generator-cli generate -i $INPUT -g rust -o rust -c $CONFIG

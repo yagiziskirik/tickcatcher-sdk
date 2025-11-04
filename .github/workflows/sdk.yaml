@@ -37,3 +37,50 @@ jobs:
 
       - name: Push SDKs
         run: git push origin main
+
+      - name: Set up Node.js for NPM
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish to NPM
+        working-directory: typescript
+        run: |
+          npm ci || npm install
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set up Python for PyPI
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Build and Publish to PyPI
+        working-directory: python
+        run: |
+          python3 -m pip install --upgrade build twine
+          python3 -m build
+          python3 -m twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+
+      - name: Publish to Cargo
+        working-directory: rust
+        run: cargo publish --token ${{ secrets.CARGO_TOKEN }}
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build C# SDK
+        run: dotnet build csharp/src/tickcatcher/tickcatcher.csproj --configuration Release
+
+      - name: Pack C# SDK
+        run: dotnet pack csharp/src/tickcatcher/tickcatcher.csproj --configuration Release
+
+      - name: Publish to NuGet
+        run: dotnet nuget push csharp/src/tickcatcher/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

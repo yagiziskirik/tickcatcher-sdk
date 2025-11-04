@@ -1,0 +1,39 @@
+# Project metadata
+projectName: tickcatcher
+packageName: tickcatcher
+packageVersion: 1.0.0
+packageDescription: "Tickcatcher SDK — Unified access to Tickcatcher API"
+packageUrl: "https://github.com/yagiziskirik/tickcatcher-sdk"
+infoEmail: "yagiz@iskirik.com"
+developerName: "Yağız IŞKIRIK"
+licenseName: "MIT"
+
+# GitHub repo information (used by openapi-generator)
+gitUserId: yagiziskirik
+gitRepoId: tickcatcher-sdk
+
+# Shared generator properties
+additionalProperties:
+  npmName: tickcatcher
+  npmVersion: 1.0.0
+  packageName: tickcatcher
+  supportsES6: true
+  hideGenerationTimestamp: true
+  artifactId: tickcatcher
+  groupId: com.tickcatcher
+  artifactVersion: 1.0.0
+  projectName: tickcatcher
+
+  # Swift-specific metadata
+  podName: tickcatcher
+  podSummary: "Tickcatcher Swift SDK for accessing Tickcatcher API"
+  podDescription: "A Swift client library for the Tickcatcher API, providing unified market data access."
+  podHomepage: "https://github.com/yagiziskirik/tickcatcher-sdk"
+  podLicense: "{ :type => 'MIT' }"
+  podAuthor: "Yağız IŞKIRIK"
+  podSource: "{ :git => 'https://github.com/yagiziskirik/tickcatcher-sdk.git', :tag => s.version.to_s }"
+  swiftVersions: [ 5.0 ]
+  deploymentTargetIos: 11.0
+  deploymentTargetOsx: 10.13
+  deploymentTargetTvos: 11.0
+  deploymentTargetWatchos: 4.0
