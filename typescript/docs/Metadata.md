@@ -17,7 +17,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { Metadata } from ''
+import type { Metadata } from 'tickcatcher'
 
 // TODO: Update the object below with actual values
 const example = {

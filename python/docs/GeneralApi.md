@@ -1,12 +1,12 @@
-# openapi_client.GeneralApi
+# tickcatcher.GeneralApi
 
 All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**info**](GeneralApi.md#info) | **GET** /info | Get your package information as well as your limitations
-[**metadata**](GeneralApi.md#metadata) | **GET** /metadata | Get metadata of selected timeframe/symbol pair
-[**search**](GeneralApi.md#search) | **GET** /search | Search through the list of symbols to use correct one in the query
+[**info**](GeneralApi.md#info) | **GET** /api/info | Get your package information as well as your limitations
+[**metadata**](GeneralApi.md#metadata) | **GET** /api/metadata | Get metadata of selected timeframe/symbol pair
+[**search**](GeneralApi.md#search) | **GET** /api/search | Search through the list of symbols to use correct one in the query
 
 
 # **info**
@@ -21,14 +21,14 @@ Get your current RapidAPI package, which coins you can use, maximum candles that
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.info import Info
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.info import Info
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -44,9 +44,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.GeneralApi(api_client)
+    api_instance = tickcatcher.GeneralApi(api_client)
 
     try:
         # Get your package information as well as your limitations
@@ -99,14 +99,14 @@ Retrieve metadata for a specific symbol and timeframe.
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.metadata import Metadata
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.metadata import Metadata
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -122,9 +122,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.GeneralApi(api_client)
+    api_instance = tickcatcher.GeneralApi(api_client)
     symbol = 'BTCUSDT' # str | 
     timeframe = '1h' # str | 
 
@@ -184,14 +184,14 @@ If your queries don't work correctly, you can search the database with the coin 
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.search_result import SearchResult
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.search_result import SearchResult
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -207,9 +207,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.GeneralApi(api_client)
+    api_instance = tickcatcher.GeneralApi(api_client)
     query = 'BTC' # str | 
 
     try:

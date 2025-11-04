@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.calendar_event import CalendarEvent
+from tickcatcher.models.calendar_event import CalendarEvent
 
 # TODO update the JSON string below
 json = "{}"

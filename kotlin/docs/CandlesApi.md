@@ -4,11 +4,11 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**basicCandles**](CandlesApi.md#basicCandles) | **GET** /bcandles | Get candlestick data |
-| [**enterpriseCandles**](CandlesApi.md#enterpriseCandles) | **GET** /ecandles | Get candlestick data |
-| [**megaCandles**](CandlesApi.md#megaCandles) | **GET** /mcandles | Get candlestick data |
-| [**proCandles**](CandlesApi.md#proCandles) | **GET** /pcandles | Get candlestick data |
-| [**ultraCandles**](CandlesApi.md#ultraCandles) | **GET** /ucandles | Get candlestick data |
+| [**basicCandles**](CandlesApi.md#basicCandles) | **GET** /api/bcandles | Get candlestick data |
+| [**enterpriseCandles**](CandlesApi.md#enterpriseCandles) | **GET** /api/ecandles | Get candlestick data |
+| [**megaCandles**](CandlesApi.md#megaCandles) | **GET** /api/mcandles | Get candlestick data |
+| [**proCandles**](CandlesApi.md#proCandles) | **GET** /api/pcandles | Get candlestick data |
+| [**ultraCandles**](CandlesApi.md#ultraCandles) | **GET** /api/ucandles | Get candlestick data |
 
 
 <a id="basicCandles"></a>
@@ -22,8 +22,8 @@ Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = CandlesApi()
 val symbol : kotlin.String = BTCUSDT // kotlin.String | 
@@ -75,8 +75,8 @@ Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = CandlesApi()
 val symbol : kotlin.String = BTCUSDT // kotlin.String | 
@@ -132,8 +132,8 @@ Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = CandlesApi()
 val symbol : kotlin.String = BTCUSDT // kotlin.String | 
@@ -189,8 +189,8 @@ Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = CandlesApi()
 val symbol : kotlin.String = BTCUSDT // kotlin.String | 
@@ -242,8 +242,8 @@ Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = CandlesApi()
 val symbol : kotlin.String = BTCUSDT // kotlin.String | 

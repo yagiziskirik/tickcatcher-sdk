@@ -4,9 +4,9 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**info**](GeneralAPI.md#info) | **GET** /info | Get your package information as well as your limitations
-[**metadata**](GeneralAPI.md#metadata) | **GET** /metadata | Get metadata of selected timeframe/symbol pair
-[**search**](GeneralAPI.md#search) | **GET** /search | Search through the list of symbols to use correct one in the query
+[**info**](GeneralAPI.md#info) | **GET** /api/info | Get your package information as well as your limitations
+[**metadata**](GeneralAPI.md#metadata) | **GET** /api/metadata | Get metadata of selected timeframe/symbol pair
+[**search**](GeneralAPI.md#search) | **GET** /api/search | Search through the list of symbols to use correct one in the query
 
 
 # **info**
@@ -21,7 +21,7 @@ Get your current RapidAPI package, which coins you can use, maximum candles that
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 
 // Get your package information as well as your limitations
@@ -67,7 +67,7 @@ Retrieve metadata for a specific symbol and timeframe.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let symbol = "symbol_example" // String | 
 let timeframe = "timeframe_example" // String | 
@@ -119,7 +119,7 @@ If your queries don't work correctly, you can search the database with the coin 
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let query = "query_example" // String | 
 

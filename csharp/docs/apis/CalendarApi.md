@@ -1,10 +1,10 @@
-# Org.OpenAPITools.Api.CalendarApi
+# tickcatcher.Api.CalendarApi
 
 All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Calendar**](CalendarApi.md#calendar) | **GET** /calendar | Get economic calendar within a selected period |
+| [**Calendar**](CalendarApi.md#calendar) | **GET** /api/calendar | Get economic calendar within a selected period |
 
 <a id="calendar"></a>
 # **Calendar**

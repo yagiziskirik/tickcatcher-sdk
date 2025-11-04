@@ -1,14 +1,14 @@
-# Org.OpenAPITools.Api.CandlesApi
+# tickcatcher.Api.CandlesApi
 
 All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BasicCandles**](CandlesApi.md#basiccandles) | **GET** /bcandles | Get candlestick data |
-| [**EnterpriseCandles**](CandlesApi.md#enterprisecandles) | **GET** /ecandles | Get candlestick data |
-| [**MegaCandles**](CandlesApi.md#megacandles) | **GET** /mcandles | Get candlestick data |
-| [**ProCandles**](CandlesApi.md#procandles) | **GET** /pcandles | Get candlestick data |
-| [**UltraCandles**](CandlesApi.md#ultracandles) | **GET** /ucandles | Get candlestick data |
+| [**BasicCandles**](CandlesApi.md#basiccandles) | **GET** /api/bcandles | Get candlestick data |
+| [**EnterpriseCandles**](CandlesApi.md#enterprisecandles) | **GET** /api/ecandles | Get candlestick data |
+| [**MegaCandles**](CandlesApi.md#megacandles) | **GET** /api/mcandles | Get candlestick data |
+| [**ProCandles**](CandlesApi.md#procandles) | **GET** /api/pcandles | Get candlestick data |
+| [**UltraCandles**](CandlesApi.md#ultracandles) | **GET** /api/ucandles | Get candlestick data |
 
 <a id="basiccandles"></a>
 # **BasicCandles**

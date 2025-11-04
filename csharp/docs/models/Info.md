@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Info
+# tickcatcher.Model.Info
 
 ## Properties
 

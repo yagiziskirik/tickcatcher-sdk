@@ -4,11 +4,11 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**basic_candles**](CandlesApi.md#basic_candles) | **GET** /bcandles | Get candlestick data
-[**enterprise_candles**](CandlesApi.md#enterprise_candles) | **GET** /ecandles | Get candlestick data
-[**mega_candles**](CandlesApi.md#mega_candles) | **GET** /mcandles | Get candlestick data
-[**pro_candles**](CandlesApi.md#pro_candles) | **GET** /pcandles | Get candlestick data
-[**ultra_candles**](CandlesApi.md#ultra_candles) | **GET** /ucandles | Get candlestick data
+[**basic_candles**](CandlesApi.md#basic_candles) | **GET** /api/bcandles | Get candlestick data
+[**enterprise_candles**](CandlesApi.md#enterprise_candles) | **GET** /api/ecandles | Get candlestick data
+[**mega_candles**](CandlesApi.md#mega_candles) | **GET** /api/mcandles | Get candlestick data
+[**pro_candles**](CandlesApi.md#pro_candles) | **GET** /api/pcandles | Get candlestick data
+[**ultra_candles**](CandlesApi.md#ultra_candles) | **GET** /api/ucandles | Get candlestick data
 
 
 

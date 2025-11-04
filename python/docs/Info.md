@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.info import Info
+from tickcatcher.models.info import Info
 
 # TODO update the JSON string below
 json = "{}"

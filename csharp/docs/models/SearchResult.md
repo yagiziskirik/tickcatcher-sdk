@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.SearchResult
+# tickcatcher.Model.SearchResult
 
 ## Properties
 

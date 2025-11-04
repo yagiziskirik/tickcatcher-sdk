@@ -1,7 +1,7 @@
 [package]
-name = "openapi"
-version = "1.0.0"
-authors = ["OpenAPI Generator team and contributors"]
+name = "tickcatcher"
+version = "1.0.1"
+authors = ["yagiz@iskirik.com"]
 description = "The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. "
 license = "MIT"
 edition = "2021"

@@ -2,6 +2,8 @@ name: Generate & Push SDKs
 
 on:
   push:
+    branches:
+      - main
     paths:
       - 'openapi/tickcatcher.yaml'
   workflow_dispatch:

@@ -7,14 +7,14 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.0.0
+  version: 1.0.1
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
 security:
 - rapidapiKey: []
 paths:
-  /bcandles:
+  /api/bcandles:
     get:
       description: Retrieve OHLCV data for a specific symbol and timeframe for Basic
         package.
@@ -68,7 +68,7 @@ paths:
       summary: Get candlestick data
       tags:
       - Candles
-  /pcandles:
+  /api/pcandles:
     get:
       description: Retrieve OHLCV data for a specific symbol and timeframe for Pro
         package.
@@ -123,7 +123,7 @@ paths:
       summary: Get candlestick data
       tags:
       - Candles
-  /ucandles:
+  /api/ucandles:
     get:
       description: Retrieve OHLCV data for a specific symbol and timeframe for Ultra
         package.
@@ -196,7 +196,7 @@ paths:
       summary: Get candlestick data
       tags:
       - Candles
-  /mcandles:
+  /api/mcandles:
     get:
       description: Retrieve OHLCV data for a specific symbol and timeframe for Mega
         package.
@@ -279,7 +279,7 @@ paths:
       summary: Get candlestick data
       tags:
       - Candles
-  /ecandles:
+  /api/ecandles:
     get:
       description: Retrieve OHLCV data for a specific symbol and timeframe for Enterprise
         package.
@@ -362,7 +362,7 @@ paths:
       summary: Get candlestick data
       tags:
       - Candles
-  /metadata:
+  /api/metadata:
     get:
       description: Retrieve metadata for a specific symbol and timeframe.
       operationId: metadata
@@ -407,7 +407,7 @@ paths:
       summary: Get metadata of selected timeframe/symbol pair
       tags:
       - General
-  /info:
+  /api/info:
     get:
       description: "Get your current RapidAPI package, which coins you can use, maximum\
         \ candles that you can request, etc."
@@ -428,7 +428,7 @@ paths:
       summary: Get your package information as well as your limitations
       tags:
       - General
-  /search:
+  /api/search:
     get:
       description: "If your queries don't work correctly, you can search the database\
         \ with the coin name to get the correct symbol(s)."
@@ -458,7 +458,7 @@ paths:
       summary: Search through the list of symbols to use correct one in the query
       tags:
       - General
-  /calendar:
+  /api/calendar:
     get:
       description: "Fetch economic calendar for event based trading simulations. If\
         \ no dates entered, data will be from -3 days from today to +3 days."

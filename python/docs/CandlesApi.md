@@ -1,14 +1,14 @@
-# openapi_client.CandlesApi
+# tickcatcher.CandlesApi
 
 All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**basic_candles**](CandlesApi.md#basic_candles) | **GET** /bcandles | Get candlestick data
-[**enterprise_candles**](CandlesApi.md#enterprise_candles) | **GET** /ecandles | Get candlestick data
-[**mega_candles**](CandlesApi.md#mega_candles) | **GET** /mcandles | Get candlestick data
-[**pro_candles**](CandlesApi.md#pro_candles) | **GET** /pcandles | Get candlestick data
-[**ultra_candles**](CandlesApi.md#ultra_candles) | **GET** /ucandles | Get candlestick data
+[**basic_candles**](CandlesApi.md#basic_candles) | **GET** /api/bcandles | Get candlestick data
+[**enterprise_candles**](CandlesApi.md#enterprise_candles) | **GET** /api/ecandles | Get candlestick data
+[**mega_candles**](CandlesApi.md#mega_candles) | **GET** /api/mcandles | Get candlestick data
+[**pro_candles**](CandlesApi.md#pro_candles) | **GET** /api/pcandles | Get candlestick data
+[**ultra_candles**](CandlesApi.md#ultra_candles) | **GET** /api/ucandles | Get candlestick data
 
 
 # **basic_candles**
@@ -23,14 +23,14 @@ Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.candle import Candle
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.candle import Candle
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -46,9 +46,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CandlesApi(api_client)
+    api_instance = tickcatcher.CandlesApi(api_client)
     symbol = 'BTCUSDT' # str | 
     timeframe = '1h' # str | 
     limit = 200 # int |  (optional) (default to 200)
@@ -109,14 +109,14 @@ Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.candle import Candle
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.candle import Candle
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -132,9 +132,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CandlesApi(api_client)
+    api_instance = tickcatcher.CandlesApi(api_client)
     symbol = 'BTCUSDT' # str | 
     timeframe = '1h' # str | 
     limit = 1000 # int |  (optional) (default to 1000)
@@ -199,14 +199,14 @@ Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.candle import Candle
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.candle import Candle
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -222,9 +222,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CandlesApi(api_client)
+    api_instance = tickcatcher.CandlesApi(api_client)
     symbol = 'BTCUSDT' # str | 
     timeframe = '1h' # str | 
     limit = 1000 # int |  (optional) (default to 1000)
@@ -289,14 +289,14 @@ Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.candle import Candle
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.candle import Candle
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -312,9 +312,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CandlesApi(api_client)
+    api_instance = tickcatcher.CandlesApi(api_client)
     symbol = 'BTCUSDT' # str | 
     timeframe = '1h' # str | 
     limit = 1000 # int |  (optional) (default to 1000)
@@ -375,14 +375,14 @@ Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.candle import Candle
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.candle import Candle
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -398,9 +398,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CandlesApi(api_client)
+    api_instance = tickcatcher.CandlesApi(api_client)
     symbol = 'BTCUSDT' # str | 
     timeframe = '1h' # str | 
     limit = 1000 # int |  (optional) (default to 1000)

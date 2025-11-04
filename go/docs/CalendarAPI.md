@@ -4,7 +4,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Calendar**](CalendarAPI.md#Calendar) | **Get** /calendar | Get economic calendar within a selected period
+[**Calendar**](CalendarAPI.md#Calendar) | **Get** /api/calendar | Get economic calendar within a selected period
 
 
 
@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {

@@ -4,9 +4,9 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**info**](GeneralApi.md#info) | **GET** /info | Get your package information as well as your limitations
-[**metadata**](GeneralApi.md#metadata) | **GET** /metadata | Get metadata of selected timeframe/symbol pair
-[**search**](GeneralApi.md#search) | **GET** /search | Search through the list of symbols to use correct one in the query
+[**info**](GeneralApi.md#info) | **GET** /api/info | Get your package information as well as your limitations
+[**metadata**](GeneralApi.md#metadata) | **GET** /api/metadata | Get metadata of selected timeframe/symbol pair
+[**search**](GeneralApi.md#search) | **GET** /api/search | Search through the list of symbols to use correct one in the query
 
 
 

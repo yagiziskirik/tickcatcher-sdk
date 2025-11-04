@@ -4,7 +4,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**calendar**](CalendarApi.md#calendar) | **GET** /calendar | Get economic calendar within a selected period |
+| [**calendar**](CalendarApi.md#calendar) | **GET** /api/calendar | Get economic calendar within a selected period |
 
 
 
@@ -22,11 +22,11 @@ Fetch economic calendar for event based trading simulations. If no dates entered
 import {
   Configuration,
   CalendarApi,
-} from '';
-import type { CalendarRequest } from '';
+} from 'tickcatcher';
+import type { CalendarRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
