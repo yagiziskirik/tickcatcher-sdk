@@ -4,11 +4,11 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**basicCandles**](CandlesAPI.md#basiccandles) | **GET** /bcandles | Get candlestick data
-[**enterpriseCandles**](CandlesAPI.md#enterprisecandles) | **GET** /ecandles | Get candlestick data
-[**megaCandles**](CandlesAPI.md#megacandles) | **GET** /mcandles | Get candlestick data
-[**proCandles**](CandlesAPI.md#procandles) | **GET** /pcandles | Get candlestick data
-[**ultraCandles**](CandlesAPI.md#ultracandles) | **GET** /ucandles | Get candlestick data
+[**basicCandles**](CandlesAPI.md#basiccandles) | **GET** /api/bcandles | Get candlestick data
+[**enterpriseCandles**](CandlesAPI.md#enterprisecandles) | **GET** /api/ecandles | Get candlestick data
+[**megaCandles**](CandlesAPI.md#megacandles) | **GET** /api/mcandles | Get candlestick data
+[**proCandles**](CandlesAPI.md#procandles) | **GET** /api/pcandles | Get candlestick data
+[**ultraCandles**](CandlesAPI.md#ultracandles) | **GET** /api/ucandles | Get candlestick data
 
 
 # **basicCandles**
@@ -23,7 +23,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let symbol = "symbol_example" // String | 
 let timeframe = "timeframe_example" // String | 
@@ -77,7 +77,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let symbol = "symbol_example" // String | 
 let timeframe = "timeframe_example" // String | 
@@ -135,7 +135,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let symbol = "symbol_example" // String | 
 let timeframe = "timeframe_example" // String | 
@@ -193,7 +193,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let symbol = "symbol_example" // String | 
 let timeframe = "timeframe_example" // String | 
@@ -247,7 +247,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let symbol = "symbol_example" // String | 
 let timeframe = "timeframe_example" // String | 

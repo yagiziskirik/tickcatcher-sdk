@@ -15,7 +15,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { Info } from ''
+import type { Info } from 'tickcatcher'
 
 // TODO: Update the object below with actual values
 const example = {

@@ -4,9 +4,9 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Info**](GeneralAPI.md#Info) | **Get** /info | Get your package information as well as your limitations
-[**Metadata**](GeneralAPI.md#Metadata) | **Get** /metadata | Get metadata of selected timeframe/symbol pair
-[**Search**](GeneralAPI.md#Search) | **Get** /search | Search through the list of symbols to use correct one in the query
+[**Info**](GeneralAPI.md#Info) | **Get** /api/info | Get your package information as well as your limitations
+[**Metadata**](GeneralAPI.md#Metadata) | **Get** /api/metadata | Get metadata of selected timeframe/symbol pair
+[**Search**](GeneralAPI.md#Search) | **Get** /api/search | Search through the list of symbols to use correct one in the query
 
 
 
@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {
@@ -88,7 +88,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {
@@ -156,7 +156,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {

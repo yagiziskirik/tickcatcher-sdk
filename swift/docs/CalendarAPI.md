@@ -4,7 +4,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calendar**](CalendarAPI.md#calendar) | **GET** /calendar | Get economic calendar within a selected period
+[**calendar**](CalendarAPI.md#calendar) | **GET** /api/calendar | Get economic calendar within a selected period
 
 
 # **calendar**
@@ -19,7 +19,7 @@ Fetch economic calendar for event based trading simulations. If no dates entered
 ### Example
 ```swift
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
+import tickcatcher
 
 let startDate = 987 // Int64 | Javascript style epoch time with milliseconds (i.e. 1762194992000). (optional)
 let endDate = 987 // Int64 | Javascript style epoch time with milliseconds (i.e. 1762194992000). (optional)

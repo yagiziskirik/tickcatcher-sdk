@@ -4,7 +4,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calendar**](CalendarApi.md#calendar) | **GET** /calendar | Get economic calendar within a selected period
+[**calendar**](CalendarApi.md#calendar) | **GET** /api/calendar | Get economic calendar within a selected period
 
 
 

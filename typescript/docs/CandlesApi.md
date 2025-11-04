@@ -4,11 +4,11 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**basicCandles**](CandlesApi.md#basiccandles) | **GET** /bcandles | Get candlestick data |
-| [**enterpriseCandles**](CandlesApi.md#enterprisecandles) | **GET** /ecandles | Get candlestick data |
-| [**megaCandles**](CandlesApi.md#megacandles) | **GET** /mcandles | Get candlestick data |
-| [**proCandles**](CandlesApi.md#procandles) | **GET** /pcandles | Get candlestick data |
-| [**ultraCandles**](CandlesApi.md#ultracandles) | **GET** /ucandles | Get candlestick data |
+| [**basicCandles**](CandlesApi.md#basiccandles) | **GET** /api/bcandles | Get candlestick data |
+| [**enterpriseCandles**](CandlesApi.md#enterprisecandles) | **GET** /api/ecandles | Get candlestick data |
+| [**megaCandles**](CandlesApi.md#megacandles) | **GET** /api/mcandles | Get candlestick data |
+| [**proCandles**](CandlesApi.md#procandles) | **GET** /api/pcandles | Get candlestick data |
+| [**ultraCandles**](CandlesApi.md#ultracandles) | **GET** /api/ucandles | Get candlestick data |
 
 
 
@@ -26,11 +26,11 @@ Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
 import {
   Configuration,
   CandlesApi,
-} from '';
-import type { BasicCandlesRequest } from '';
+} from 'tickcatcher';
+import type { BasicCandlesRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
@@ -106,11 +106,11 @@ Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
 import {
   Configuration,
   CandlesApi,
-} from '';
-import type { EnterpriseCandlesRequest } from '';
+} from 'tickcatcher';
+import type { EnterpriseCandlesRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
@@ -192,11 +192,11 @@ Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
 import {
   Configuration,
   CandlesApi,
-} from '';
-import type { MegaCandlesRequest } from '';
+} from 'tickcatcher';
+import type { MegaCandlesRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
@@ -278,11 +278,11 @@ Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
 import {
   Configuration,
   CandlesApi,
-} from '';
-import type { ProCandlesRequest } from '';
+} from 'tickcatcher';
+import type { ProCandlesRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
@@ -358,11 +358,11 @@ Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
 import {
   Configuration,
   CandlesApi,
-} from '';
-import type { UltraCandlesRequest } from '';
+} from 'tickcatcher';
+import type { UltraCandlesRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",

@@ -4,11 +4,11 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BasicCandles**](CandlesAPI.md#BasicCandles) | **Get** /bcandles | Get candlestick data
-[**EnterpriseCandles**](CandlesAPI.md#EnterpriseCandles) | **Get** /ecandles | Get candlestick data
-[**MegaCandles**](CandlesAPI.md#MegaCandles) | **Get** /mcandles | Get candlestick data
-[**ProCandles**](CandlesAPI.md#ProCandles) | **Get** /pcandles | Get candlestick data
-[**UltraCandles**](CandlesAPI.md#UltraCandles) | **Get** /ucandles | Get candlestick data
+[**BasicCandles**](CandlesAPI.md#BasicCandles) | **Get** /api/bcandles | Get candlestick data
+[**EnterpriseCandles**](CandlesAPI.md#EnterpriseCandles) | **Get** /api/ecandles | Get candlestick data
+[**MegaCandles**](CandlesAPI.md#MegaCandles) | **Get** /api/mcandles | Get candlestick data
+[**ProCandles**](CandlesAPI.md#ProCandles) | **Get** /api/pcandles | Get candlestick data
+[**UltraCandles**](CandlesAPI.md#UltraCandles) | **Get** /api/ucandles | Get candlestick data
 
 
 
@@ -29,7 +29,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {
@@ -99,7 +99,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {
@@ -173,7 +173,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {
@@ -247,7 +247,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {
@@ -317,7 +317,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+	openapiclient "github.com/yagiziskirik/tickcatcher-sdk"
 )
 
 func main() {

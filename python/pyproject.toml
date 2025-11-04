@@ -1,9 +1,9 @@
 [project]
-name = "openapi_client"
+name = "tickcatcher"
 version = "1.0.0"
 description = "Tickcatcher API"
 authors = [
-  {name = "OpenAPI Generator Community",email = "team@openapitools.org"},
+  {name = "OpenAPI Generator Community",email = "yagiz@iskirik.com"},
 ]
 license = { text = "MIT" }
 readme = "README.md"
@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+Repository = "https://github.com/yagiziskirik/tickcatcher-sdk"
 
 [tool.poetry]
 requires-poetry = ">=2.0"
@@ -41,7 +41,7 @@ extension-pkg-whitelist = "pydantic"
 
 [tool.mypy]
 files = [
-  "openapi_client",
+  "tickcatcher",
   #"test",  # auto-generated tests
   "tests", # hand-written tests
 ]
@@ -79,7 +79,7 @@ disallow_any_generics = true
 
 [[tool.mypy.overrides]]
 module = [
-  "openapi_client.configuration",
+  "tickcatcher.configuration",
 ]
 warn_unused_ignores = true
 strict_equality = true

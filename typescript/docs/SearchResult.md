@@ -12,7 +12,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { SearchResult } from ''
+import type { SearchResult } from 'tickcatcher'
 
 // TODO: Update the object below with actual values
 const example = {

@@ -1,10 +1,10 @@
-# openapi_client.CalendarApi
+# tickcatcher.CalendarApi
 
 All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**calendar**](CalendarApi.md#calendar) | **GET** /calendar | Get economic calendar within a selected period
+[**calendar**](CalendarApi.md#calendar) | **GET** /api/calendar | Get economic calendar within a selected period
 
 
 # **calendar**
@@ -19,14 +19,14 @@ Fetch economic calendar for event based trading simulations. If no dates entered
 * Api Key Authentication (rapidapiKey):
 
 ```python
-import openapi_client
-from openapi_client.models.calendar_event import CalendarEvent
-from openapi_client.rest import ApiException
+import tickcatcher
+from tickcatcher.models.calendar_event import CalendarEvent
+from tickcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = tickcatcher.Configuration(
     host = "https://tickcatcher.p.rapidapi.com"
 )
 
@@ -42,9 +42,9 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 # configuration.api_key_prefix['rapidapiKey'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CalendarApi(api_client)
+    api_instance = tickcatcher.CalendarApi(api_client)
     start_date = 1762194992000 # int | Javascript style epoch time with milliseconds (i.e. 1762194992000). (optional)
     end_date = 1762194992000 # int | Javascript style epoch time with milliseconds (i.e. 1762194992000). (optional)
 

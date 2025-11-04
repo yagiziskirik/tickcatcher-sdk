@@ -4,7 +4,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**calendar**](CalendarApi.md#calendar) | **GET** /calendar | Get economic calendar within a selected period |
+| [**calendar**](CalendarApi.md#calendar) | **GET** /api/calendar | Get economic calendar within a selected period |
 
 
 <a id="calendar"></a>
@@ -18,8 +18,8 @@ Fetch economic calendar for event based trading simulations. If no dates entered
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = CalendarApi()
 val startDate : kotlin.Long = 1762194992000 // kotlin.Long | Javascript style epoch time with milliseconds (i.e. 1762194992000).

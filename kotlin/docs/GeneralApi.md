@@ -4,9 +4,9 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**info**](GeneralApi.md#info) | **GET** /info | Get your package information as well as your limitations |
-| [**metadata**](GeneralApi.md#metadata) | **GET** /metadata | Get metadata of selected timeframe/symbol pair |
-| [**search**](GeneralApi.md#search) | **GET** /search | Search through the list of symbols to use correct one in the query |
+| [**info**](GeneralApi.md#info) | **GET** /api/info | Get your package information as well as your limitations |
+| [**metadata**](GeneralApi.md#metadata) | **GET** /api/metadata | Get metadata of selected timeframe/symbol pair |
+| [**search**](GeneralApi.md#search) | **GET** /api/search | Search through the list of symbols to use correct one in the query |
 
 
 <a id="info"></a>
@@ -20,8 +20,8 @@ Get your current RapidAPI package, which coins you can use, maximum candles that
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = GeneralApi()
 try {
@@ -66,8 +66,8 @@ Retrieve metadata for a specific symbol and timeframe.
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = GeneralApi()
 val symbol : kotlin.String = BTCUSDT // kotlin.String | 
@@ -117,8 +117,8 @@ If your queries don&#39;t work correctly, you can search the database with the c
 ### Example
 ```kotlin
 // Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
+//import tickcatcher.infrastructure.*
+//import tickcatcher.models.*
 
 val apiInstance = GeneralApi()
 val query : kotlin.String = BTC // kotlin.String | 

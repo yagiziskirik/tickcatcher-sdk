@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Metadata
+# tickcatcher.Model.Metadata
 
 ## Properties
 

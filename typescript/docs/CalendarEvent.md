@@ -31,7 +31,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { CalendarEvent } from ''
+import type { CalendarEvent } from 'tickcatcher'
 
 // TODO: Update the object below with actual values
 const example = {

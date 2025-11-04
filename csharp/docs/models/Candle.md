@@ -1,4 +1,4 @@
-# Org.OpenAPITools.Model.Candle
+# tickcatcher.Model.Candle
 
 ## Properties
 

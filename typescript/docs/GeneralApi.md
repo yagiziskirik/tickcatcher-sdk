@@ -4,9 +4,9 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**info**](GeneralApi.md#info) | **GET** /info | Get your package information as well as your limitations |
-| [**metadata**](GeneralApi.md#metadata) | **GET** /metadata | Get metadata of selected timeframe/symbol pair |
-| [**search**](GeneralApi.md#search) | **GET** /search | Search through the list of symbols to use correct one in the query |
+| [**info**](GeneralApi.md#info) | **GET** /api/info | Get your package information as well as your limitations |
+| [**metadata**](GeneralApi.md#metadata) | **GET** /api/metadata | Get metadata of selected timeframe/symbol pair |
+| [**search**](GeneralApi.md#search) | **GET** /api/search | Search through the list of symbols to use correct one in the query |
 
 
 
@@ -24,11 +24,11 @@ Get your current RapidAPI package, which coins you can use, maximum candles that
 import {
   Configuration,
   GeneralApi,
-} from '';
-import type { InfoRequest } from '';
+} from 'tickcatcher';
+import type { InfoRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
@@ -90,11 +90,11 @@ Retrieve metadata for a specific symbol and timeframe.
 import {
   Configuration,
   GeneralApi,
-} from '';
-import type { MetadataRequest } from '';
+} from 'tickcatcher';
+import type { MetadataRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
@@ -168,11 +168,11 @@ If your queries don\&#39;t work correctly, you can search the database with the 
 import {
   Configuration,
   GeneralApi,
-} from '';
-import type { SearchRequest } from '';
+} from 'tickcatcher';
+import type { SearchRequest } from 'tickcatcher';
 
 async function example() {
-  console.log("🚀 Testing  SDK...");
+  console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",

@@ -1,12 +1,12 @@
-# Org.OpenAPITools.Api.GeneralApi
+# tickcatcher.Api.GeneralApi
 
 All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**Info**](GeneralApi.md#info) | **GET** /info | Get your package information as well as your limitations |
-| [**Metadata**](GeneralApi.md#metadata) | **GET** /metadata | Get metadata of selected timeframe/symbol pair |
-| [**Search**](GeneralApi.md#search) | **GET** /search | Search through the list of symbols to use correct one in the query |
+| [**Info**](GeneralApi.md#info) | **GET** /api/info | Get your package information as well as your limitations |
+| [**Metadata**](GeneralApi.md#metadata) | **GET** /api/metadata | Get metadata of selected timeframe/symbol pair |
+| [**Search**](GeneralApi.md#search) | **GET** /api/search | Search through the list of symbols to use correct one in the query |
 
 <a id="info"></a>
 # **Info**
