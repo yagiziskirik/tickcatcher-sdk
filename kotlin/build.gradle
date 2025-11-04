@@ -1,9 +1,5 @@
 group 'com.tickcatcher'
-<<<<<<< HEAD
 version '${packageVersion}'
-=======
-version '1.0.0'
->>>>>>> 85e84b4da65fd4b53c01e5c1219cb9ae17445e8e
 
 wrapper {
     gradleVersion = '8.14.3'
