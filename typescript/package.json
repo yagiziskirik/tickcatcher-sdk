@@ -1,6 +1,6 @@
 {
   "name": "tickcatcher",
-  "version": "1.0.0",
+  "version": "${packageVersion}",
   "description": "OpenAPI client for tickcatcher",
   "author": "OpenAPI-Generator",
   "repository": {

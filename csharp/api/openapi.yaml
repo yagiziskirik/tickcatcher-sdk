@@ -7,7 +7,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.0.0
+  version: 1.0.1
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
