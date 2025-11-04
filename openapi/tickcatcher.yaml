@@ -186,7 +186,7 @@ security:
   - rapidapiKey: []
 
 paths:
-  /bcandles:
+  /api/bcandles:
     get:
       tags: [Candles]
       operationId: basicCandles
@@ -228,7 +228,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /pcandles:
+  /api/pcandles:
     get:
       tags: [Candles]
       operationId: proCandles
@@ -270,7 +270,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /ucandles:
+  /api/ucandles:
     get:
       tags: [Candles]
       operationId: ultraCandles
@@ -326,7 +326,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /mcandles:
+  /api/mcandles:
     get:
       tags: [Candles]
       summary: Get candlestick data
@@ -383,7 +383,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /ecandles:
+  /api/ecandles:
     get:
       tags: [Candles]
       operationId: enterpriseCandles
@@ -440,7 +440,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /metadata:
+  /api/metadata:
     get:
       tags: [General]
       operationId: metadata
@@ -475,7 +475,7 @@ paths:
           description: No data found
         "500":
           description: Server error
-  /info:
+  /api/info:
     get:
       tags: [General]
       operationId: info
@@ -494,7 +494,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /search:
+  /api/search:
     get:
       tags: [General]
       operationId: search
@@ -520,7 +520,7 @@ paths:
           description: Missing or invalid API key
         "500":
           description: Server error
-  /calendar:
+  /api/calendar:
     get:
       tags: [Calendar]
       operationId: calendar
