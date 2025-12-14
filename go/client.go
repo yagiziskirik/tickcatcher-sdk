@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.0.1
+API version: 1.1.0
 Contact: yagiz@iskirik.com
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Tickcatcher API API v1.0.1
+// APIClient manages communication with the Tickcatcher API API v1.1.0
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -50,11 +50,21 @@ type APIClient struct {
 
 	// API Services
 
+	BasicIndicatorsAPI *BasicIndicatorsAPIService
+
 	CalendarAPI *CalendarAPIService
 
 	CandlesAPI *CandlesAPIService
 
+	EnterpriseIndicatorsAPI *EnterpriseIndicatorsAPIService
+
 	GeneralAPI *GeneralAPIService
+
+	MegaIndicatorsAPI *MegaIndicatorsAPIService
+
+	ProIndicatorsAPI *ProIndicatorsAPIService
+
+	UltraIndicatorsAPI *UltraIndicatorsAPIService
 }
 
 type service struct {
@@ -73,9 +83,14 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.BasicIndicatorsAPI = (*BasicIndicatorsAPIService)(&c.common)
 	c.CalendarAPI = (*CalendarAPIService)(&c.common)
 	c.CandlesAPI = (*CandlesAPIService)(&c.common)
+	c.EnterpriseIndicatorsAPI = (*EnterpriseIndicatorsAPIService)(&c.common)
 	c.GeneralAPI = (*GeneralAPIService)(&c.common)
+	c.MegaIndicatorsAPI = (*MegaIndicatorsAPIService)(&c.common)
+	c.ProIndicatorsAPI = (*ProIndicatorsAPIService)(&c.common)
+	c.UltraIndicatorsAPI = (*UltraIndicatorsAPIService)(&c.common)
 
 	return c
 }

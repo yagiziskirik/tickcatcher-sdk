@@ -7,7 +7,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.0.1
+  version: 1.1.0
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
@@ -500,6 +500,455 @@ paths:
       summary: Get economic calendar within a selected period
       tags:
       - Calendar
+  /api/indicators/sma:
+    post:
+      description: Returns the SMA of the close prices.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_sma_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: Array of SMA values
+      summary: Calculate Simple Moving Average (SMA)
+      tags:
+      - Basic Indicators
+  /api/indicators/ema:
+    post:
+      description: Returns the EMA of the close prices.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: Array of EMA values
+      summary: Calculate Exponential Moving Average (EMA)
+      tags:
+      - Basic Indicators
+  /api/indicators/rsi:
+    post:
+      description: Returns the RSI of the close prices.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: Array of RSI values
+      summary: Calculate Relative Strength Index (RSI)
+      tags:
+      - Basic Indicators
+  /api/indicators/macd:
+    post:
+      description: "Returns MACD, Signal, and Histogram."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_macd_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/_api_indicators_macd_post_200_response_inner"
+                type: array
+          description: MACD result
+      summary: Calculate MACD
+      tags:
+      - Pro Indicators
+  /api/indicators/stoch:
+    post:
+      description: Returns %K and %D lines.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_stoch_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/_api_indicators_stoch_post_200_response_inner"
+                type: array
+          description: Stochastic result
+      summary: Calculate Stochastic Oscillator
+      tags:
+      - Pro Indicators
+  /api/indicators/bbands:
+    post:
+      description: "Returns Upper, Middle, and Lower bands."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_bbands_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/_api_indicators_bbands_post_200_response_inner"
+                type: array
+          description: Bollinger Bands result
+      summary: Calculate Bollinger Bands
+      tags:
+      - Pro Indicators
+  /api/indicators/volumema:
+    post:
+      description: Returns Simple Moving Average of Volume.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: Array of Volume MA values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Volume MA
+      tags:
+      - Pro Indicators
+  /api/indicators/atr:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: ATR values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Average True Range (ATR)
+      tags:
+      - Ultra Indicators
+  /api/indicators/adx:
+    post:
+      operationId: adx
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/adx_200_response_inner"
+                type: array
+          description: ADX result
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Average Directional Index (ADX)
+      tags:
+      - Ultra Indicators
+  /api/indicators/cci:
+    post:
+      operationId: cci
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: CCI values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Commodity Channel Index (CCI)
+      tags:
+      - Ultra Indicators
+  /api/indicators/psar:
+    post:
+      operationId: psar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/psar_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: Parabolic SAR values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Parabolic SAR
+      tags:
+      - Ultra Indicators
+  /api/indicators/ichimoku:
+    post:
+      operationId: ichimoku
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ichimoku_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/ichimoku_200_response_inner"
+                type: array
+          description: Ichimoku result
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Ichimoku Cloud
+      tags:
+      - Mega Indicators
+  /api/indicators/williamsr:
+    post:
+      operationId: williamsr
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: Williams %R values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Williams %R
+      tags:
+      - Mega Indicators
+  /api/indicators/supertrend:
+    post:
+      operationId: supertrend
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/supertrend_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/supertrend_200_response_inner"
+                type: array
+          description: SuperTrend result
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate SuperTrend
+      tags:
+      - Mega Indicators
+  /api/indicators/heikenashi:
+    post:
+      operationId: heikenashi
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/heikenashi_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/heikenashi_200_response"
+          description: Heiken Ashi candles
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Heiken Ashi
+      tags:
+      - Mega Indicators
+  /api/indicators/keltner:
+    post:
+      operationId: keltner
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/keltner_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/_api_indicators_bbands_post_200_response_inner"
+                type: array
+          description: Keltner Channel values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Keltner Channels
+      tags:
+      - Enterprise Indicators
+  /api/indicators/vwap:
+    post:
+      operationId: vwap
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/heikenashi_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: number
+                type: array
+          description: VWAP values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate VWAP
+      tags:
+      - Enterprise Indicators
+  /api/indicators/zigzag:
+    post:
+      operationId: zigzag
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/heikenashi_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  nullable: true
+                  type: number
+                type: array
+          description: ZigZag values
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate ZigZag Indicator
+      tags:
+      - Enterprise Indicators
+  /api/indicators/pivot:
+    post:
+      operationId: pivot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/heikenashi_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/pivot_200_response_inner"
+                type: array
+          description: Pivot Points
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+      summary: Calculate Pivot Points
+      tags:
+      - Enterprise Indicators
 components:
   schemas:
     Candle:
@@ -747,6 +1196,318 @@ components:
       - importance
       - title
       - ts
+    CandleData:
+      properties:
+        open:
+          items:
+            type: number
+          type: array
+        high:
+          items:
+            type: number
+          type: array
+        low:
+          items:
+            type: number
+          type: array
+        close:
+          items:
+            type: number
+          type: array
+        volume:
+          items:
+            type: number
+          type: array
+      required:
+      - close
+    _api_indicators_sma_post_request_params:
+      properties:
+        period:
+          default: 14
+          description: The period for calculating SMA.
+          type: integer
+    _api_indicators_sma_post_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/_api_indicators_sma_post_request_params"
+      required:
+      - data
+    _api_indicators_ema_post_request_params:
+      properties:
+        period:
+          default: 14
+          type: integer
+    _api_indicators_ema_post_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/_api_indicators_ema_post_request_params"
+      required:
+      - data
+    _api_indicators_macd_post_request_params:
+      properties:
+        fastPeriod:
+          default: 12
+          type: integer
+        slowPeriod:
+          default: 26
+          type: integer
+        signalPeriod:
+          default: 9
+          type: integer
+    _api_indicators_macd_post_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/_api_indicators_macd_post_request_params"
+      required:
+      - data
+    _api_indicators_macd_post_200_response_inner:
+      example:
+        histogram: 1.4658129805029452
+        MACD: 0.8008281904610115
+        signal: 6.027456183070403
+      properties:
+        MACD:
+          type: number
+        signal:
+          type: number
+        histogram:
+          type: number
+    _api_indicators_stoch_post_request_params:
+      properties:
+        period:
+          default: 14
+          type: integer
+        signalPeriod:
+          default: 3
+          type: integer
+    _api_indicators_stoch_post_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/_api_indicators_stoch_post_request_params"
+      required:
+      - data
+    _api_indicators_stoch_post_200_response_inner:
+      example:
+        stochD: 6.027456183070403
+        stochK: 0.8008281904610115
+      properties:
+        stochK:
+          type: number
+        stochD:
+          type: number
+    _api_indicators_bbands_post_request_params:
+      properties:
+        period:
+          default: 14
+          type: integer
+        stdDev:
+          default: 2
+          type: number
+    _api_indicators_bbands_post_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/_api_indicators_bbands_post_request_params"
+      required:
+      - data
+    _api_indicators_bbands_post_200_response_inner:
+      example:
+        middle: 6.027456183070403
+        upper: 0.8008281904610115
+        lower: 1.4658129805029452
+      properties:
+        upper:
+          type: number
+        middle:
+          type: number
+        lower:
+          type: number
+    adx_200_response_inner:
+      example:
+        mdi: 1.4658129805029452
+        adx: 0.8008281904610115
+        pdi: 6.027456183070403
+      properties:
+        adx:
+          type: number
+        pdi:
+          type: number
+        mdi:
+          type: number
+    psar_request_params:
+      properties:
+        step:
+          default: 0.02
+          type: number
+        max:
+          default: 0.2
+          type: number
+    psar_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/psar_request_params"
+      required:
+      - data
+    ichimoku_request_params:
+      properties:
+        conversionPeriod:
+          default: 9
+          type: integer
+        basePeriod:
+          default: 26
+          type: integer
+        spanPeriod:
+          default: 52
+          type: integer
+        displacement:
+          default: 26
+          type: integer
+    ichimoku_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/ichimoku_request_params"
+      required:
+      - data
+    ichimoku_200_response_inner:
+      example:
+        spanB: 5.962133916683182
+        conversion: 0.8008281904610115
+        base: 6.027456183070403
+        spanA: 1.4658129805029452
+        lagging: 5.637376656633329
+      properties:
+        conversion:
+          type: number
+        base:
+          type: number
+        spanA:
+          type: number
+        spanB:
+          type: number
+        lagging:
+          type: number
+    supertrend_request_params:
+      properties:
+        period:
+          default: 10
+          type: integer
+        multiplier:
+          default: 3
+          type: number
+    supertrend_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/supertrend_request_params"
+      required:
+      - data
+    supertrend_200_response_inner:
+      example:
+        trend: 6.027456183070403
+        value: 0.8008281904610115
+      properties:
+        value:
+          type: number
+        trend:
+          type: number
+    heikenashi_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+      required:
+      - data
+    heikenashi_200_response:
+      example:
+        high:
+        - 6.027456183070403
+        - 6.027456183070403
+        low:
+        - 1.4658129805029452
+        - 1.4658129805029452
+        close:
+        - 5.962133916683182
+        - 5.962133916683182
+        open:
+        - 0.8008281904610115
+        - 0.8008281904610115
+      properties:
+        open:
+          items:
+            type: number
+          type: array
+        high:
+          items:
+            type: number
+          type: array
+        low:
+          items:
+            type: number
+          type: array
+        close:
+          items:
+            type: number
+          type: array
+    keltner_request_params:
+      properties:
+        period:
+          default: 20
+          type: integer
+        multiplier:
+          default: 1
+          type: number
+    keltner_request:
+      properties:
+        data:
+          $ref: "#/components/schemas/CandleData"
+        params:
+          $ref: "#/components/schemas/keltner_request_params"
+      required:
+      - data
+    pivot_200_response_inner:
+      example:
+        p: 0.8008281904610115
+        r2: 5.962133916683182
+        s3: 7.061401241503109
+        r3: 2.3021358869347655
+        s1: 1.4658129805029452
+        r1: 6.027456183070403
+        s2: 5.637376656633329
+      properties:
+        p:
+          nullable: true
+          type: number
+        r1:
+          nullable: true
+          type: number
+        s1:
+          nullable: true
+          type: number
+        r2:
+          nullable: true
+          type: number
+        s2:
+          nullable: true
+          type: number
+        r3:
+          nullable: true
+          type: number
+        s3:
+          nullable: true
+          type: number
   securitySchemes:
     rapidapiKey:
       in: header
