@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Tickcatcher API
-  version: 1.0.1
+  version: 1.1.0
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -181,6 +181,32 @@ components:
           description: Unix timestamp (ms)
         scale:
           type: [string, "null"]
+
+    CandleData:
+      type: object
+      properties:
+        open:
+          type: array
+          items:
+            type: number
+        high:
+          type: array
+          items:
+            type: number
+        low:
+          type: array
+          items:
+            type: number
+        close:
+          type: array
+          items:
+            type: number
+        volume:
+          type: array
+          items:
+            type: number
+      required:
+        - close
 
 security:
   - rapidapiKey: []
@@ -554,5 +580,731 @@ paths:
                   $ref: "#/components/schemas/CalendarEvent"
         "401":
           description: Missing or invalid API key
+        "500":
+          description: Server error
+  /api/indicators/sma:
+    post:
+      summary: Calculate Simple Moving Average (SMA)
+      description: Returns the SMA of the close prices.
+      tags: [Basic Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+                      description: The period for calculating SMA.
+      responses:
+        '200':
+          description: Array of SMA values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+
+  /api/indicators/ema:
+    post:
+      summary: Calculate Exponential Moving Average (EMA)
+      description: Returns the EMA of the close prices.
+      tags: [Basic Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: Array of EMA values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+
+  /api/indicators/rsi:
+    post:
+      summary: Calculate Relative Strength Index (RSI)
+      description: Returns the RSI of the close prices.
+      tags: [Basic Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: Array of RSI values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+
+  /api/indicators/macd:
+    post:
+      summary: Calculate MACD
+      description: Returns MACD, Signal, and Histogram.
+      tags: [Pro Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    fastPeriod:
+                      type: integer
+                      default: 12
+                    slowPeriod:
+                      type: integer
+                      default: 26
+                    signalPeriod:
+                      type: integer
+                      default: 9
+      responses:
+        '200':
+          description: MACD result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    MACD:
+                      type: number
+                    signal:
+                      type: number
+                    histogram:
+                      type: number
+
+  /api/indicators/stoch:
+    post:
+      summary: Calculate Stochastic Oscillator
+      description: Returns %K and %D lines.
+      tags: [Pro Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+                    signalPeriod:
+                      type: integer
+                      default: 3
+      responses:
+        '200':
+          description: Stochastic result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    stochK:
+                      type: number
+                    stochD:
+                      type: number
+
+  /api/indicators/bbands:
+    post:
+      summary: Calculate Bollinger Bands
+      description: Returns Upper, Middle, and Lower bands.
+      tags: [Pro Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+                    stdDev:
+                      type: number
+                      default: 2
+      responses:
+        '200':
+          description: Bollinger Bands result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    upper:
+                      type: number
+                    middle:
+                      type: number
+                    lower:
+                      type: number
+
+  /api/indicators/volumema:
+    post:
+      summary: Calculate Volume MA
+      description: Returns Simple Moving Average of Volume.
+      tags: [Pro Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: Array of Volume MA values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/atr:
+    post:
+      summary: Calculate Average True Range (ATR)
+      tags: [Ultra Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: ATR values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/adx:
+    post:
+      summary: Calculate Average Directional Index (ADX)
+      operationId: adx
+      tags: [Ultra Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: ADX result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    adx:
+                      type: number
+                    pdi:
+                      type: number
+                    mdi:
+                      type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/cci:
+    post:
+      summary: Calculate Commodity Channel Index (CCI)
+      operationId: cci
+      tags: [Ultra Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: CCI values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/psar:
+    post:
+      summary: Calculate Parabolic SAR
+      operationId: psar
+      tags: [Ultra Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    step:
+                      type: number
+                      default: 0.02
+                    max:
+                      type: number
+                      default: 0.2
+      responses:
+        '200':
+          description: Parabolic SAR values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/ichimoku:
+    post:
+      summary: Calculate Ichimoku Cloud
+      operationId: ichimoku
+      tags: [Mega Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    conversionPeriod:
+                      type: integer
+                      default: 9
+                    basePeriod:
+                      type: integer
+                      default: 26
+                    spanPeriod:
+                      type: integer
+                      default: 52
+                    displacement:
+                      type: integer
+                      default: 26
+      responses:
+        '200':
+          description: Ichimoku result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    conversion:
+                      type: number
+                    base:
+                      type: number
+                    spanA:
+                      type: number
+                    spanB:
+                      type: number
+                    lagging:
+                      type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/williamsr:
+    post:
+      summary: Calculate Williams %R
+      operationId: williamsr
+      tags: [Mega Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 14
+      responses:
+        '200':
+          description: Williams %R values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/supertrend:
+    post:
+      summary: Calculate SuperTrend
+      operationId: supertrend
+      tags: [Mega Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 10
+                    multiplier:
+                      type: number
+                      default: 3
+      responses:
+        '200':
+          description: SuperTrend result
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    value:
+                      type: number
+                    trend:
+                      type: number # 1 (up) or -1 (down)
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/heikenashi:
+    post:
+      summary: Calculate Heiken Ashi
+      operationId: heikenashi
+      tags: [Mega Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+      responses:
+        '200':
+          description: Heiken Ashi candles
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  open:
+                    type: array
+                    items:
+                       type: number
+                  high:
+                    type: array
+                    items:
+                       type: number
+                  low:
+                    type: array
+                    items:
+                       type: number
+                  close:
+                    type: array
+                    items:
+                       type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/keltner:
+    post:
+      summary: Calculate Keltner Channels
+      operationId: keltner
+      tags: [Enterprise Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                params:
+                  type: object
+                  properties:
+                    period:
+                      type: integer
+                      default: 20
+                    multiplier:
+                      type: number
+                      default: 1
+      responses:
+        '200':
+          description: Keltner Channel values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    upper:
+                      type: number
+                    middle:
+                      type: number
+                    lower:
+                      type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/vwap:
+    post:
+      summary: Calculate VWAP
+      operationId: vwap
+      tags: [Enterprise Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+                  description: Requires volume data
+      responses:
+        '200':
+          description: VWAP values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: number
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/zigzag:
+    post:
+      summary: Calculate ZigZag Indicator
+      operationId: zigzag
+      tags: [Enterprise Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+      responses:
+        '200':
+          description: ZigZag values
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: [number, "null"]
+        "400":
+          description: Invalid parameters
+        "500":
+          description: Server error
+
+  /api/indicators/pivot:
+    post:
+      summary: Calculate Pivot Points
+      operationId: pivot
+      tags: [Enterprise Indicators]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [data]
+              properties:
+                data:
+                  $ref: '#/components/schemas/CandleData'
+      responses:
+        '200':
+          description: Pivot Points
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    p:
+                      type: [number, "null"]
+                    r1:
+                      type: [number, "null"]
+                    s1:
+                      type: [number, "null"]
+                    r2:
+                      type: [number, "null"]
+                    s2:
+                      type: [number, "null"]
+                    r3:
+                      type: [number, "null"]
+                    s3:
+                      type: [number, "null"]
+        "400":
+          description: Invalid parameters
         "500":
           description: Server error
