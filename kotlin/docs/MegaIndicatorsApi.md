@@ -153,7 +153,7 @@ Configure rapidapiKey:
 
 <a id="williamsr"></a>
 # **williamsr**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; williamsr(apiIndicatorsEmaPostRequest)
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; williamsr(emaRequest)
 
 Calculate Williams %R
 
@@ -164,9 +164,9 @@ Calculate Williams %R
 //import tickcatcher.models.*
 
 val apiInstance = MegaIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.williamsr(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.williamsr(emaRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MegaIndicatorsApi#williamsr")
@@ -180,7 +180,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 

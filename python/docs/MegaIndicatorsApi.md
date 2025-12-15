@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **williamsr**
-> List[float] williamsr(api_indicators_ema_post_request)
+> List[float] williamsr(ema_request)
 
 Calculate Williams %R
 
@@ -261,7 +261,7 @@ Calculate Williams %R
 
 ```python
 import tickcatcher
-from tickcatcher.models.api_indicators_ema_post_request import ApiIndicatorsEmaPostRequest
+from tickcatcher.models.ema_request import EmaRequest
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
@@ -286,11 +286,11 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tickcatcher.MegaIndicatorsApi(api_client)
-    api_indicators_ema_post_request = tickcatcher.ApiIndicatorsEmaPostRequest() # ApiIndicatorsEmaPostRequest | 
+    ema_request = tickcatcher.EmaRequest() # EmaRequest | 
 
     try:
         # Calculate Williams %R
-        api_response = api_instance.williamsr(api_indicators_ema_post_request)
+        api_response = api_instance.williamsr(ema_request)
         print("The response of MegaIndicatorsApi->williamsr:\n")
         pprint(api_response)
     except Exception as e:
@@ -304,7 +304,7 @@ with tickcatcher.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | 
+ **ema_request** | [**EmaRequest**](EmaRequest.md)|  | 
 
 ### Return type
 

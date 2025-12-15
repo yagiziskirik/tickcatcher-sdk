@@ -5,14 +5,14 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adx**](UltraIndicatorsAPI.md#adx) | **POST** /api/indicators/adx | Calculate Average Directional Index (ADX)
-[**apiIndicatorsAtrPost**](UltraIndicatorsAPI.md#apiindicatorsatrpost) | **POST** /api/indicators/atr | Calculate Average True Range (ATR)
+[**atr**](UltraIndicatorsAPI.md#atr) | **POST** /api/indicators/atr | Calculate Average True Range (ATR)
 [**cci**](UltraIndicatorsAPI.md#cci) | **POST** /api/indicators/cci | Calculate Commodity Channel Index (CCI)
 [**psar**](UltraIndicatorsAPI.md#psar) | **POST** /api/indicators/psar | Calculate Parabolic SAR
 
 
 # **adx**
 ```swift
-    open class func adx(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, completion: @escaping (_ data: [Adx200ResponseInner]?, _ error: Error?) -> Void)
+    open class func adx(emaRequest: EmaRequest, completion: @escaping (_ data: [Adx200ResponseInner]?, _ error: Error?) -> Void)
 ```
 
 Calculate Average Directional Index (ADX)
@@ -22,10 +22,10 @@ Calculate Average Directional Index (ADX)
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsEmaPostRequest = _api_indicators_ema_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_ema_post_request_params(period: 123)) // ApiIndicatorsEmaPostRequest | 
+let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Average Directional Index (ADX)
-UltraIndicatorsAPI.adx(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest) { (response, error) in
+UltraIndicatorsAPI.adx(emaRequest: emaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -41,7 +41,7 @@ UltraIndicatorsAPI.adx(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -58,9 +58,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIndicatorsAtrPost**
+# **atr**
 ```swift
-    open class func apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
+    open class func atr(emaRequest: EmaRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
 ```
 
 Calculate Average True Range (ATR)
@@ -70,10 +70,10 @@ Calculate Average True Range (ATR)
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsEmaPostRequest = _api_indicators_ema_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_ema_post_request_params(period: 123)) // ApiIndicatorsEmaPostRequest | 
+let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Average True Range (ATR)
-UltraIndicatorsAPI.apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest) { (response, error) in
+UltraIndicatorsAPI.atr(emaRequest: emaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -89,7 +89,7 @@ UltraIndicatorsAPI.apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest: apiIndicato
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 # **cci**
 ```swift
-    open class func cci(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
+    open class func cci(emaRequest: EmaRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
 ```
 
 Calculate Commodity Channel Index (CCI)
@@ -118,10 +118,10 @@ Calculate Commodity Channel Index (CCI)
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsEmaPostRequest = _api_indicators_ema_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_ema_post_request_params(period: 123)) // ApiIndicatorsEmaPostRequest | 
+let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Commodity Channel Index (CCI)
-UltraIndicatorsAPI.cci(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest) { (response, error) in
+UltraIndicatorsAPI.cci(emaRequest: emaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -137,7 +137,7 @@ UltraIndicatorsAPI.cci(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -166,7 +166,7 @@ Calculate Parabolic SAR
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let psarRequest = psar_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: psar_request_params(step: 123, max: 123)) // PsarRequest | 
+let psarRequest = psar_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: psar_request_params(step: 123, max: 123)) // PsarRequest | 
 
 // Calculate Parabolic SAR
 UltraIndicatorsAPI.psar(psarRequest: psarRequest) { (response, error) in

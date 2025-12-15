@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Keltner
 
-> []ApiIndicatorsBbandsPost200ResponseInner Keltner(ctx).KeltnerRequest(keltnerRequest).Execute()
+> []Bbands200ResponseInner Keltner(ctx).KeltnerRequest(keltnerRequest).Execute()
 
 Calculate Keltner Channels
 
@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-	keltnerRequest := *openapiclient.NewKeltnerRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // KeltnerRequest | 
+	keltnerRequest := *openapiclient.NewKeltnerRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // KeltnerRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `EnterpriseIndicatorsAPI.Keltner``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Keltner`: []ApiIndicatorsBbandsPost200ResponseInner
+	// response from `Keltner`: []Bbands200ResponseInner
 	fmt.Fprintf(os.Stdout, "Response from `EnterpriseIndicatorsAPI.Keltner`: %v\n", resp)
 }
 ```
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ApiIndicatorsBbandsPost200ResponseInner**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**[]Bbands200ResponseInner**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-	heikenashiRequest := *openapiclient.NewHeikenashiRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // HeikenashiRequest | 
+	heikenashiRequest := *openapiclient.NewHeikenashiRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // HeikenashiRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -158,7 +158,7 @@ import (
 )
 
 func main() {
-	heikenashiRequest := *openapiclient.NewHeikenashiRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // HeikenashiRequest | 
+	heikenashiRequest := *openapiclient.NewHeikenashiRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // HeikenashiRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -222,7 +222,7 @@ import (
 )
 
 func main() {
-	heikenashiRequest := *openapiclient.NewHeikenashiRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // HeikenashiRequest | 
+	heikenashiRequest := *openapiclient.NewHeikenashiRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // HeikenashiRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

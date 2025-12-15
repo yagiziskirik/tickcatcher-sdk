@@ -12,10 +12,10 @@ import AnyCodable
 
 public struct PsarRequest: Codable, JSONEncodable, Hashable {
 
-    public var data: CandleData
+    public var data: [Candle]
     public var params: PsarRequestParams?
 
-    public init(data: CandleData, params: PsarRequestParams? = nil) {
+    public init(data: [Candle], params: PsarRequestParams? = nil) {
         self.data = data
         self.params = params
     }

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**CandleData**](CandleData.md) |  | 
+**data** | [**List[Candle]**](Candle.md) |  | 
 **params** | [**PsarRequestParams**](PsarRequestParams.md) |  | [optional] 
 
 ## Example

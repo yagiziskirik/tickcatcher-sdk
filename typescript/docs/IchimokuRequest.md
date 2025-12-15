@@ -6,7 +6,7 @@
 
 Name | Type
 ------------ | -------------
-`data` | [CandleData](CandleData.md)
+`data` | [Array&lt;Candle&gt;](Candle.md)
 `params` | [IchimokuRequestParams](IchimokuRequestParams.md)
 
 ## Example

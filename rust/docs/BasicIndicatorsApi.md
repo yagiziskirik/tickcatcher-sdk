@@ -4,15 +4,15 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_indicators_ema_post**](BasicIndicatorsApi.md#api_indicators_ema_post) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA)
-[**api_indicators_rsi_post**](BasicIndicatorsApi.md#api_indicators_rsi_post) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI)
-[**api_indicators_sma_post**](BasicIndicatorsApi.md#api_indicators_sma_post) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA)
+[**ema**](BasicIndicatorsApi.md#ema) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA)
+[**rsi**](BasicIndicatorsApi.md#rsi) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI)
+[**sma**](BasicIndicatorsApi.md#sma) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA)
 
 
 
-## api_indicators_ema_post
+## ema
 
-> Vec<f64> api_indicators_ema_post(api_indicators_ema_post_request)
+> Vec<f64> ema(ema_request)
 Calculate Exponential Moving Average (EMA)
 
 Returns the EMA of the close prices.
@@ -22,7 +22,7 @@ Returns the EMA of the close prices.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 
@@ -40,9 +40,9 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## api_indicators_rsi_post
+## rsi
 
-> Vec<f64> api_indicators_rsi_post(api_indicators_ema_post_request)
+> Vec<f64> rsi(ema_request)
 Calculate Relative Strength Index (RSI)
 
 Returns the RSI of the close prices.
@@ -52,7 +52,7 @@ Returns the RSI of the close prices.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 
@@ -70,9 +70,9 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## api_indicators_sma_post
+## sma
 
-> Vec<f64> api_indicators_sma_post(api_indicators_sma_post_request)
+> Vec<f64> sma(sma_request)
 Calculate Simple Moving Average (SMA)
 
 Returns the SMA of the close prices.
@@ -82,7 +82,7 @@ Returns the SMA of the close prices.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_sma_post_request** | [**ApiIndicatorsSmaPostRequest**](ApiIndicatorsSmaPostRequest.md) |  | [required] |
+**sma_request** | [**SmaRequest**](SmaRequest.md) |  | [required] |
 
 ### Return type
 

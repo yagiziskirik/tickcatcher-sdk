@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &SupertrendRequest{}
 
 // SupertrendRequest struct for SupertrendRequest
 type SupertrendRequest struct {
-	Data CandleData `json:"data"`
+	Data []Candle `json:"data"`
 	Params *SupertrendRequestParams `json:"params,omitempty"`
 }
 
@@ -32,7 +32,7 @@ type _SupertrendRequest SupertrendRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSupertrendRequest(data CandleData) *SupertrendRequest {
+func NewSupertrendRequest(data []Candle) *SupertrendRequest {
 	this := SupertrendRequest{}
 	this.Data = data
 	return &this
@@ -47,9 +47,9 @@ func NewSupertrendRequestWithDefaults() *SupertrendRequest {
 }
 
 // GetData returns the Data field value
-func (o *SupertrendRequest) GetData() CandleData {
+func (o *SupertrendRequest) GetData() []Candle {
 	if o == nil {
-		var ret CandleData
+		var ret []Candle
 		return ret
 	}
 
@@ -58,15 +58,15 @@ func (o *SupertrendRequest) GetData() CandleData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SupertrendRequest) GetDataOk() (*CandleData, bool) {
+func (o *SupertrendRequest) GetDataOk() ([]Candle, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
 // SetData sets field value
-func (o *SupertrendRequest) SetData(v CandleData) {
+func (o *SupertrendRequest) SetData(v []Candle) {
 	o.Data = v
 }
 

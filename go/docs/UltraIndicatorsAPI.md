@@ -5,7 +5,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Adx**](UltraIndicatorsAPI.md#Adx) | **Post** /api/indicators/adx | Calculate Average Directional Index (ADX)
-[**ApiIndicatorsAtrPost**](UltraIndicatorsAPI.md#ApiIndicatorsAtrPost) | **Post** /api/indicators/atr | Calculate Average True Range (ATR)
+[**Atr**](UltraIndicatorsAPI.md#Atr) | **Post** /api/indicators/atr | Calculate Average True Range (ATR)
 [**Cci**](UltraIndicatorsAPI.md#Cci) | **Post** /api/indicators/cci | Calculate Commodity Channel Index (CCI)
 [**Psar**](UltraIndicatorsAPI.md#Psar) | **Post** /api/indicators/psar | Calculate Parabolic SAR
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Adx
 
-> []Adx200ResponseInner Adx(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []Adx200ResponseInner Adx(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Average Directional Index (ADX)
 
@@ -30,11 +30,11 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UltraIndicatorsAPI.Adx(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.UltraIndicatorsAPI.Adx(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UltraIndicatorsAPI.Adx``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiAdxRequest struct via the 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -75,9 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApiIndicatorsAtrPost
+## Atr
 
-> []float32 ApiIndicatorsAtrPost(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []float32 Atr(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Average True Range (ATR)
 
@@ -94,17 +94,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UltraIndicatorsAPI.ApiIndicatorsAtrPost(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.UltraIndicatorsAPI.Atr(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UltraIndicatorsAPI.ApiIndicatorsAtrPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UltraIndicatorsAPI.Atr``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsAtrPost`: []float32
-	fmt.Fprintf(os.Stdout, "Response from `UltraIndicatorsAPI.ApiIndicatorsAtrPost`: %v\n", resp)
+	// response from `Atr`: []float32
+	fmt.Fprintf(os.Stdout, "Response from `UltraIndicatorsAPI.Atr`: %v\n", resp)
 }
 ```
 
@@ -114,12 +114,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsAtrPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiAtrRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ## Cci
 
-> []float32 Cci(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []float32 Cci(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Commodity Channel Index (CCI)
 
@@ -158,11 +158,11 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UltraIndicatorsAPI.Cci(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.UltraIndicatorsAPI.Cci(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UltraIndicatorsAPI.Cci``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -183,7 +183,7 @@ Other parameters are passed through a pointer to a apiCciRequest struct via the 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -222,7 +222,7 @@ import (
 )
 
 func main() {
-	psarRequest := *openapiclient.NewPsarRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // PsarRequest | 
+	psarRequest := *openapiclient.NewPsarRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // PsarRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

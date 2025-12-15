@@ -5,7 +5,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adx**](UltraIndicatorsApi.md#adx) | **POST** /api/indicators/adx | Calculate Average Directional Index (ADX)
-[**api_indicators_atr_post**](UltraIndicatorsApi.md#api_indicators_atr_post) | **POST** /api/indicators/atr | Calculate Average True Range (ATR)
+[**atr**](UltraIndicatorsApi.md#atr) | **POST** /api/indicators/atr | Calculate Average True Range (ATR)
 [**cci**](UltraIndicatorsApi.md#cci) | **POST** /api/indicators/cci | Calculate Commodity Channel Index (CCI)
 [**psar**](UltraIndicatorsApi.md#psar) | **POST** /api/indicators/psar | Calculate Parabolic SAR
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## adx
 
-> Vec<models::Adx200ResponseInner> adx(api_indicators_ema_post_request)
+> Vec<models::Adx200ResponseInner> adx(ema_request)
 Calculate Average Directional Index (ADX)
 
 ### Parameters
@@ -21,7 +21,7 @@ Calculate Average Directional Index (ADX)
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 
@@ -39,9 +39,9 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## api_indicators_atr_post
+## atr
 
-> Vec<f64> api_indicators_atr_post(api_indicators_ema_post_request)
+> Vec<f64> atr(ema_request)
 Calculate Average True Range (ATR)
 
 ### Parameters
@@ -49,7 +49,7 @@ Calculate Average True Range (ATR)
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Required | Notes
 
 ## cci
 
-> Vec<f64> cci(api_indicators_ema_post_request)
+> Vec<f64> cci(ema_request)
 Calculate Commodity Channel Index (CCI)
 
 ### Parameters
@@ -77,7 +77,7 @@ Calculate Commodity Channel Index (CCI)
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 

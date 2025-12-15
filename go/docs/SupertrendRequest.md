@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CandleData**](CandleData.md) |  | 
+**Data** | [**[]Candle**](Candle.md) |  | 
 **Params** | Pointer to [**SupertrendRequestParams**](SupertrendRequestParams.md) |  | [optional] 
 
 ## Methods
 
 ### NewSupertrendRequest
 
-`func NewSupertrendRequest(data CandleData, ) *SupertrendRequest`
+`func NewSupertrendRequest(data []Candle, ) *SupertrendRequest`
 
 NewSupertrendRequest instantiates a new SupertrendRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SupertrendRequest) GetData() CandleData`
+`func (o *SupertrendRequest) GetData() []Candle`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SupertrendRequest) GetDataOk() (*CandleData, bool)`
+`func (o *SupertrendRequest) GetDataOk() (*[]Candle, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SupertrendRequest) SetData(v CandleData)`
+`func (o *SupertrendRequest) SetData(v []Candle)`
 
 SetData sets Data field to given value.
 

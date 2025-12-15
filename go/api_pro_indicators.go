@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -23,47 +23,47 @@ import (
 // ProIndicatorsAPIService ProIndicatorsAPI service
 type ProIndicatorsAPIService service
 
-type ApiApiIndicatorsBbandsPostRequest struct {
+type ApiBbandsRequest struct {
 	ctx context.Context
 	ApiService *ProIndicatorsAPIService
-	apiIndicatorsBbandsPostRequest *ApiIndicatorsBbandsPostRequest
+	bbandsRequest *BbandsRequest
 }
 
-func (r ApiApiIndicatorsBbandsPostRequest) ApiIndicatorsBbandsPostRequest(apiIndicatorsBbandsPostRequest ApiIndicatorsBbandsPostRequest) ApiApiIndicatorsBbandsPostRequest {
-	r.apiIndicatorsBbandsPostRequest = &apiIndicatorsBbandsPostRequest
+func (r ApiBbandsRequest) BbandsRequest(bbandsRequest BbandsRequest) ApiBbandsRequest {
+	r.bbandsRequest = &bbandsRequest
 	return r
 }
 
-func (r ApiApiIndicatorsBbandsPostRequest) Execute() ([]ApiIndicatorsBbandsPost200ResponseInner, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsBbandsPostExecute(r)
+func (r ApiBbandsRequest) Execute() ([]Bbands200ResponseInner, *http.Response, error) {
+	return r.ApiService.BbandsExecute(r)
 }
 
 /*
-ApiIndicatorsBbandsPost Calculate Bollinger Bands
+Bbands Calculate Bollinger Bands
 
 Returns Upper, Middle, and Lower bands.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsBbandsPostRequest
+ @return ApiBbandsRequest
 */
-func (a *ProIndicatorsAPIService) ApiIndicatorsBbandsPost(ctx context.Context) ApiApiIndicatorsBbandsPostRequest {
-	return ApiApiIndicatorsBbandsPostRequest{
+func (a *ProIndicatorsAPIService) Bbands(ctx context.Context) ApiBbandsRequest {
+	return ApiBbandsRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ApiIndicatorsBbandsPost200ResponseInner
-func (a *ProIndicatorsAPIService) ApiIndicatorsBbandsPostExecute(r ApiApiIndicatorsBbandsPostRequest) ([]ApiIndicatorsBbandsPost200ResponseInner, *http.Response, error) {
+//  @return []Bbands200ResponseInner
+func (a *ProIndicatorsAPIService) BbandsExecute(r ApiBbandsRequest) ([]Bbands200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ApiIndicatorsBbandsPost200ResponseInner
+		localVarReturnValue  []Bbands200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.ApiIndicatorsBbandsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.Bbands")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -73,8 +73,8 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsBbandsPostExecute(r ApiApiIndicat
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsBbandsPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsBbandsPostRequest is required and must be specified")
+	if r.bbandsRequest == nil {
+		return localVarReturnValue, nil, reportError("bbandsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -95,7 +95,7 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsBbandsPostExecute(r ApiApiIndicat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsBbandsPostRequest
+	localVarPostBody = r.bbandsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -147,47 +147,47 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsBbandsPostExecute(r ApiApiIndicat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiIndicatorsMacdPostRequest struct {
+type ApiMacdRequest struct {
 	ctx context.Context
 	ApiService *ProIndicatorsAPIService
-	apiIndicatorsMacdPostRequest *ApiIndicatorsMacdPostRequest
+	macdRequest *MacdRequest
 }
 
-func (r ApiApiIndicatorsMacdPostRequest) ApiIndicatorsMacdPostRequest(apiIndicatorsMacdPostRequest ApiIndicatorsMacdPostRequest) ApiApiIndicatorsMacdPostRequest {
-	r.apiIndicatorsMacdPostRequest = &apiIndicatorsMacdPostRequest
+func (r ApiMacdRequest) MacdRequest(macdRequest MacdRequest) ApiMacdRequest {
+	r.macdRequest = &macdRequest
 	return r
 }
 
-func (r ApiApiIndicatorsMacdPostRequest) Execute() ([]ApiIndicatorsMacdPost200ResponseInner, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsMacdPostExecute(r)
+func (r ApiMacdRequest) Execute() ([]Macd200ResponseInner, *http.Response, error) {
+	return r.ApiService.MacdExecute(r)
 }
 
 /*
-ApiIndicatorsMacdPost Calculate MACD
+Macd Calculate MACD
 
 Returns MACD, Signal, and Histogram.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsMacdPostRequest
+ @return ApiMacdRequest
 */
-func (a *ProIndicatorsAPIService) ApiIndicatorsMacdPost(ctx context.Context) ApiApiIndicatorsMacdPostRequest {
-	return ApiApiIndicatorsMacdPostRequest{
+func (a *ProIndicatorsAPIService) Macd(ctx context.Context) ApiMacdRequest {
+	return ApiMacdRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ApiIndicatorsMacdPost200ResponseInner
-func (a *ProIndicatorsAPIService) ApiIndicatorsMacdPostExecute(r ApiApiIndicatorsMacdPostRequest) ([]ApiIndicatorsMacdPost200ResponseInner, *http.Response, error) {
+//  @return []Macd200ResponseInner
+func (a *ProIndicatorsAPIService) MacdExecute(r ApiMacdRequest) ([]Macd200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ApiIndicatorsMacdPost200ResponseInner
+		localVarReturnValue  []Macd200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.ApiIndicatorsMacdPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.Macd")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -197,8 +197,8 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsMacdPostExecute(r ApiApiIndicator
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsMacdPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsMacdPostRequest is required and must be specified")
+	if r.macdRequest == nil {
+		return localVarReturnValue, nil, reportError("macdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -219,7 +219,7 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsMacdPostExecute(r ApiApiIndicator
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsMacdPostRequest
+	localVarPostBody = r.macdRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -271,47 +271,47 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsMacdPostExecute(r ApiApiIndicator
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiIndicatorsStochPostRequest struct {
+type ApiStochRequest struct {
 	ctx context.Context
 	ApiService *ProIndicatorsAPIService
-	apiIndicatorsStochPostRequest *ApiIndicatorsStochPostRequest
+	stochRequest *StochRequest
 }
 
-func (r ApiApiIndicatorsStochPostRequest) ApiIndicatorsStochPostRequest(apiIndicatorsStochPostRequest ApiIndicatorsStochPostRequest) ApiApiIndicatorsStochPostRequest {
-	r.apiIndicatorsStochPostRequest = &apiIndicatorsStochPostRequest
+func (r ApiStochRequest) StochRequest(stochRequest StochRequest) ApiStochRequest {
+	r.stochRequest = &stochRequest
 	return r
 }
 
-func (r ApiApiIndicatorsStochPostRequest) Execute() ([]ApiIndicatorsStochPost200ResponseInner, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsStochPostExecute(r)
+func (r ApiStochRequest) Execute() ([]Stoch200ResponseInner, *http.Response, error) {
+	return r.ApiService.StochExecute(r)
 }
 
 /*
-ApiIndicatorsStochPost Calculate Stochastic Oscillator
+Stoch Calculate Stochastic Oscillator
 
 Returns %K and %D lines.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsStochPostRequest
+ @return ApiStochRequest
 */
-func (a *ProIndicatorsAPIService) ApiIndicatorsStochPost(ctx context.Context) ApiApiIndicatorsStochPostRequest {
-	return ApiApiIndicatorsStochPostRequest{
+func (a *ProIndicatorsAPIService) Stoch(ctx context.Context) ApiStochRequest {
+	return ApiStochRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ApiIndicatorsStochPost200ResponseInner
-func (a *ProIndicatorsAPIService) ApiIndicatorsStochPostExecute(r ApiApiIndicatorsStochPostRequest) ([]ApiIndicatorsStochPost200ResponseInner, *http.Response, error) {
+//  @return []Stoch200ResponseInner
+func (a *ProIndicatorsAPIService) StochExecute(r ApiStochRequest) ([]Stoch200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ApiIndicatorsStochPost200ResponseInner
+		localVarReturnValue  []Stoch200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.ApiIndicatorsStochPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.Stoch")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -321,8 +321,8 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsStochPostExecute(r ApiApiIndicato
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsStochPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsStochPostRequest is required and must be specified")
+	if r.stochRequest == nil {
+		return localVarReturnValue, nil, reportError("stochRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -343,7 +343,7 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsStochPostExecute(r ApiApiIndicato
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsStochPostRequest
+	localVarPostBody = r.stochRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -395,31 +395,31 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsStochPostExecute(r ApiApiIndicato
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiIndicatorsVolumemaPostRequest struct {
+type ApiVolumemaRequest struct {
 	ctx context.Context
 	ApiService *ProIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiApiIndicatorsVolumemaPostRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiApiIndicatorsVolumemaPostRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiVolumemaRequest) EmaRequest(emaRequest EmaRequest) ApiVolumemaRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
-func (r ApiApiIndicatorsVolumemaPostRequest) Execute() ([]float32, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsVolumemaPostExecute(r)
+func (r ApiVolumemaRequest) Execute() ([]float32, *http.Response, error) {
+	return r.ApiService.VolumemaExecute(r)
 }
 
 /*
-ApiIndicatorsVolumemaPost Calculate Volume MA
+Volumema Calculate Volume MA
 
 Returns Simple Moving Average of Volume.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsVolumemaPostRequest
+ @return ApiVolumemaRequest
 */
-func (a *ProIndicatorsAPIService) ApiIndicatorsVolumemaPost(ctx context.Context) ApiApiIndicatorsVolumemaPostRequest {
-	return ApiApiIndicatorsVolumemaPostRequest{
+func (a *ProIndicatorsAPIService) Volumema(ctx context.Context) ApiVolumemaRequest {
+	return ApiVolumemaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -427,7 +427,7 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsVolumemaPost(ctx context.Context)
 
 // Execute executes the request
 //  @return []float32
-func (a *ProIndicatorsAPIService) ApiIndicatorsVolumemaPostExecute(r ApiApiIndicatorsVolumemaPostRequest) ([]float32, *http.Response, error) {
+func (a *ProIndicatorsAPIService) VolumemaExecute(r ApiVolumemaRequest) ([]float32, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -435,7 +435,7 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsVolumemaPostExecute(r ApiApiIndic
 		localVarReturnValue  []float32
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.ApiIndicatorsVolumemaPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProIndicatorsAPIService.Volumema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -445,8 +445,8 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsVolumemaPostExecute(r ApiApiIndic
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -467,7 +467,7 @@ func (a *ProIndicatorsAPIService) ApiIndicatorsVolumemaPostExecute(r ApiApiIndic
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

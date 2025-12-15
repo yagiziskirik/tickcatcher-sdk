@@ -12,9 +12,9 @@ import AnyCodable
 
 public struct HeikenashiRequest: Codable, JSONEncodable, Hashable {
 
-    public var data: CandleData
+    public var data: [Candle]
 
-    public init(data: CandleData) {
+    public init(data: [Candle]) {
         self.data = data
     }
 

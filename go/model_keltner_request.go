@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &KeltnerRequest{}
 
 // KeltnerRequest struct for KeltnerRequest
 type KeltnerRequest struct {
-	Data CandleData `json:"data"`
+	Data []Candle `json:"data"`
 	Params *KeltnerRequestParams `json:"params,omitempty"`
 }
 
@@ -32,7 +32,7 @@ type _KeltnerRequest KeltnerRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeltnerRequest(data CandleData) *KeltnerRequest {
+func NewKeltnerRequest(data []Candle) *KeltnerRequest {
 	this := KeltnerRequest{}
 	this.Data = data
 	return &this
@@ -47,9 +47,9 @@ func NewKeltnerRequestWithDefaults() *KeltnerRequest {
 }
 
 // GetData returns the Data field value
-func (o *KeltnerRequest) GetData() CandleData {
+func (o *KeltnerRequest) GetData() []Candle {
 	if o == nil {
-		var ret CandleData
+		var ret []Candle
 		return ret
 	}
 
@@ -58,15 +58,15 @@ func (o *KeltnerRequest) GetData() CandleData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *KeltnerRequest) GetDataOk() (*CandleData, bool) {
+func (o *KeltnerRequest) GetDataOk() ([]Candle, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
 // SetData sets field value
-func (o *KeltnerRequest) SetData(v CandleData) {
+func (o *KeltnerRequest) SetData(v []Candle) {
 	o.Data = v
 }
 

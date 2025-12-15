@@ -4,15 +4,15 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiIndicatorsEmaPost**](BasicIndicatorsApi.md#apiindicatorsemapostoperation) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA) |
-| [**apiIndicatorsRsiPost**](BasicIndicatorsApi.md#apiindicatorsrsipost) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI) |
-| [**apiIndicatorsSmaPost**](BasicIndicatorsApi.md#apiindicatorssmapostoperation) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA) |
+| [**ema**](BasicIndicatorsApi.md#emaoperation) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA) |
+| [**rsi**](BasicIndicatorsApi.md#rsi) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI) |
+| [**sma**](BasicIndicatorsApi.md#smaoperation) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA) |
 
 
 
-## apiIndicatorsEmaPost
+## ema
 
-> Array&lt;number&gt; apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest)
+> Array&lt;number&gt; ema(emaRequest)
 
 Calculate Exponential Moving Average (EMA)
 
@@ -25,7 +25,7 @@ import {
   Configuration,
   BasicIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsEmaPostOperationRequest } from 'tickcatcher';
+import type { EmaOperationRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -36,12 +36,12 @@ async function example() {
   const api = new BasicIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
-  } satisfies ApiIndicatorsEmaPostOperationRequest;
+    // EmaRequest
+    emaRequest: ...,
+  } satisfies EmaOperationRequest;
 
   try {
-    const data = await api.apiIndicatorsEmaPost(body);
+    const data = await api.ema(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -57,7 +57,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 
@@ -77,13 +77,16 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Array of EMA values |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## apiIndicatorsRsiPost
+## rsi
 
-> Array&lt;number&gt; apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest)
+> Array&lt;number&gt; rsi(emaRequest)
 
 Calculate Relative Strength Index (RSI)
 
@@ -96,7 +99,7 @@ import {
   Configuration,
   BasicIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsRsiPostRequest } from 'tickcatcher';
+import type { RsiRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -107,12 +110,12 @@ async function example() {
   const api = new BasicIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
-  } satisfies ApiIndicatorsRsiPostRequest;
+    // EmaRequest
+    emaRequest: ...,
+  } satisfies RsiRequest;
 
   try {
-    const data = await api.apiIndicatorsRsiPost(body);
+    const data = await api.rsi(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -128,7 +131,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 
@@ -148,13 +151,16 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Array of RSI values |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## apiIndicatorsSmaPost
+## sma
 
-> Array&lt;number&gt; apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest)
+> Array&lt;number&gt; sma(smaRequest)
 
 Calculate Simple Moving Average (SMA)
 
@@ -167,7 +173,7 @@ import {
   Configuration,
   BasicIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsSmaPostOperationRequest } from 'tickcatcher';
+import type { SmaOperationRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -178,12 +184,12 @@ async function example() {
   const api = new BasicIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsSmaPostRequest
-    apiIndicatorsSmaPostRequest: ...,
-  } satisfies ApiIndicatorsSmaPostOperationRequest;
+    // SmaRequest
+    smaRequest: ...,
+  } satisfies SmaOperationRequest;
 
   try {
-    const data = await api.apiIndicatorsSmaPost(body);
+    const data = await api.sma(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -199,7 +205,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsSmaPostRequest** | [ApiIndicatorsSmaPostRequest](ApiIndicatorsSmaPostRequest.md) |  | |
+| **smaRequest** | [SmaRequest](SmaRequest.md) |  | |
 
 ### Return type
 
@@ -219,6 +225,9 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Array of SMA values |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

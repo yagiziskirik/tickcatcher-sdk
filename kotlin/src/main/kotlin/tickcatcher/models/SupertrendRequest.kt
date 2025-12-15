@@ -15,7 +15,7 @@
 
 package tickcatcher.models
 
-import tickcatcher.models.CandleData
+import tickcatcher.models.Candle
 import tickcatcher.models.SupertrendRequestParams
 
 import com.squareup.moshi.Json
@@ -32,7 +32,7 @@ import com.squareup.moshi.JsonClass
 data class SupertrendRequest (
 
     @Json(name = "data")
-    val `data`: CandleData,
+    val `data`: kotlin.collections.List<Candle>,
 
     @Json(name = "params")
     val params: SupertrendRequestParams? = null

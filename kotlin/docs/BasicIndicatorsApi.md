@@ -4,14 +4,14 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**apiIndicatorsEmaPost**](BasicIndicatorsApi.md#apiIndicatorsEmaPost) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA) |
-| [**apiIndicatorsRsiPost**](BasicIndicatorsApi.md#apiIndicatorsRsiPost) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI) |
-| [**apiIndicatorsSmaPost**](BasicIndicatorsApi.md#apiIndicatorsSmaPost) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA) |
+| [**ema**](BasicIndicatorsApi.md#ema) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA) |
+| [**rsi**](BasicIndicatorsApi.md#rsi) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI) |
+| [**sma**](BasicIndicatorsApi.md#sma) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA) |
 
 
-<a id="apiIndicatorsEmaPost"></a>
-# **apiIndicatorsEmaPost**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest)
+<a id="ema"></a>
+# **ema**
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; ema(emaRequest)
 
 Calculate Exponential Moving Average (EMA)
 
@@ -24,15 +24,15 @@ Returns the EMA of the close prices.
 //import tickcatcher.models.*
 
 val apiInstance = BasicIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.ema(emaRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BasicIndicatorsApi#apiIndicatorsEmaPost")
+    println("4xx response calling BasicIndicatorsApi#ema")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BasicIndicatorsApi#apiIndicatorsEmaPost")
+    println("5xx response calling BasicIndicatorsApi#ema")
     e.printStackTrace()
 }
 ```
@@ -40,7 +40,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 
@@ -58,9 +58,9 @@ Configure rapidapiKey:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="apiIndicatorsRsiPost"></a>
-# **apiIndicatorsRsiPost**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest)
+<a id="rsi"></a>
+# **rsi**
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; rsi(emaRequest)
 
 Calculate Relative Strength Index (RSI)
 
@@ -73,15 +73,15 @@ Returns the RSI of the close prices.
 //import tickcatcher.models.*
 
 val apiInstance = BasicIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.rsi(emaRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BasicIndicatorsApi#apiIndicatorsRsiPost")
+    println("4xx response calling BasicIndicatorsApi#rsi")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BasicIndicatorsApi#apiIndicatorsRsiPost")
+    println("5xx response calling BasicIndicatorsApi#rsi")
     e.printStackTrace()
 }
 ```
@@ -89,7 +89,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 
@@ -107,9 +107,9 @@ Configure rapidapiKey:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="apiIndicatorsSmaPost"></a>
-# **apiIndicatorsSmaPost**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest)
+<a id="sma"></a>
+# **sma**
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; sma(smaRequest)
 
 Calculate Simple Moving Average (SMA)
 
@@ -122,15 +122,15 @@ Returns the SMA of the close prices.
 //import tickcatcher.models.*
 
 val apiInstance = BasicIndicatorsApi()
-val apiIndicatorsSmaPostRequest : ApiIndicatorsSmaPostRequest =  // ApiIndicatorsSmaPostRequest | 
+val smaRequest : SmaRequest =  // SmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.sma(smaRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling BasicIndicatorsApi#apiIndicatorsSmaPost")
+    println("4xx response calling BasicIndicatorsApi#sma")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling BasicIndicatorsApi#apiIndicatorsSmaPost")
+    println("5xx response calling BasicIndicatorsApi#sma")
     e.printStackTrace()
 }
 ```
@@ -138,7 +138,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsSmaPostRequest** | [**ApiIndicatorsSmaPostRequest**](ApiIndicatorsSmaPostRequest.md)|  | |
+| **smaRequest** | [**SmaRequest**](SmaRequest.md)|  | |
 
 ### Return type
 

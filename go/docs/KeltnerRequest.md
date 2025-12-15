@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CandleData**](CandleData.md) |  | 
+**Data** | [**[]Candle**](Candle.md) |  | 
 **Params** | Pointer to [**KeltnerRequestParams**](KeltnerRequestParams.md) |  | [optional] 
 
 ## Methods
 
 ### NewKeltnerRequest
 
-`func NewKeltnerRequest(data CandleData, ) *KeltnerRequest`
+`func NewKeltnerRequest(data []Candle, ) *KeltnerRequest`
 
 NewKeltnerRequest instantiates a new KeltnerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *KeltnerRequest) GetData() CandleData`
+`func (o *KeltnerRequest) GetData() []Candle`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *KeltnerRequest) GetDataOk() (*CandleData, bool)`
+`func (o *KeltnerRequest) GetDataOk() (*[]Candle, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *KeltnerRequest) SetData(v CandleData)`
+`func (o *KeltnerRequest) SetData(v []Candle)`
 
 SetData sets Data field to given value.
 

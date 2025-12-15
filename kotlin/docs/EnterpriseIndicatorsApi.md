@@ -12,7 +12,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 <a id="keltner"></a>
 # **keltner**
-> kotlin.collections.List&lt;ApiIndicatorsBbandsPost200ResponseInner&gt; keltner(keltnerRequest)
+> kotlin.collections.List&lt;Bbands200ResponseInner&gt; keltner(keltnerRequest)
 
 Calculate Keltner Channels
 
@@ -25,7 +25,7 @@ Calculate Keltner Channels
 val apiInstance = EnterpriseIndicatorsApi()
 val keltnerRequest : KeltnerRequest =  // KeltnerRequest | 
 try {
-    val result : kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner> = apiInstance.keltner(keltnerRequest)
+    val result : kotlin.collections.List<Bbands200ResponseInner> = apiInstance.keltner(keltnerRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling EnterpriseIndicatorsApi#keltner")
@@ -43,7 +43,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;ApiIndicatorsBbandsPost200ResponseInner&gt;**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**kotlin.collections.List&lt;Bbands200ResponseInner&gt;**](Bbands200ResponseInner.md)
 
 ### Authorization
 

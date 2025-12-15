@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-	heikenashiRequest := *openapiclient.NewHeikenashiRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // HeikenashiRequest | 
+	heikenashiRequest := *openapiclient.NewHeikenashiRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // HeikenashiRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-	ichimokuRequest := *openapiclient.NewIchimokuRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // IchimokuRequest | 
+	ichimokuRequest := *openapiclient.NewIchimokuRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // IchimokuRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -158,7 +158,7 @@ import (
 )
 
 func main() {
-	supertrendRequest := *openapiclient.NewSupertrendRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // SupertrendRequest | 
+	supertrendRequest := *openapiclient.NewSupertrendRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // SupertrendRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ## Williamsr
 
-> []float32 Williamsr(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []float32 Williamsr(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Williams %R
 
@@ -222,11 +222,11 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MegaIndicatorsAPI.Williamsr(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.MegaIndicatorsAPI.Williamsr(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MegaIndicatorsAPI.Williamsr``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -247,7 +247,7 @@ Other parameters are passed through a pointer to a apiWilliamsrRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 

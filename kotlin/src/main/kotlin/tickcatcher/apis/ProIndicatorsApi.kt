@@ -19,13 +19,13 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import tickcatcher.models.ApiIndicatorsBbandsPost200ResponseInner
-import tickcatcher.models.ApiIndicatorsBbandsPostRequest
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
-import tickcatcher.models.ApiIndicatorsMacdPost200ResponseInner
-import tickcatcher.models.ApiIndicatorsMacdPostRequest
-import tickcatcher.models.ApiIndicatorsStochPost200ResponseInner
-import tickcatcher.models.ApiIndicatorsStochPostRequest
+import tickcatcher.models.Bbands200ResponseInner
+import tickcatcher.models.BbandsRequest
+import tickcatcher.models.EmaRequest
+import tickcatcher.models.Macd200ResponseInner
+import tickcatcher.models.MacdRequest
+import tickcatcher.models.Stoch200ResponseInner
+import tickcatcher.models.StochRequest
 
 import com.squareup.moshi.Json
 
@@ -55,8 +55,8 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/bbands
      * Calculate Bollinger Bands
      * Returns Upper, Middle, and Lower bands.
-     * @param apiIndicatorsBbandsPostRequest 
-     * @return kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>
+     * @param bbandsRequest 
+     * @return kotlin.collections.List<Bbands200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -65,11 +65,11 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest: ApiIndicatorsBbandsPostRequest) : kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner> {
-        val localVarResponse = apiIndicatorsBbandsPostWithHttpInfo(apiIndicatorsBbandsPostRequest = apiIndicatorsBbandsPostRequest)
+    fun bbands(bbandsRequest: BbandsRequest) : kotlin.collections.List<Bbands200ResponseInner> {
+        val localVarResponse = bbandsWithHttpInfo(bbandsRequest = bbandsRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Bbands200ResponseInner>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -87,29 +87,29 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/bbands
      * Calculate Bollinger Bands
      * Returns Upper, Middle, and Lower bands.
-     * @param apiIndicatorsBbandsPostRequest 
-     * @return ApiResponse<kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>?>
+     * @param bbandsRequest 
+     * @return ApiResponse<kotlin.collections.List<Bbands200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsBbandsPostWithHttpInfo(apiIndicatorsBbandsPostRequest: ApiIndicatorsBbandsPostRequest) : ApiResponse<kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>?> {
-        val localVariableConfig = apiIndicatorsBbandsPostRequestConfig(apiIndicatorsBbandsPostRequest = apiIndicatorsBbandsPostRequest)
+    fun bbandsWithHttpInfo(bbandsRequest: BbandsRequest) : ApiResponse<kotlin.collections.List<Bbands200ResponseInner>?> {
+        val localVariableConfig = bbandsRequestConfig(bbandsRequest = bbandsRequest)
 
-        return request<ApiIndicatorsBbandsPostRequest, kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>>(
+        return request<BbandsRequest, kotlin.collections.List<Bbands200ResponseInner>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsBbandsPost
+     * To obtain the request config of the operation bbands
      *
-     * @param apiIndicatorsBbandsPostRequest 
+     * @param bbandsRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsBbandsPostRequestConfig(apiIndicatorsBbandsPostRequest: ApiIndicatorsBbandsPostRequest) : RequestConfig<ApiIndicatorsBbandsPostRequest> {
-        val localVariableBody = apiIndicatorsBbandsPostRequest
+    fun bbandsRequestConfig(bbandsRequest: BbandsRequest) : RequestConfig<BbandsRequest> {
+        val localVariableBody = bbandsRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -129,8 +129,8 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/macd
      * Calculate MACD
      * Returns MACD, Signal, and Histogram.
-     * @param apiIndicatorsMacdPostRequest 
-     * @return kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner>
+     * @param macdRequest 
+     * @return kotlin.collections.List<Macd200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -139,11 +139,11 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest: ApiIndicatorsMacdPostRequest) : kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner> {
-        val localVarResponse = apiIndicatorsMacdPostWithHttpInfo(apiIndicatorsMacdPostRequest = apiIndicatorsMacdPostRequest)
+    fun macd(macdRequest: MacdRequest) : kotlin.collections.List<Macd200ResponseInner> {
+        val localVarResponse = macdWithHttpInfo(macdRequest = macdRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Macd200ResponseInner>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -161,29 +161,29 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/macd
      * Calculate MACD
      * Returns MACD, Signal, and Histogram.
-     * @param apiIndicatorsMacdPostRequest 
-     * @return ApiResponse<kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner>?>
+     * @param macdRequest 
+     * @return ApiResponse<kotlin.collections.List<Macd200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsMacdPostWithHttpInfo(apiIndicatorsMacdPostRequest: ApiIndicatorsMacdPostRequest) : ApiResponse<kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner>?> {
-        val localVariableConfig = apiIndicatorsMacdPostRequestConfig(apiIndicatorsMacdPostRequest = apiIndicatorsMacdPostRequest)
+    fun macdWithHttpInfo(macdRequest: MacdRequest) : ApiResponse<kotlin.collections.List<Macd200ResponseInner>?> {
+        val localVariableConfig = macdRequestConfig(macdRequest = macdRequest)
 
-        return request<ApiIndicatorsMacdPostRequest, kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner>>(
+        return request<MacdRequest, kotlin.collections.List<Macd200ResponseInner>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsMacdPost
+     * To obtain the request config of the operation macd
      *
-     * @param apiIndicatorsMacdPostRequest 
+     * @param macdRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsMacdPostRequestConfig(apiIndicatorsMacdPostRequest: ApiIndicatorsMacdPostRequest) : RequestConfig<ApiIndicatorsMacdPostRequest> {
-        val localVariableBody = apiIndicatorsMacdPostRequest
+    fun macdRequestConfig(macdRequest: MacdRequest) : RequestConfig<MacdRequest> {
+        val localVariableBody = macdRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -203,8 +203,8 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/stoch
      * Calculate Stochastic Oscillator
      * Returns %K and %D lines.
-     * @param apiIndicatorsStochPostRequest 
-     * @return kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner>
+     * @param stochRequest 
+     * @return kotlin.collections.List<Stoch200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -213,11 +213,11 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsStochPost(apiIndicatorsStochPostRequest: ApiIndicatorsStochPostRequest) : kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner> {
-        val localVarResponse = apiIndicatorsStochPostWithHttpInfo(apiIndicatorsStochPostRequest = apiIndicatorsStochPostRequest)
+    fun stoch(stochRequest: StochRequest) : kotlin.collections.List<Stoch200ResponseInner> {
+        val localVarResponse = stochWithHttpInfo(stochRequest = stochRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Stoch200ResponseInner>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -235,29 +235,29 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/stoch
      * Calculate Stochastic Oscillator
      * Returns %K and %D lines.
-     * @param apiIndicatorsStochPostRequest 
-     * @return ApiResponse<kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner>?>
+     * @param stochRequest 
+     * @return ApiResponse<kotlin.collections.List<Stoch200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsStochPostWithHttpInfo(apiIndicatorsStochPostRequest: ApiIndicatorsStochPostRequest) : ApiResponse<kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner>?> {
-        val localVariableConfig = apiIndicatorsStochPostRequestConfig(apiIndicatorsStochPostRequest = apiIndicatorsStochPostRequest)
+    fun stochWithHttpInfo(stochRequest: StochRequest) : ApiResponse<kotlin.collections.List<Stoch200ResponseInner>?> {
+        val localVariableConfig = stochRequestConfig(stochRequest = stochRequest)
 
-        return request<ApiIndicatorsStochPostRequest, kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner>>(
+        return request<StochRequest, kotlin.collections.List<Stoch200ResponseInner>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsStochPost
+     * To obtain the request config of the operation stoch
      *
-     * @param apiIndicatorsStochPostRequest 
+     * @param stochRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsStochPostRequestConfig(apiIndicatorsStochPostRequest: ApiIndicatorsStochPostRequest) : RequestConfig<ApiIndicatorsStochPostRequest> {
-        val localVariableBody = apiIndicatorsStochPostRequest
+    fun stochRequestConfig(stochRequest: StochRequest) : RequestConfig<StochRequest> {
+        val localVariableBody = stochRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -277,7 +277,7 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/volumema
      * Calculate Volume MA
      * Returns Simple Moving Average of Volume.
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -287,8 +287,8 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = apiIndicatorsVolumemaPostWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun volumema(emaRequest: EmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = volumemaWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -309,29 +309,29 @@ class ProIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * POST /api/indicators/volumema
      * Calculate Volume MA
      * Returns Simple Moving Average of Volume.
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsVolumemaPostWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = apiIndicatorsVolumemaPostRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun volumemaWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = volumemaRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<EmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsVolumemaPost
+     * To obtain the request config of the operation volumema
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsVolumemaPostRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun volumemaRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## keltner
 
-> Vec<models::ApiIndicatorsBbandsPost200ResponseInner> keltner(keltner_request)
+> Vec<models::Bbands200ResponseInner> keltner(keltner_request)
 Calculate Keltner Channels
 
 ### Parameters
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<models::ApiIndicatorsBbandsPost200ResponseInner>**](_api_indicators_bbands_post_200_response_inner.md)
+[**Vec<models::Bbands200ResponseInner>**](bbands_200_response_inner.md)
 
 ### Authorization
 

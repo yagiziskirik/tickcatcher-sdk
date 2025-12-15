@@ -15,13 +15,13 @@ open class UltraIndicatorsAPI {
     /**
      Calculate Average Directional Index (ADX)
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func adx(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Adx200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
-        return adxWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func adx(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Adx200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
+        return adxWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -37,13 +37,13 @@ open class UltraIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Adx200ResponseInner]> 
      */
-    open class func adxWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Adx200ResponseInner]> {
+    open class func adxWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Adx200ResponseInner]> {
         let localVariablePath = "/api/indicators/adx"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -61,13 +61,13 @@ open class UltraIndicatorsAPI {
     /**
      Calculate Average True Range (ATR)
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsAtrPostWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func atr(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return atrWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -83,13 +83,13 @@ open class UltraIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func apiIndicatorsAtrPostWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func atrWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/atr"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -107,13 +107,13 @@ open class UltraIndicatorsAPI {
     /**
      Calculate Commodity Channel Index (CCI)
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func cci(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return cciWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func cci(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return cciWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -129,13 +129,13 @@ open class UltraIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func cciWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func cciWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/cci"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 

@@ -12,10 +12,10 @@ import AnyCodable
 
 public struct KeltnerRequest: Codable, JSONEncodable, Hashable {
 
-    public var data: CandleData
+    public var data: [Candle]
     public var params: KeltnerRequestParams?
 
-    public init(data: CandleData, params: KeltnerRequestParams? = nil) {
+    public init(data: [Candle], params: KeltnerRequestParams? = nil) {
         self.data = data
         self.params = params
     }

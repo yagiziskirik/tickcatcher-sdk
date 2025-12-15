@@ -153,13 +153,13 @@ open class MegaIndicatorsAPI {
     /**
      Calculate Williams %R
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func williamsr(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return williamsrWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func williamsr(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return williamsrWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -175,13 +175,13 @@ open class MegaIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func williamsrWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func williamsrWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/williamsr"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 

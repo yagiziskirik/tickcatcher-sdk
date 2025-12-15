@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -23,31 +23,31 @@ import (
 // BasicIndicatorsAPIService BasicIndicatorsAPI service
 type BasicIndicatorsAPIService service
 
-type ApiApiIndicatorsEmaPostRequest struct {
+type ApiEmaRequest struct {
 	ctx context.Context
 	ApiService *BasicIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiApiIndicatorsEmaPostRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiApiIndicatorsEmaPostRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiEmaRequest) EmaRequest(emaRequest EmaRequest) ApiEmaRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
-func (r ApiApiIndicatorsEmaPostRequest) Execute() ([]float32, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsEmaPostExecute(r)
+func (r ApiEmaRequest) Execute() ([]float32, *http.Response, error) {
+	return r.ApiService.EmaExecute(r)
 }
 
 /*
-ApiIndicatorsEmaPost Calculate Exponential Moving Average (EMA)
+Ema Calculate Exponential Moving Average (EMA)
 
 Returns the EMA of the close prices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsEmaPostRequest
+ @return ApiEmaRequest
 */
-func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPost(ctx context.Context) ApiApiIndicatorsEmaPostRequest {
-	return ApiApiIndicatorsEmaPostRequest{
+func (a *BasicIndicatorsAPIService) Ema(ctx context.Context) ApiEmaRequest {
+	return ApiEmaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -55,7 +55,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPost(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []float32
-func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPostExecute(r ApiApiIndicatorsEmaPostRequest) ([]float32, *http.Response, error) {
+func (a *BasicIndicatorsAPIService) EmaExecute(r ApiEmaRequest) ([]float32, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -63,7 +63,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPostExecute(r ApiApiIndicato
 		localVarReturnValue  []float32
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicIndicatorsAPIService.ApiIndicatorsEmaPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicIndicatorsAPIService.Ema")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -73,8 +73,8 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPostExecute(r ApiApiIndicato
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -95,7 +95,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPostExecute(r ApiApiIndicato
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -147,31 +147,31 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsEmaPostExecute(r ApiApiIndicato
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiIndicatorsRsiPostRequest struct {
+type ApiRsiRequest struct {
 	ctx context.Context
 	ApiService *BasicIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiApiIndicatorsRsiPostRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiApiIndicatorsRsiPostRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiRsiRequest) EmaRequest(emaRequest EmaRequest) ApiRsiRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
-func (r ApiApiIndicatorsRsiPostRequest) Execute() ([]float32, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsRsiPostExecute(r)
+func (r ApiRsiRequest) Execute() ([]float32, *http.Response, error) {
+	return r.ApiService.RsiExecute(r)
 }
 
 /*
-ApiIndicatorsRsiPost Calculate Relative Strength Index (RSI)
+Rsi Calculate Relative Strength Index (RSI)
 
 Returns the RSI of the close prices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsRsiPostRequest
+ @return ApiRsiRequest
 */
-func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPost(ctx context.Context) ApiApiIndicatorsRsiPostRequest {
-	return ApiApiIndicatorsRsiPostRequest{
+func (a *BasicIndicatorsAPIService) Rsi(ctx context.Context) ApiRsiRequest {
+	return ApiRsiRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -179,7 +179,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPost(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []float32
-func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPostExecute(r ApiApiIndicatorsRsiPostRequest) ([]float32, *http.Response, error) {
+func (a *BasicIndicatorsAPIService) RsiExecute(r ApiRsiRequest) ([]float32, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -187,7 +187,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPostExecute(r ApiApiIndicato
 		localVarReturnValue  []float32
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicIndicatorsAPIService.ApiIndicatorsRsiPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicIndicatorsAPIService.Rsi")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -197,8 +197,8 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPostExecute(r ApiApiIndicato
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -219,7 +219,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPostExecute(r ApiApiIndicato
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -271,31 +271,31 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsRsiPostExecute(r ApiApiIndicato
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiIndicatorsSmaPostRequest struct {
+type ApiSmaRequest struct {
 	ctx context.Context
 	ApiService *BasicIndicatorsAPIService
-	apiIndicatorsSmaPostRequest *ApiIndicatorsSmaPostRequest
+	smaRequest *SmaRequest
 }
 
-func (r ApiApiIndicatorsSmaPostRequest) ApiIndicatorsSmaPostRequest(apiIndicatorsSmaPostRequest ApiIndicatorsSmaPostRequest) ApiApiIndicatorsSmaPostRequest {
-	r.apiIndicatorsSmaPostRequest = &apiIndicatorsSmaPostRequest
+func (r ApiSmaRequest) SmaRequest(smaRequest SmaRequest) ApiSmaRequest {
+	r.smaRequest = &smaRequest
 	return r
 }
 
-func (r ApiApiIndicatorsSmaPostRequest) Execute() ([]float32, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsSmaPostExecute(r)
+func (r ApiSmaRequest) Execute() ([]float32, *http.Response, error) {
+	return r.ApiService.SmaExecute(r)
 }
 
 /*
-ApiIndicatorsSmaPost Calculate Simple Moving Average (SMA)
+Sma Calculate Simple Moving Average (SMA)
 
 Returns the SMA of the close prices.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsSmaPostRequest
+ @return ApiSmaRequest
 */
-func (a *BasicIndicatorsAPIService) ApiIndicatorsSmaPost(ctx context.Context) ApiApiIndicatorsSmaPostRequest {
-	return ApiApiIndicatorsSmaPostRequest{
+func (a *BasicIndicatorsAPIService) Sma(ctx context.Context) ApiSmaRequest {
+	return ApiSmaRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -303,7 +303,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsSmaPost(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []float32
-func (a *BasicIndicatorsAPIService) ApiIndicatorsSmaPostExecute(r ApiApiIndicatorsSmaPostRequest) ([]float32, *http.Response, error) {
+func (a *BasicIndicatorsAPIService) SmaExecute(r ApiSmaRequest) ([]float32, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -311,7 +311,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsSmaPostExecute(r ApiApiIndicato
 		localVarReturnValue  []float32
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicIndicatorsAPIService.ApiIndicatorsSmaPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BasicIndicatorsAPIService.Sma")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -321,8 +321,8 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsSmaPostExecute(r ApiApiIndicato
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsSmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsSmaPostRequest is required and must be specified")
+	if r.smaRequest == nil {
+		return localVarReturnValue, nil, reportError("smaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -343,7 +343,7 @@ func (a *BasicIndicatorsAPIService) ApiIndicatorsSmaPostExecute(r ApiApiIndicato
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsSmaPostRequest
+	localVarPostBody = r.smaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

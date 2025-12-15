@@ -4,15 +4,15 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiIndicatorsEmaPost**](BasicIndicatorsAPI.md#ApiIndicatorsEmaPost) | **Post** /api/indicators/ema | Calculate Exponential Moving Average (EMA)
-[**ApiIndicatorsRsiPost**](BasicIndicatorsAPI.md#ApiIndicatorsRsiPost) | **Post** /api/indicators/rsi | Calculate Relative Strength Index (RSI)
-[**ApiIndicatorsSmaPost**](BasicIndicatorsAPI.md#ApiIndicatorsSmaPost) | **Post** /api/indicators/sma | Calculate Simple Moving Average (SMA)
+[**Ema**](BasicIndicatorsAPI.md#Ema) | **Post** /api/indicators/ema | Calculate Exponential Moving Average (EMA)
+[**Rsi**](BasicIndicatorsAPI.md#Rsi) | **Post** /api/indicators/rsi | Calculate Relative Strength Index (RSI)
+[**Sma**](BasicIndicatorsAPI.md#Sma) | **Post** /api/indicators/sma | Calculate Simple Moving Average (SMA)
 
 
 
-## ApiIndicatorsEmaPost
+## Ema
 
-> []float32 ApiIndicatorsEmaPost(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []float32 Ema(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Exponential Moving Average (EMA)
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BasicIndicatorsAPI.ApiIndicatorsEmaPost(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.BasicIndicatorsAPI.Ema(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BasicIndicatorsAPI.ApiIndicatorsEmaPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BasicIndicatorsAPI.Ema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsEmaPost`: []float32
-	fmt.Fprintf(os.Stdout, "Response from `BasicIndicatorsAPI.ApiIndicatorsEmaPost`: %v\n", resp)
+	// response from `Ema`: []float32
+	fmt.Fprintf(os.Stdout, "Response from `BasicIndicatorsAPI.Ema`: %v\n", resp)
 }
 ```
 
@@ -51,12 +51,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsEmaPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiEmaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApiIndicatorsRsiPost
+## Rsi
 
-> []float32 ApiIndicatorsRsiPost(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []float32 Rsi(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Relative Strength Index (RSI)
 
@@ -97,17 +97,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BasicIndicatorsAPI.ApiIndicatorsRsiPost(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.BasicIndicatorsAPI.Rsi(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BasicIndicatorsAPI.ApiIndicatorsRsiPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BasicIndicatorsAPI.Rsi``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsRsiPost`: []float32
-	fmt.Fprintf(os.Stdout, "Response from `BasicIndicatorsAPI.ApiIndicatorsRsiPost`: %v\n", resp)
+	// response from `Rsi`: []float32
+	fmt.Fprintf(os.Stdout, "Response from `BasicIndicatorsAPI.Rsi`: %v\n", resp)
 }
 ```
 
@@ -117,12 +117,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsRsiPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRsiRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApiIndicatorsSmaPost
+## Sma
 
-> []float32 ApiIndicatorsSmaPost(ctx).ApiIndicatorsSmaPostRequest(apiIndicatorsSmaPostRequest).Execute()
+> []float32 Sma(ctx).SmaRequest(smaRequest).Execute()
 
 Calculate Simple Moving Average (SMA)
 
@@ -163,17 +163,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsSmaPostRequest := *openapiclient.NewApiIndicatorsSmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsSmaPostRequest | 
+	smaRequest := *openapiclient.NewSmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // SmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BasicIndicatorsAPI.ApiIndicatorsSmaPost(context.Background()).ApiIndicatorsSmaPostRequest(apiIndicatorsSmaPostRequest).Execute()
+	resp, r, err := apiClient.BasicIndicatorsAPI.Sma(context.Background()).SmaRequest(smaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BasicIndicatorsAPI.ApiIndicatorsSmaPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `BasicIndicatorsAPI.Sma``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsSmaPost`: []float32
-	fmt.Fprintf(os.Stdout, "Response from `BasicIndicatorsAPI.ApiIndicatorsSmaPost`: %v\n", resp)
+	// response from `Sma`: []float32
+	fmt.Fprintf(os.Stdout, "Response from `BasicIndicatorsAPI.Sma`: %v\n", resp)
 }
 ```
 
@@ -183,12 +183,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsSmaPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSmaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsSmaPostRequest** | [**ApiIndicatorsSmaPostRequest**](ApiIndicatorsSmaPostRequest.md) |  | 
+ **smaRequest** | [**SmaRequest**](SmaRequest.md) |  | 
 
 ### Return type
 

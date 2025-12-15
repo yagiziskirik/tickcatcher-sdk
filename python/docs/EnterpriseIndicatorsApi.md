@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **keltner**
-> List[ApiIndicatorsBbandsPost200ResponseInner] keltner(keltner_request)
+> List[Bbands200ResponseInner] keltner(keltner_request)
 
 Calculate Keltner Channels
 
@@ -21,7 +21,7 @@ Calculate Keltner Channels
 
 ```python
 import tickcatcher
-from tickcatcher.models.api_indicators_bbands_post200_response_inner import ApiIndicatorsBbandsPost200ResponseInner
+from tickcatcher.models.bbands200_response_inner import Bbands200ResponseInner
 from tickcatcher.models.keltner_request import KeltnerRequest
 from tickcatcher.rest import ApiException
 from pprint import pprint
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[ApiIndicatorsBbandsPost200ResponseInner]**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**List[Bbands200ResponseInner]**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -166,6 +166,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Pivot Points |  -  |
 **400** | Invalid parameters |  -  |
+**401** | Missing or invalid API key |  -  |
 **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

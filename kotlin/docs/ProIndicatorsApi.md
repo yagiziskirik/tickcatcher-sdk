@@ -4,15 +4,15 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**apiIndicatorsBbandsPost**](ProIndicatorsApi.md#apiIndicatorsBbandsPost) | **POST** /api/indicators/bbands | Calculate Bollinger Bands |
-| [**apiIndicatorsMacdPost**](ProIndicatorsApi.md#apiIndicatorsMacdPost) | **POST** /api/indicators/macd | Calculate MACD |
-| [**apiIndicatorsStochPost**](ProIndicatorsApi.md#apiIndicatorsStochPost) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator |
-| [**apiIndicatorsVolumemaPost**](ProIndicatorsApi.md#apiIndicatorsVolumemaPost) | **POST** /api/indicators/volumema | Calculate Volume MA |
+| [**bbands**](ProIndicatorsApi.md#bbands) | **POST** /api/indicators/bbands | Calculate Bollinger Bands |
+| [**macd**](ProIndicatorsApi.md#macd) | **POST** /api/indicators/macd | Calculate MACD |
+| [**stoch**](ProIndicatorsApi.md#stoch) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator |
+| [**volumema**](ProIndicatorsApi.md#volumema) | **POST** /api/indicators/volumema | Calculate Volume MA |
 
 
-<a id="apiIndicatorsBbandsPost"></a>
-# **apiIndicatorsBbandsPost**
-> kotlin.collections.List&lt;ApiIndicatorsBbandsPost200ResponseInner&gt; apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest)
+<a id="bbands"></a>
+# **bbands**
+> kotlin.collections.List&lt;Bbands200ResponseInner&gt; bbands(bbandsRequest)
 
 Calculate Bollinger Bands
 
@@ -25,15 +25,15 @@ Returns Upper, Middle, and Lower bands.
 //import tickcatcher.models.*
 
 val apiInstance = ProIndicatorsApi()
-val apiIndicatorsBbandsPostRequest : ApiIndicatorsBbandsPostRequest =  // ApiIndicatorsBbandsPostRequest | 
+val bbandsRequest : BbandsRequest =  // BbandsRequest | 
 try {
-    val result : kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner> = apiInstance.apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest)
+    val result : kotlin.collections.List<Bbands200ResponseInner> = apiInstance.bbands(bbandsRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProIndicatorsApi#apiIndicatorsBbandsPost")
+    println("4xx response calling ProIndicatorsApi#bbands")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProIndicatorsApi#apiIndicatorsBbandsPost")
+    println("5xx response calling ProIndicatorsApi#bbands")
     e.printStackTrace()
 }
 ```
@@ -41,11 +41,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsBbandsPostRequest** | [**ApiIndicatorsBbandsPostRequest**](ApiIndicatorsBbandsPostRequest.md)|  | |
+| **bbandsRequest** | [**BbandsRequest**](BbandsRequest.md)|  | |
 
 ### Return type
 
-[**kotlin.collections.List&lt;ApiIndicatorsBbandsPost200ResponseInner&gt;**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**kotlin.collections.List&lt;Bbands200ResponseInner&gt;**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -59,9 +59,9 @@ Configure rapidapiKey:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="apiIndicatorsMacdPost"></a>
-# **apiIndicatorsMacdPost**
-> kotlin.collections.List&lt;ApiIndicatorsMacdPost200ResponseInner&gt; apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest)
+<a id="macd"></a>
+# **macd**
+> kotlin.collections.List&lt;Macd200ResponseInner&gt; macd(macdRequest)
 
 Calculate MACD
 
@@ -74,15 +74,15 @@ Returns MACD, Signal, and Histogram.
 //import tickcatcher.models.*
 
 val apiInstance = ProIndicatorsApi()
-val apiIndicatorsMacdPostRequest : ApiIndicatorsMacdPostRequest =  // ApiIndicatorsMacdPostRequest | 
+val macdRequest : MacdRequest =  // MacdRequest | 
 try {
-    val result : kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner> = apiInstance.apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest)
+    val result : kotlin.collections.List<Macd200ResponseInner> = apiInstance.macd(macdRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProIndicatorsApi#apiIndicatorsMacdPost")
+    println("4xx response calling ProIndicatorsApi#macd")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProIndicatorsApi#apiIndicatorsMacdPost")
+    println("5xx response calling ProIndicatorsApi#macd")
     e.printStackTrace()
 }
 ```
@@ -90,11 +90,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsMacdPostRequest** | [**ApiIndicatorsMacdPostRequest**](ApiIndicatorsMacdPostRequest.md)|  | |
+| **macdRequest** | [**MacdRequest**](MacdRequest.md)|  | |
 
 ### Return type
 
-[**kotlin.collections.List&lt;ApiIndicatorsMacdPost200ResponseInner&gt;**](ApiIndicatorsMacdPost200ResponseInner.md)
+[**kotlin.collections.List&lt;Macd200ResponseInner&gt;**](Macd200ResponseInner.md)
 
 ### Authorization
 
@@ -108,9 +108,9 @@ Configure rapidapiKey:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="apiIndicatorsStochPost"></a>
-# **apiIndicatorsStochPost**
-> kotlin.collections.List&lt;ApiIndicatorsStochPost200ResponseInner&gt; apiIndicatorsStochPost(apiIndicatorsStochPostRequest)
+<a id="stoch"></a>
+# **stoch**
+> kotlin.collections.List&lt;Stoch200ResponseInner&gt; stoch(stochRequest)
 
 Calculate Stochastic Oscillator
 
@@ -123,15 +123,15 @@ Returns %K and %D lines.
 //import tickcatcher.models.*
 
 val apiInstance = ProIndicatorsApi()
-val apiIndicatorsStochPostRequest : ApiIndicatorsStochPostRequest =  // ApiIndicatorsStochPostRequest | 
+val stochRequest : StochRequest =  // StochRequest | 
 try {
-    val result : kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner> = apiInstance.apiIndicatorsStochPost(apiIndicatorsStochPostRequest)
+    val result : kotlin.collections.List<Stoch200ResponseInner> = apiInstance.stoch(stochRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProIndicatorsApi#apiIndicatorsStochPost")
+    println("4xx response calling ProIndicatorsApi#stoch")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProIndicatorsApi#apiIndicatorsStochPost")
+    println("5xx response calling ProIndicatorsApi#stoch")
     e.printStackTrace()
 }
 ```
@@ -139,11 +139,11 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsStochPostRequest** | [**ApiIndicatorsStochPostRequest**](ApiIndicatorsStochPostRequest.md)|  | |
+| **stochRequest** | [**StochRequest**](StochRequest.md)|  | |
 
 ### Return type
 
-[**kotlin.collections.List&lt;ApiIndicatorsStochPost200ResponseInner&gt;**](ApiIndicatorsStochPost200ResponseInner.md)
+[**kotlin.collections.List&lt;Stoch200ResponseInner&gt;**](Stoch200ResponseInner.md)
 
 ### Authorization
 
@@ -157,9 +157,9 @@ Configure rapidapiKey:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="apiIndicatorsVolumemaPost"></a>
-# **apiIndicatorsVolumemaPost**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest)
+<a id="volumema"></a>
+# **volumema**
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; volumema(emaRequest)
 
 Calculate Volume MA
 
@@ -172,15 +172,15 @@ Returns Simple Moving Average of Volume.
 //import tickcatcher.models.*
 
 val apiInstance = ProIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.volumema(emaRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling ProIndicatorsApi#apiIndicatorsVolumemaPost")
+    println("4xx response calling ProIndicatorsApi#volumema")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling ProIndicatorsApi#apiIndicatorsVolumemaPost")
+    println("5xx response calling ProIndicatorsApi#volumema")
     e.printStackTrace()
 }
 ```
@@ -188,7 +188,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 

@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import tickcatcher.models.ApiIndicatorsBbandsPost200ResponseInner
+import tickcatcher.models.Bbands200ResponseInner
 import tickcatcher.models.HeikenashiRequest
 import tickcatcher.models.KeltnerRequest
 import tickcatcher.models.Pivot200ResponseInner
@@ -53,7 +53,7 @@ class EnterpriseIndicatorsApi(basePath: kotlin.String = defaultBasePath, client:
      * Calculate Keltner Channels
      * 
      * @param keltnerRequest 
-     * @return kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>
+     * @return kotlin.collections.List<Bbands200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ class EnterpriseIndicatorsApi(basePath: kotlin.String = defaultBasePath, client:
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun keltner(keltnerRequest: KeltnerRequest) : kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner> {
+    fun keltner(keltnerRequest: KeltnerRequest) : kotlin.collections.List<Bbands200ResponseInner> {
         val localVarResponse = keltnerWithHttpInfo(keltnerRequest = keltnerRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Bbands200ResponseInner>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -85,16 +85,16 @@ class EnterpriseIndicatorsApi(basePath: kotlin.String = defaultBasePath, client:
      * Calculate Keltner Channels
      * 
      * @param keltnerRequest 
-     * @return ApiResponse<kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>?>
+     * @return ApiResponse<kotlin.collections.List<Bbands200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun keltnerWithHttpInfo(keltnerRequest: KeltnerRequest) : ApiResponse<kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>?> {
+    fun keltnerWithHttpInfo(keltnerRequest: KeltnerRequest) : ApiResponse<kotlin.collections.List<Bbands200ResponseInner>?> {
         val localVariableConfig = keltnerRequestConfig(keltnerRequest = keltnerRequest)
 
-        return request<KeltnerRequest, kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner>>(
+        return request<KeltnerRequest, kotlin.collections.List<Bbands200ResponseInner>>(
             localVariableConfig
         )
     }

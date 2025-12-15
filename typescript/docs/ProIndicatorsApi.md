@@ -4,16 +4,16 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**apiIndicatorsBbandsPost**](ProIndicatorsApi.md#apiindicatorsbbandspostoperation) | **POST** /api/indicators/bbands | Calculate Bollinger Bands |
-| [**apiIndicatorsMacdPost**](ProIndicatorsApi.md#apiindicatorsmacdpostoperation) | **POST** /api/indicators/macd | Calculate MACD |
-| [**apiIndicatorsStochPost**](ProIndicatorsApi.md#apiindicatorsstochpostoperation) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator |
-| [**apiIndicatorsVolumemaPost**](ProIndicatorsApi.md#apiindicatorsvolumemapost) | **POST** /api/indicators/volumema | Calculate Volume MA |
+| [**bbands**](ProIndicatorsApi.md#bbandsoperation) | **POST** /api/indicators/bbands | Calculate Bollinger Bands |
+| [**macd**](ProIndicatorsApi.md#macdoperation) | **POST** /api/indicators/macd | Calculate MACD |
+| [**stoch**](ProIndicatorsApi.md#stochoperation) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator |
+| [**volumema**](ProIndicatorsApi.md#volumema) | **POST** /api/indicators/volumema | Calculate Volume MA |
 
 
 
-## apiIndicatorsBbandsPost
+## bbands
 
-> Array&lt;ApiIndicatorsBbandsPost200ResponseInner&gt; apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest)
+> Array&lt;Bbands200ResponseInner&gt; bbands(bbandsRequest)
 
 Calculate Bollinger Bands
 
@@ -26,7 +26,7 @@ import {
   Configuration,
   ProIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsBbandsPostOperationRequest } from 'tickcatcher';
+import type { BbandsOperationRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -37,12 +37,12 @@ async function example() {
   const api = new ProIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsBbandsPostRequest
-    apiIndicatorsBbandsPostRequest: ...,
-  } satisfies ApiIndicatorsBbandsPostOperationRequest;
+    // BbandsRequest
+    bbandsRequest: ...,
+  } satisfies BbandsOperationRequest;
 
   try {
-    const data = await api.apiIndicatorsBbandsPost(body);
+    const data = await api.bbands(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -58,11 +58,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsBbandsPostRequest** | [ApiIndicatorsBbandsPostRequest](ApiIndicatorsBbandsPostRequest.md) |  | |
+| **bbandsRequest** | [BbandsRequest](BbandsRequest.md) |  | |
 
 ### Return type
 
-[**Array&lt;ApiIndicatorsBbandsPost200ResponseInner&gt;**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**Array&lt;Bbands200ResponseInner&gt;**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -78,13 +78,16 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Bollinger Bands result |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## apiIndicatorsMacdPost
+## macd
 
-> Array&lt;ApiIndicatorsMacdPost200ResponseInner&gt; apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest)
+> Array&lt;Macd200ResponseInner&gt; macd(macdRequest)
 
 Calculate MACD
 
@@ -97,7 +100,7 @@ import {
   Configuration,
   ProIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsMacdPostOperationRequest } from 'tickcatcher';
+import type { MacdOperationRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -108,12 +111,12 @@ async function example() {
   const api = new ProIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsMacdPostRequest
-    apiIndicatorsMacdPostRequest: ...,
-  } satisfies ApiIndicatorsMacdPostOperationRequest;
+    // MacdRequest
+    macdRequest: ...,
+  } satisfies MacdOperationRequest;
 
   try {
-    const data = await api.apiIndicatorsMacdPost(body);
+    const data = await api.macd(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -129,11 +132,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsMacdPostRequest** | [ApiIndicatorsMacdPostRequest](ApiIndicatorsMacdPostRequest.md) |  | |
+| **macdRequest** | [MacdRequest](MacdRequest.md) |  | |
 
 ### Return type
 
-[**Array&lt;ApiIndicatorsMacdPost200ResponseInner&gt;**](ApiIndicatorsMacdPost200ResponseInner.md)
+[**Array&lt;Macd200ResponseInner&gt;**](Macd200ResponseInner.md)
 
 ### Authorization
 
@@ -149,13 +152,16 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | MACD result |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## apiIndicatorsStochPost
+## stoch
 
-> Array&lt;ApiIndicatorsStochPost200ResponseInner&gt; apiIndicatorsStochPost(apiIndicatorsStochPostRequest)
+> Array&lt;Stoch200ResponseInner&gt; stoch(stochRequest)
 
 Calculate Stochastic Oscillator
 
@@ -168,7 +174,7 @@ import {
   Configuration,
   ProIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsStochPostOperationRequest } from 'tickcatcher';
+import type { StochOperationRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -179,12 +185,12 @@ async function example() {
   const api = new ProIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsStochPostRequest
-    apiIndicatorsStochPostRequest: ...,
-  } satisfies ApiIndicatorsStochPostOperationRequest;
+    // StochRequest
+    stochRequest: ...,
+  } satisfies StochOperationRequest;
 
   try {
-    const data = await api.apiIndicatorsStochPost(body);
+    const data = await api.stoch(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -200,11 +206,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsStochPostRequest** | [ApiIndicatorsStochPostRequest](ApiIndicatorsStochPostRequest.md) |  | |
+| **stochRequest** | [StochRequest](StochRequest.md) |  | |
 
 ### Return type
 
-[**Array&lt;ApiIndicatorsStochPost200ResponseInner&gt;**](ApiIndicatorsStochPost200ResponseInner.md)
+[**Array&lt;Stoch200ResponseInner&gt;**](Stoch200ResponseInner.md)
 
 ### Authorization
 
@@ -220,13 +226,16 @@ example().catch(console.error);
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Stochastic result |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## apiIndicatorsVolumemaPost
+## volumema
 
-> Array&lt;number&gt; apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest)
+> Array&lt;number&gt; volumema(emaRequest)
 
 Calculate Volume MA
 
@@ -239,7 +248,7 @@ import {
   Configuration,
   ProIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsVolumemaPostRequest } from 'tickcatcher';
+import type { VolumemaRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -250,12 +259,12 @@ async function example() {
   const api = new ProIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
-  } satisfies ApiIndicatorsVolumemaPostRequest;
+    // EmaRequest
+    emaRequest: ...,
+  } satisfies VolumemaRequest;
 
   try {
-    const data = await api.apiIndicatorsVolumemaPost(body);
+    const data = await api.volumema(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -271,7 +280,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 

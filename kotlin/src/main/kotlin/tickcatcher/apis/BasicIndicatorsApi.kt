@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
-import tickcatcher.models.ApiIndicatorsSmaPostRequest
+import tickcatcher.models.EmaRequest
+import tickcatcher.models.SmaRequest
 
 import com.squareup.moshi.Json
 
@@ -50,7 +50,7 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/ema
      * Calculate Exponential Moving Average (EMA)
      * Returns the EMA of the close prices.
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -60,8 +60,8 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = apiIndicatorsEmaPostWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun ema(emaRequest: EmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = emaWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -82,29 +82,29 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/ema
      * Calculate Exponential Moving Average (EMA)
      * Returns the EMA of the close prices.
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsEmaPostWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = apiIndicatorsEmaPostRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun emaWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = emaRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<EmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsEmaPost
+     * To obtain the request config of the operation ema
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsEmaPostRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun emaRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -124,7 +124,7 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/rsi
      * Calculate Relative Strength Index (RSI)
      * Returns the RSI of the close prices.
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -134,8 +134,8 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = apiIndicatorsRsiPostWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun rsi(emaRequest: EmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = rsiWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -156,29 +156,29 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/rsi
      * Calculate Relative Strength Index (RSI)
      * Returns the RSI of the close prices.
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsRsiPostWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = apiIndicatorsRsiPostRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun rsiWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = rsiRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<EmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsRsiPost
+     * To obtain the request config of the operation rsi
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsRsiPostRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun rsiRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -198,7 +198,7 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/sma
      * Calculate Simple Moving Average (SMA)
      * Returns the SMA of the close prices.
-     * @param apiIndicatorsSmaPostRequest 
+     * @param smaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -208,8 +208,8 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest: ApiIndicatorsSmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = apiIndicatorsSmaPostWithHttpInfo(apiIndicatorsSmaPostRequest = apiIndicatorsSmaPostRequest)
+    fun sma(smaRequest: SmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = smaWithHttpInfo(smaRequest = smaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -230,29 +230,29 @@ class BasicIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/sma
      * Calculate Simple Moving Average (SMA)
      * Returns the SMA of the close prices.
-     * @param apiIndicatorsSmaPostRequest 
+     * @param smaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsSmaPostWithHttpInfo(apiIndicatorsSmaPostRequest: ApiIndicatorsSmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = apiIndicatorsSmaPostRequestConfig(apiIndicatorsSmaPostRequest = apiIndicatorsSmaPostRequest)
+    fun smaWithHttpInfo(smaRequest: SmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = smaRequestConfig(smaRequest = smaRequest)
 
-        return request<ApiIndicatorsSmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<SmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsSmaPost
+     * To obtain the request config of the operation sma
      *
-     * @param apiIndicatorsSmaPostRequest 
+     * @param smaRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsSmaPostRequestConfig(apiIndicatorsSmaPostRequest: ApiIndicatorsSmaPostRequest) : RequestConfig<ApiIndicatorsSmaPostRequest> {
-        val localVariableBody = apiIndicatorsSmaPostRequest
+    fun smaRequestConfig(smaRequest: SmaRequest) : RequestConfig<SmaRequest> {
+        val localVariableBody = smaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

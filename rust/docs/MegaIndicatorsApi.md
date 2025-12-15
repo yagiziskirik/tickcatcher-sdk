@@ -97,7 +97,7 @@ Name | Type | Description  | Required | Notes
 
 ## williamsr
 
-> Vec<f64> williamsr(api_indicators_ema_post_request)
+> Vec<f64> williamsr(ema_request)
 Calculate Williams %R
 
 ### Parameters
@@ -105,7 +105,7 @@ Calculate Williams %R
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 

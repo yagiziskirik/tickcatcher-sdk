@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**CandleData**](CandleData.md) |  | 
+**data** | [**List[Candle]**](Candle.md) |  | 
 **params** | [**KeltnerRequestParams**](KeltnerRequestParams.md) |  | [optional] 
 
 ## Example

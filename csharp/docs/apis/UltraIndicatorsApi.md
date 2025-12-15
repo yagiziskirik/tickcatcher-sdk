@@ -5,13 +5,13 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**Adx**](UltraIndicatorsApi.md#adx) | **POST** /api/indicators/adx | Calculate Average Directional Index (ADX) |
-| [**ApiIndicatorsAtrPost**](UltraIndicatorsApi.md#apiindicatorsatrpost) | **POST** /api/indicators/atr | Calculate Average True Range (ATR) |
+| [**Atr**](UltraIndicatorsApi.md#atr) | **POST** /api/indicators/atr | Calculate Average True Range (ATR) |
 | [**Cci**](UltraIndicatorsApi.md#cci) | **POST** /api/indicators/cci | Calculate Commodity Channel Index (CCI) |
 | [**Psar**](UltraIndicatorsApi.md#psar) | **POST** /api/indicators/psar | Calculate Parabolic SAR |
 
 <a id="adx"></a>
 # **Adx**
-> List&lt;Adx200ResponseInner&gt; Adx (ApiIndicatorsEmaPostRequest apiIndicatorsEmaPostRequest)
+> List&lt;Adx200ResponseInner&gt; Adx (EmaRequest emaRequest)
 
 Calculate Average Directional Index (ADX)
 
@@ -20,7 +20,7 @@ Calculate Average Directional Index (ADX)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  |  |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md) |  |  |
 
 ### Return type
 
@@ -45,9 +45,9 @@ Calculate Average Directional Index (ADX)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="apiindicatorsatrpost"></a>
-# **ApiIndicatorsAtrPost**
-> List&lt;decimal&gt; ApiIndicatorsAtrPost (ApiIndicatorsEmaPostRequest apiIndicatorsEmaPostRequest)
+<a id="atr"></a>
+# **Atr**
+> List&lt;decimal&gt; Atr (EmaRequest emaRequest)
 
 Calculate Average True Range (ATR)
 
@@ -56,7 +56,7 @@ Calculate Average True Range (ATR)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  |  |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md) |  |  |
 
 ### Return type
 
@@ -83,7 +83,7 @@ Calculate Average True Range (ATR)
 
 <a id="cci"></a>
 # **Cci**
-> List&lt;decimal&gt; Cci (ApiIndicatorsEmaPostRequest apiIndicatorsEmaPostRequest)
+> List&lt;decimal&gt; Cci (EmaRequest emaRequest)
 
 Calculate Commodity Channel Index (CCI)
 
@@ -92,7 +92,7 @@ Calculate Commodity Channel Index (CCI)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  |  |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md) |  |  |
 
 ### Return type
 

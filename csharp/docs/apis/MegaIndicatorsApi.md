@@ -119,7 +119,7 @@ Calculate SuperTrend
 
 <a id="williamsr"></a>
 # **Williamsr**
-> List&lt;decimal&gt; Williamsr (ApiIndicatorsEmaPostRequest apiIndicatorsEmaPostRequest)
+> List&lt;decimal&gt; Williamsr (EmaRequest emaRequest)
 
 Calculate Williams %R
 
@@ -128,7 +128,7 @@ Calculate Williams %R
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  |  |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md) |  |  |
 
 ### Return type
 

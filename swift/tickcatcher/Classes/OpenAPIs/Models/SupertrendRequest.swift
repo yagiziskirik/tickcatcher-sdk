@@ -12,10 +12,10 @@ import AnyCodable
 
 public struct SupertrendRequest: Codable, JSONEncodable, Hashable {
 
-    public var data: CandleData
+    public var data: [Candle]
     public var params: SupertrendRequestParams?
 
-    public init(data: CandleData, params: SupertrendRequestParams? = nil) {
+    public init(data: [Candle], params: SupertrendRequestParams? = nil) {
         self.data = data
         self.params = params
     }

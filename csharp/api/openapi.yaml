@@ -7,7 +7,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.1.0
+  version: 1.1.1
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
@@ -503,11 +503,12 @@ paths:
   /api/indicators/sma:
     post:
       description: Returns the SMA of the close prices.
+      operationId: sma
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_sma_post_request"
+              $ref: "#/components/schemas/sma_request"
         required: true
       responses:
         "200":
@@ -518,17 +519,24 @@ paths:
                   type: number
                 type: array
           description: Array of SMA values
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
       summary: Calculate Simple Moving Average (SMA)
       tags:
       - Basic Indicators
   /api/indicators/ema:
     post:
       description: Returns the EMA of the close prices.
+      operationId: ema
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -539,17 +547,24 @@ paths:
                   type: number
                 type: array
           description: Array of EMA values
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
       summary: Calculate Exponential Moving Average (EMA)
       tags:
       - Basic Indicators
   /api/indicators/rsi:
     post:
       description: Returns the RSI of the close prices.
+      operationId: rsi
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -560,17 +575,24 @@ paths:
                   type: number
                 type: array
           description: Array of RSI values
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
       summary: Calculate Relative Strength Index (RSI)
       tags:
       - Basic Indicators
   /api/indicators/macd:
     post:
       description: "Returns MACD, Signal, and Histogram."
+      operationId: macd
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_macd_post_request"
+              $ref: "#/components/schemas/macd_request"
         required: true
       responses:
         "200":
@@ -578,20 +600,27 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/_api_indicators_macd_post_200_response_inner"
+                  $ref: "#/components/schemas/macd_200_response_inner"
                 type: array
           description: MACD result
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
       summary: Calculate MACD
       tags:
       - Pro Indicators
   /api/indicators/stoch:
     post:
       description: Returns %K and %D lines.
+      operationId: stoch
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_stoch_post_request"
+              $ref: "#/components/schemas/stoch_request"
         required: true
       responses:
         "200":
@@ -599,20 +628,27 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/_api_indicators_stoch_post_200_response_inner"
+                  $ref: "#/components/schemas/stoch_200_response_inner"
                 type: array
           description: Stochastic result
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
       summary: Calculate Stochastic Oscillator
       tags:
       - Pro Indicators
   /api/indicators/bbands:
     post:
       description: "Returns Upper, Middle, and Lower bands."
+      operationId: bbands
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_bbands_post_request"
+              $ref: "#/components/schemas/bbands_request"
         required: true
       responses:
         "200":
@@ -620,20 +656,27 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/_api_indicators_bbands_post_200_response_inner"
+                  $ref: "#/components/schemas/bbands_200_response_inner"
                 type: array
           description: Bollinger Bands result
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
       summary: Calculate Bollinger Bands
       tags:
       - Pro Indicators
   /api/indicators/volumema:
     post:
       description: Returns Simple Moving Average of Volume.
+      operationId: volumema
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -653,11 +696,12 @@ paths:
       - Pro Indicators
   /api/indicators/atr:
     post:
+      operationId: atr
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -682,7 +726,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -707,7 +751,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -782,7 +826,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/_api_indicators_ema_post_request"
+              $ref: "#/components/schemas/ema_request"
         required: true
       responses:
         "200":
@@ -863,7 +907,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/_api_indicators_bbands_post_200_response_inner"
+                  $ref: "#/components/schemas/bbands_200_response_inner"
                 type: array
           description: Keltner Channel values
         "400":
@@ -944,6 +988,8 @@ paths:
           description: Pivot Points
         "400":
           description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
         "500":
           description: Server error
       summary: Calculate Pivot Points
@@ -1197,57 +1243,41 @@ components:
       - title
       - ts
     CandleData:
-      properties:
-        open:
-          items:
-            type: number
-          type: array
-        high:
-          items:
-            type: number
-          type: array
-        low:
-          items:
-            type: number
-          type: array
-        close:
-          items:
-            type: number
-          type: array
-        volume:
-          items:
-            type: number
-          type: array
-      required:
-      - close
-    _api_indicators_sma_post_request_params:
+      items:
+        $ref: "#/components/schemas/Candle"
+      type: array
+    sma_request_params:
       properties:
         period:
           default: 14
           description: The period for calculating SMA.
           type: integer
-    _api_indicators_sma_post_request:
+    sma_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
-          $ref: "#/components/schemas/_api_indicators_sma_post_request_params"
+          $ref: "#/components/schemas/sma_request_params"
       required:
       - data
-    _api_indicators_ema_post_request_params:
+    ema_request_params:
       properties:
         period:
           default: 14
           type: integer
-    _api_indicators_ema_post_request:
+    ema_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
-          $ref: "#/components/schemas/_api_indicators_ema_post_request_params"
+          $ref: "#/components/schemas/ema_request_params"
       required:
       - data
-    _api_indicators_macd_post_request_params:
+    macd_request_params:
       properties:
         fastPeriod:
           default: 12
@@ -1258,15 +1288,17 @@ components:
         signalPeriod:
           default: 9
           type: integer
-    _api_indicators_macd_post_request:
+    macd_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
-          $ref: "#/components/schemas/_api_indicators_macd_post_request_params"
+          $ref: "#/components/schemas/macd_request_params"
       required:
       - data
-    _api_indicators_macd_post_200_response_inner:
+    macd_200_response_inner:
       example:
         histogram: 1.4658129805029452
         MACD: 0.8008281904610115
@@ -1278,7 +1310,7 @@ components:
           type: number
         histogram:
           type: number
-    _api_indicators_stoch_post_request_params:
+    stoch_request_params:
       properties:
         period:
           default: 14
@@ -1286,15 +1318,17 @@ components:
         signalPeriod:
           default: 3
           type: integer
-    _api_indicators_stoch_post_request:
+    stoch_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
-          $ref: "#/components/schemas/_api_indicators_stoch_post_request_params"
+          $ref: "#/components/schemas/stoch_request_params"
       required:
       - data
-    _api_indicators_stoch_post_200_response_inner:
+    stoch_200_response_inner:
       example:
         stochD: 6.027456183070403
         stochK: 0.8008281904610115
@@ -1303,7 +1337,7 @@ components:
           type: number
         stochD:
           type: number
-    _api_indicators_bbands_post_request_params:
+    bbands_request_params:
       properties:
         period:
           default: 14
@@ -1311,15 +1345,17 @@ components:
         stdDev:
           default: 2
           type: number
-    _api_indicators_bbands_post_request:
+    bbands_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
-          $ref: "#/components/schemas/_api_indicators_bbands_post_request_params"
+          $ref: "#/components/schemas/bbands_request_params"
       required:
       - data
-    _api_indicators_bbands_post_200_response_inner:
+    bbands_200_response_inner:
       example:
         middle: 6.027456183070403
         upper: 0.8008281904610115
@@ -1354,7 +1390,9 @@ components:
     psar_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
           $ref: "#/components/schemas/psar_request_params"
       required:
@@ -1376,7 +1414,9 @@ components:
     ichimoku_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
           $ref: "#/components/schemas/ichimoku_request_params"
       required:
@@ -1410,7 +1450,9 @@ components:
     supertrend_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
           $ref: "#/components/schemas/supertrend_request_params"
       required:
@@ -1427,7 +1469,9 @@ components:
     heikenashi_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
       required:
       - data
     heikenashi_200_response:
@@ -1472,7 +1516,9 @@ components:
     keltner_request:
       properties:
         data:
-          $ref: "#/components/schemas/CandleData"
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
         params:
           $ref: "#/components/schemas/keltner_request_params"
       required:

@@ -4,15 +4,15 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiIndicatorsBbandsPost**](ProIndicatorsAPI.md#apiindicatorsbbandspost) | **POST** /api/indicators/bbands | Calculate Bollinger Bands
-[**apiIndicatorsMacdPost**](ProIndicatorsAPI.md#apiindicatorsmacdpost) | **POST** /api/indicators/macd | Calculate MACD
-[**apiIndicatorsStochPost**](ProIndicatorsAPI.md#apiindicatorsstochpost) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator
-[**apiIndicatorsVolumemaPost**](ProIndicatorsAPI.md#apiindicatorsvolumemapost) | **POST** /api/indicators/volumema | Calculate Volume MA
+[**bbands**](ProIndicatorsAPI.md#bbands) | **POST** /api/indicators/bbands | Calculate Bollinger Bands
+[**macd**](ProIndicatorsAPI.md#macd) | **POST** /api/indicators/macd | Calculate MACD
+[**stoch**](ProIndicatorsAPI.md#stoch) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator
+[**volumema**](ProIndicatorsAPI.md#volumema) | **POST** /api/indicators/volumema | Calculate Volume MA
 
 
-# **apiIndicatorsBbandsPost**
+# **bbands**
 ```swift
-    open class func apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest: ApiIndicatorsBbandsPostRequest, completion: @escaping (_ data: [ApiIndicatorsBbandsPost200ResponseInner]?, _ error: Error?) -> Void)
+    open class func bbands(bbandsRequest: BbandsRequest, completion: @escaping (_ data: [Bbands200ResponseInner]?, _ error: Error?) -> Void)
 ```
 
 Calculate Bollinger Bands
@@ -24,10 +24,10 @@ Returns Upper, Middle, and Lower bands.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsBbandsPostRequest = _api_indicators_bbands_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_bbands_post_request_params(period: 123, stdDev: 123)) // ApiIndicatorsBbandsPostRequest | 
+let bbandsRequest = bbands_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: bbands_request_params(period: 123, stdDev: 123)) // BbandsRequest | 
 
 // Calculate Bollinger Bands
-ProIndicatorsAPI.apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest: apiIndicatorsBbandsPostRequest) { (response, error) in
+ProIndicatorsAPI.bbands(bbandsRequest: bbandsRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -43,11 +43,11 @@ ProIndicatorsAPI.apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest: apiIndi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsBbandsPostRequest** | [**ApiIndicatorsBbandsPostRequest**](ApiIndicatorsBbandsPostRequest.md) |  | 
+ **bbandsRequest** | [**BbandsRequest**](BbandsRequest.md) |  | 
 
 ### Return type
 
-[**[ApiIndicatorsBbandsPost200ResponseInner]**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**[Bbands200ResponseInner]**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIndicatorsMacdPost**
+# **macd**
 ```swift
-    open class func apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest: ApiIndicatorsMacdPostRequest, completion: @escaping (_ data: [ApiIndicatorsMacdPost200ResponseInner]?, _ error: Error?) -> Void)
+    open class func macd(macdRequest: MacdRequest, completion: @escaping (_ data: [Macd200ResponseInner]?, _ error: Error?) -> Void)
 ```
 
 Calculate MACD
@@ -74,10 +74,10 @@ Returns MACD, Signal, and Histogram.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsMacdPostRequest = _api_indicators_macd_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_macd_post_request_params(fastPeriod: 123, slowPeriod: 123, signalPeriod: 123)) // ApiIndicatorsMacdPostRequest | 
+let macdRequest = macd_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: macd_request_params(fastPeriod: 123, slowPeriod: 123, signalPeriod: 123)) // MacdRequest | 
 
 // Calculate MACD
-ProIndicatorsAPI.apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest: apiIndicatorsMacdPostRequest) { (response, error) in
+ProIndicatorsAPI.macd(macdRequest: macdRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -93,11 +93,11 @@ ProIndicatorsAPI.apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest: apiIndicato
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsMacdPostRequest** | [**ApiIndicatorsMacdPostRequest**](ApiIndicatorsMacdPostRequest.md) |  | 
+ **macdRequest** | [**MacdRequest**](MacdRequest.md) |  | 
 
 ### Return type
 
-[**[ApiIndicatorsMacdPost200ResponseInner]**](ApiIndicatorsMacdPost200ResponseInner.md)
+[**[Macd200ResponseInner]**](Macd200ResponseInner.md)
 
 ### Authorization
 
@@ -110,9 +110,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIndicatorsStochPost**
+# **stoch**
 ```swift
-    open class func apiIndicatorsStochPost(apiIndicatorsStochPostRequest: ApiIndicatorsStochPostRequest, completion: @escaping (_ data: [ApiIndicatorsStochPost200ResponseInner]?, _ error: Error?) -> Void)
+    open class func stoch(stochRequest: StochRequest, completion: @escaping (_ data: [Stoch200ResponseInner]?, _ error: Error?) -> Void)
 ```
 
 Calculate Stochastic Oscillator
@@ -124,10 +124,10 @@ Returns %K and %D lines.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsStochPostRequest = _api_indicators_stoch_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_stoch_post_request_params(period: 123, signalPeriod: 123)) // ApiIndicatorsStochPostRequest | 
+let stochRequest = stoch_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: stoch_request_params(period: 123, signalPeriod: 123)) // StochRequest | 
 
 // Calculate Stochastic Oscillator
-ProIndicatorsAPI.apiIndicatorsStochPost(apiIndicatorsStochPostRequest: apiIndicatorsStochPostRequest) { (response, error) in
+ProIndicatorsAPI.stoch(stochRequest: stochRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -143,11 +143,11 @@ ProIndicatorsAPI.apiIndicatorsStochPost(apiIndicatorsStochPostRequest: apiIndica
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsStochPostRequest** | [**ApiIndicatorsStochPostRequest**](ApiIndicatorsStochPostRequest.md) |  | 
+ **stochRequest** | [**StochRequest**](StochRequest.md) |  | 
 
 ### Return type
 
-[**[ApiIndicatorsStochPost200ResponseInner]**](ApiIndicatorsStochPost200ResponseInner.md)
+[**[Stoch200ResponseInner]**](Stoch200ResponseInner.md)
 
 ### Authorization
 
@@ -160,9 +160,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIndicatorsVolumemaPost**
+# **volumema**
 ```swift
-    open class func apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
+    open class func volumema(emaRequest: EmaRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
 ```
 
 Calculate Volume MA
@@ -174,10 +174,10 @@ Returns Simple Moving Average of Volume.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsEmaPostRequest = _api_indicators_ema_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_ema_post_request_params(period: 123)) // ApiIndicatorsEmaPostRequest | 
+let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Volume MA
-ProIndicatorsAPI.apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest) { (response, error) in
+ProIndicatorsAPI.volumema(emaRequest: emaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -193,7 +193,7 @@ ProIndicatorsAPI.apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest: apiIndic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 

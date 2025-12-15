@@ -15,13 +15,13 @@ open class BasicIndicatorsAPI {
     /**
      Calculate Exponential Moving Average (EMA)
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsEmaPostWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func ema(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return emaWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -38,13 +38,13 @@ open class BasicIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func apiIndicatorsEmaPostWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func emaWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/ema"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -62,13 +62,13 @@ open class BasicIndicatorsAPI {
     /**
      Calculate Relative Strength Index (RSI)
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsRsiPostWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func rsi(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return rsiWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -85,13 +85,13 @@ open class BasicIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func apiIndicatorsRsiPostWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func rsiWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/rsi"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -109,13 +109,13 @@ open class BasicIndicatorsAPI {
     /**
      Calculate Simple Moving Average (SMA)
      
-     - parameter apiIndicatorsSmaPostRequest: (body)  
+     - parameter smaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest: ApiIndicatorsSmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsSmaPostWithRequestBuilder(apiIndicatorsSmaPostRequest: apiIndicatorsSmaPostRequest).execute(apiResponseQueue) { result in
+    open class func sma(smaRequest: SmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return smaWithRequestBuilder(smaRequest: smaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -132,13 +132,13 @@ open class BasicIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsSmaPostRequest: (body)  
+     - parameter smaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func apiIndicatorsSmaPostWithRequestBuilder(apiIndicatorsSmaPostRequest: ApiIndicatorsSmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func smaWithRequestBuilder(smaRequest: SmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/sma"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsSmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: smaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 

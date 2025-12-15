@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -34,7 +34,7 @@ func (r ApiKeltnerRequest) KeltnerRequest(keltnerRequest KeltnerRequest) ApiKelt
 	return r
 }
 
-func (r ApiKeltnerRequest) Execute() ([]ApiIndicatorsBbandsPost200ResponseInner, *http.Response, error) {
+func (r ApiKeltnerRequest) Execute() ([]Bbands200ResponseInner, *http.Response, error) {
 	return r.ApiService.KeltnerExecute(r)
 }
 
@@ -52,13 +52,13 @@ func (a *EnterpriseIndicatorsAPIService) Keltner(ctx context.Context) ApiKeltner
 }
 
 // Execute executes the request
-//  @return []ApiIndicatorsBbandsPost200ResponseInner
-func (a *EnterpriseIndicatorsAPIService) KeltnerExecute(r ApiKeltnerRequest) ([]ApiIndicatorsBbandsPost200ResponseInner, *http.Response, error) {
+//  @return []Bbands200ResponseInner
+func (a *EnterpriseIndicatorsAPIService) KeltnerExecute(r ApiKeltnerRequest) ([]Bbands200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ApiIndicatorsBbandsPost200ResponseInner
+		localVarReturnValue  []Bbands200ResponseInner
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnterpriseIndicatorsAPIService.Keltner")

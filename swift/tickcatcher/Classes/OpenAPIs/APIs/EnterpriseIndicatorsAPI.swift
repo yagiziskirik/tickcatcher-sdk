@@ -20,7 +20,7 @@ open class EnterpriseIndicatorsAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func keltner(keltnerRequest: KeltnerRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [ApiIndicatorsBbandsPost200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func keltner(keltnerRequest: KeltnerRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Bbands200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
         return keltnerWithRequestBuilder(keltnerRequest: keltnerRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -38,9 +38,9 @@ open class EnterpriseIndicatorsAPI {
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter keltnerRequest: (body)  
-     - returns: RequestBuilder<[ApiIndicatorsBbandsPost200ResponseInner]> 
+     - returns: RequestBuilder<[Bbands200ResponseInner]> 
      */
-    open class func keltnerWithRequestBuilder(keltnerRequest: KeltnerRequest) -> RequestBuilder<[ApiIndicatorsBbandsPost200ResponseInner]> {
+    open class func keltnerWithRequestBuilder(keltnerRequest: KeltnerRequest) -> RequestBuilder<[Bbands200ResponseInner]> {
         let localVariablePath = "/api/indicators/keltner"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: keltnerRequest)
@@ -53,7 +53,7 @@ open class EnterpriseIndicatorsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[ApiIndicatorsBbandsPost200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[Bbands200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

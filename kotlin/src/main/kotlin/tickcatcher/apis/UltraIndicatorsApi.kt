@@ -20,7 +20,7 @@ import okhttp3.Call
 import okhttp3.HttpUrl
 
 import tickcatcher.models.Adx200ResponseInner
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
+import tickcatcher.models.EmaRequest
 import tickcatcher.models.PsarRequest
 
 import com.squareup.moshi.Json
@@ -51,7 +51,7 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/adx
      * Calculate Average Directional Index (ADX)
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<Adx200ResponseInner>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -61,8 +61,8 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun adx(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<Adx200ResponseInner> {
-        val localVarResponse = adxWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun adx(emaRequest: EmaRequest) : kotlin.collections.List<Adx200ResponseInner> {
+        val localVarResponse = adxWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Adx200ResponseInner>
@@ -83,17 +83,17 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/adx
      * Calculate Average Directional Index (ADX)
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<Adx200ResponseInner>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun adxWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<Adx200ResponseInner>?> {
-        val localVariableConfig = adxRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun adxWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<Adx200ResponseInner>?> {
+        val localVariableConfig = adxRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<Adx200ResponseInner>>(
+        return request<EmaRequest, kotlin.collections.List<Adx200ResponseInner>>(
             localVariableConfig
         )
     }
@@ -101,11 +101,11 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
     /**
      * To obtain the request config of the operation adx
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun adxRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun adxRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -125,7 +125,7 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/atr
      * Calculate Average True Range (ATR)
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -135,8 +135,8 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = apiIndicatorsAtrPostWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun atr(emaRequest: EmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = atrWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -157,29 +157,29 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/atr
      * Calculate Average True Range (ATR)
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun apiIndicatorsAtrPostWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = apiIndicatorsAtrPostRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun atrWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = atrRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<EmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
 
     /**
-     * To obtain the request config of the operation apiIndicatorsAtrPost
+     * To obtain the request config of the operation atr
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun apiIndicatorsAtrPostRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun atrRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"
@@ -199,7 +199,7 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/cci
      * Calculate Commodity Channel Index (CCI)
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -209,8 +209,8 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cci(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = cciWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun cci(emaRequest: EmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = cciWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -231,17 +231,17 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
      * POST /api/indicators/cci
      * Calculate Commodity Channel Index (CCI)
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cciWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = cciRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun cciWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = cciRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<EmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
@@ -249,11 +249,11 @@ class UltraIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call
     /**
      * To obtain the request config of the operation cci
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun cciRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun cciRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

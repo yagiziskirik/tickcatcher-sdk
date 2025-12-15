@@ -11,7 +11,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 <a id="keltner"></a>
 # **Keltner**
-> List&lt;ApiIndicatorsBbandsPost200ResponseInner&gt; Keltner (KeltnerRequest keltnerRequest)
+> List&lt;Bbands200ResponseInner&gt; Keltner (KeltnerRequest keltnerRequest)
 
 Calculate Keltner Channels
 
@@ -24,7 +24,7 @@ Calculate Keltner Channels
 
 ### Return type
 
-[**List&lt;ApiIndicatorsBbandsPost200ResponseInner&gt;**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**List&lt;Bbands200ResponseInner&gt;**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -77,6 +77,7 @@ Calculate Pivot Points
 |-------------|-------------|------------------|
 | **200** | Pivot Points |  -  |
 | **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
 | **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

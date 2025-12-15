@@ -12,10 +12,10 @@ import AnyCodable
 
 public struct IchimokuRequest: Codable, JSONEncodable, Hashable {
 
-    public var data: CandleData
+    public var data: [Candle]
     public var params: IchimokuRequestParams?
 
-    public init(data: CandleData, params: IchimokuRequestParams? = nil) {
+    public init(data: [Candle], params: IchimokuRequestParams? = nil) {
         self.data = data
         self.params = params
     }

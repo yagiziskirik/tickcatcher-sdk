@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CandleData**](CandleData.md) |  | 
+**Data** | [**[]Candle**](Candle.md) |  | 
 **Params** | Pointer to [**PsarRequestParams**](PsarRequestParams.md) |  | [optional] 
 
 ## Methods
 
 ### NewPsarRequest
 
-`func NewPsarRequest(data CandleData, ) *PsarRequest`
+`func NewPsarRequest(data []Candle, ) *PsarRequest`
 
 NewPsarRequest instantiates a new PsarRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PsarRequest) GetData() CandleData`
+`func (o *PsarRequest) GetData() []Candle`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PsarRequest) GetDataOk() (*CandleData, bool)`
+`func (o *PsarRequest) GetDataOk() (*[]Candle, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PsarRequest) SetData(v CandleData)`
+`func (o *PsarRequest) SetData(v []Candle)`
 
 SetData sets Data field to given value.
 

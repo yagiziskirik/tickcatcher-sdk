@@ -5,13 +5,13 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adx**](UltraIndicatorsApi.md#adx) | **POST** /api/indicators/adx | Calculate Average Directional Index (ADX)
-[**api_indicators_atr_post**](UltraIndicatorsApi.md#api_indicators_atr_post) | **POST** /api/indicators/atr | Calculate Average True Range (ATR)
+[**atr**](UltraIndicatorsApi.md#atr) | **POST** /api/indicators/atr | Calculate Average True Range (ATR)
 [**cci**](UltraIndicatorsApi.md#cci) | **POST** /api/indicators/cci | Calculate Commodity Channel Index (CCI)
 [**psar**](UltraIndicatorsApi.md#psar) | **POST** /api/indicators/psar | Calculate Parabolic SAR
 
 
 # **adx**
-> List[Adx200ResponseInner] adx(api_indicators_ema_post_request)
+> List[Adx200ResponseInner] adx(ema_request)
 
 Calculate Average Directional Index (ADX)
 
@@ -22,7 +22,7 @@ Calculate Average Directional Index (ADX)
 ```python
 import tickcatcher
 from tickcatcher.models.adx200_response_inner import Adx200ResponseInner
-from tickcatcher.models.api_indicators_ema_post_request import ApiIndicatorsEmaPostRequest
+from tickcatcher.models.ema_request import EmaRequest
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
@@ -47,11 +47,11 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tickcatcher.UltraIndicatorsApi(api_client)
-    api_indicators_ema_post_request = tickcatcher.ApiIndicatorsEmaPostRequest() # ApiIndicatorsEmaPostRequest | 
+    ema_request = tickcatcher.EmaRequest() # EmaRequest | 
 
     try:
         # Calculate Average Directional Index (ADX)
-        api_response = api_instance.adx(api_indicators_ema_post_request)
+        api_response = api_instance.adx(ema_request)
         print("The response of UltraIndicatorsApi->adx:\n")
         pprint(api_response)
     except Exception as e:
@@ -65,7 +65,7 @@ with tickcatcher.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | 
+ **ema_request** | [**EmaRequest**](EmaRequest.md)|  | 
 
 ### Return type
 
@@ -90,8 +90,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_indicators_atr_post**
-> List[float] api_indicators_atr_post(api_indicators_ema_post_request)
+# **atr**
+> List[float] atr(ema_request)
 
 Calculate Average True Range (ATR)
 
@@ -101,7 +101,7 @@ Calculate Average True Range (ATR)
 
 ```python
 import tickcatcher
-from tickcatcher.models.api_indicators_ema_post_request import ApiIndicatorsEmaPostRequest
+from tickcatcher.models.ema_request import EmaRequest
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
@@ -126,15 +126,15 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tickcatcher.UltraIndicatorsApi(api_client)
-    api_indicators_ema_post_request = tickcatcher.ApiIndicatorsEmaPostRequest() # ApiIndicatorsEmaPostRequest | 
+    ema_request = tickcatcher.EmaRequest() # EmaRequest | 
 
     try:
         # Calculate Average True Range (ATR)
-        api_response = api_instance.api_indicators_atr_post(api_indicators_ema_post_request)
-        print("The response of UltraIndicatorsApi->api_indicators_atr_post:\n")
+        api_response = api_instance.atr(ema_request)
+        print("The response of UltraIndicatorsApi->atr:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UltraIndicatorsApi->api_indicators_atr_post: %s\n" % e)
+        print("Exception when calling UltraIndicatorsApi->atr: %s\n" % e)
 ```
 
 
@@ -144,7 +144,7 @@ with tickcatcher.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | 
+ **ema_request** | [**EmaRequest**](EmaRequest.md)|  | 
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cci**
-> List[float] cci(api_indicators_ema_post_request)
+> List[float] cci(ema_request)
 
 Calculate Commodity Channel Index (CCI)
 
@@ -180,7 +180,7 @@ Calculate Commodity Channel Index (CCI)
 
 ```python
 import tickcatcher
-from tickcatcher.models.api_indicators_ema_post_request import ApiIndicatorsEmaPostRequest
+from tickcatcher.models.ema_request import EmaRequest
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
@@ -205,11 +205,11 @@ configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
 with tickcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = tickcatcher.UltraIndicatorsApi(api_client)
-    api_indicators_ema_post_request = tickcatcher.ApiIndicatorsEmaPostRequest() # ApiIndicatorsEmaPostRequest | 
+    ema_request = tickcatcher.EmaRequest() # EmaRequest | 
 
     try:
         # Calculate Commodity Channel Index (CCI)
-        api_response = api_instance.cci(api_indicators_ema_post_request)
+        api_response = api_instance.cci(ema_request)
         print("The response of UltraIndicatorsApi->cci:\n")
         pprint(api_response)
     except Exception as e:
@@ -223,7 +223,7 @@ with tickcatcher.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | 
+ **ema_request** | [**EmaRequest**](EmaRequest.md)|  | 
 
 ### Return type
 

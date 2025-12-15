@@ -19,7 +19,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
+import tickcatcher.models.EmaRequest
 import tickcatcher.models.Heikenashi200Response
 import tickcatcher.models.HeikenashiRequest
 import tickcatcher.models.Ichimoku200ResponseInner
@@ -277,7 +277,7 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * POST /api/indicators/williamsr
      * Calculate Williams %R
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return kotlin.collections.List<java.math.BigDecimal>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -287,8 +287,8 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun williamsr(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : kotlin.collections.List<java.math.BigDecimal> {
-        val localVarResponse = williamsrWithHttpInfo(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun williamsr(emaRequest: EmaRequest) : kotlin.collections.List<java.math.BigDecimal> {
+        val localVarResponse = williamsrWithHttpInfo(emaRequest = emaRequest)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<java.math.BigDecimal>
@@ -309,17 +309,17 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * POST /api/indicators/williamsr
      * Calculate Williams %R
      * 
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return ApiResponse<kotlin.collections.List<java.math.BigDecimal>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun williamsrWithHttpInfo(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
-        val localVariableConfig = williamsrRequestConfig(apiIndicatorsEmaPostRequest = apiIndicatorsEmaPostRequest)
+    fun williamsrWithHttpInfo(emaRequest: EmaRequest) : ApiResponse<kotlin.collections.List<java.math.BigDecimal>?> {
+        val localVariableConfig = williamsrRequestConfig(emaRequest = emaRequest)
 
-        return request<ApiIndicatorsEmaPostRequest, kotlin.collections.List<java.math.BigDecimal>>(
+        return request<EmaRequest, kotlin.collections.List<java.math.BigDecimal>>(
             localVariableConfig
         )
     }
@@ -327,11 +327,11 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * To obtain the request config of the operation williamsr
      *
-     * @param apiIndicatorsEmaPostRequest 
+     * @param emaRequest 
      * @return RequestConfig
      */
-    fun williamsrRequestConfig(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) : RequestConfig<ApiIndicatorsEmaPostRequest> {
-        val localVariableBody = apiIndicatorsEmaPostRequest
+    fun williamsrRequestConfig(emaRequest: EmaRequest) : RequestConfig<EmaRequest> {
+        val localVariableBody = emaRequest
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Content-Type"] = "application/json"

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**CandleData**](CandleData.md) |  | 
+**data** | [**List[Candle]**](Candle.md) |  | 
 **params** | [**IchimokuRequestParams**](IchimokuRequestParams.md) |  | [optional] 
 
 ## Example

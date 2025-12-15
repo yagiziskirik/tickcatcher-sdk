@@ -5,7 +5,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**adx**](UltraIndicatorsApi.md#adx) | **POST** /api/indicators/adx | Calculate Average Directional Index (ADX) |
-| [**apiIndicatorsAtrPost**](UltraIndicatorsApi.md#apiindicatorsatrpost) | **POST** /api/indicators/atr | Calculate Average True Range (ATR) |
+| [**atr**](UltraIndicatorsApi.md#atr) | **POST** /api/indicators/atr | Calculate Average True Range (ATR) |
 | [**cci**](UltraIndicatorsApi.md#cci) | **POST** /api/indicators/cci | Calculate Commodity Channel Index (CCI) |
 | [**psar**](UltraIndicatorsApi.md#psaroperation) | **POST** /api/indicators/psar | Calculate Parabolic SAR |
 
@@ -13,7 +13,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 ## adx
 
-> Array&lt;Adx200ResponseInner&gt; adx(apiIndicatorsEmaPostRequest)
+> Array&lt;Adx200ResponseInner&gt; adx(emaRequest)
 
 Calculate Average Directional Index (ADX)
 
@@ -35,8 +35,8 @@ async function example() {
   const api = new UltraIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
+    // EmaRequest
+    emaRequest: ...,
   } satisfies AdxRequest;
 
   try {
@@ -56,7 +56,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 
@@ -82,9 +82,9 @@ example().catch(console.error);
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 
 
-## apiIndicatorsAtrPost
+## atr
 
-> Array&lt;number&gt; apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest)
+> Array&lt;number&gt; atr(emaRequest)
 
 Calculate Average True Range (ATR)
 
@@ -95,7 +95,7 @@ import {
   Configuration,
   UltraIndicatorsApi,
 } from 'tickcatcher';
-import type { ApiIndicatorsAtrPostRequest } from 'tickcatcher';
+import type { AtrRequest } from 'tickcatcher';
 
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
@@ -106,12 +106,12 @@ async function example() {
   const api = new UltraIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
-  } satisfies ApiIndicatorsAtrPostRequest;
+    // EmaRequest
+    emaRequest: ...,
+  } satisfies AtrRequest;
 
   try {
-    const data = await api.apiIndicatorsAtrPost(body);
+    const data = await api.atr(body);
     console.log(data);
   } catch (error) {
     console.error(error);
@@ -127,7 +127,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 
@@ -155,7 +155,7 @@ example().catch(console.error);
 
 ## cci
 
-> Array&lt;number&gt; cci(apiIndicatorsEmaPostRequest)
+> Array&lt;number&gt; cci(emaRequest)
 
 Calculate Commodity Channel Index (CCI)
 
@@ -177,8 +177,8 @@ async function example() {
   const api = new UltraIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
+    // EmaRequest
+    emaRequest: ...,
   } satisfies CciRequest;
 
   try {
@@ -198,7 +198,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 

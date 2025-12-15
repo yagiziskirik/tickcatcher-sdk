@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CandleData**](CandleData.md) |  | 
+**Data** | [**[]Candle**](Candle.md) |  | 
 
 ## Methods
 
 ### NewHeikenashiRequest
 
-`func NewHeikenashiRequest(data CandleData, ) *HeikenashiRequest`
+`func NewHeikenashiRequest(data []Candle, ) *HeikenashiRequest`
 
 NewHeikenashiRequest instantiates a new HeikenashiRequest object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *HeikenashiRequest) GetData() CandleData`
+`func (o *HeikenashiRequest) GetData() []Candle`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HeikenashiRequest) GetDataOk() (*CandleData, bool)`
+`func (o *HeikenashiRequest) GetDataOk() (*[]Candle, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HeikenashiRequest) SetData(v CandleData)`
+`func (o *HeikenashiRequest) SetData(v []Candle)`
 
 SetData sets Data field to given value.
 

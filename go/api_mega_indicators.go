@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -392,11 +392,11 @@ func (a *MegaIndicatorsAPIService) SupertrendExecute(r ApiSupertrendRequest) ([]
 type ApiWilliamsrRequest struct {
 	ctx context.Context
 	ApiService *MegaIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiWilliamsrRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiWilliamsrRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiWilliamsrRequest) EmaRequest(emaRequest EmaRequest) ApiWilliamsrRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
@@ -437,8 +437,8 @@ func (a *MegaIndicatorsAPIService) WilliamsrExecute(r ApiWilliamsrRequest) ([]fl
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -459,7 +459,7 @@ func (a *MegaIndicatorsAPIService) WilliamsrExecute(r ApiWilliamsrRequest) ([]fl
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

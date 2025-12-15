@@ -4,14 +4,14 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiIndicatorsEmaPost**](BasicIndicatorsAPI.md#apiindicatorsemapost) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA)
-[**apiIndicatorsRsiPost**](BasicIndicatorsAPI.md#apiindicatorsrsipost) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI)
-[**apiIndicatorsSmaPost**](BasicIndicatorsAPI.md#apiindicatorssmapost) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA)
+[**ema**](BasicIndicatorsAPI.md#ema) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA)
+[**rsi**](BasicIndicatorsAPI.md#rsi) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI)
+[**sma**](BasicIndicatorsAPI.md#sma) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA)
 
 
-# **apiIndicatorsEmaPost**
+# **ema**
 ```swift
-    open class func apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
+    open class func ema(emaRequest: EmaRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
 ```
 
 Calculate Exponential Moving Average (EMA)
@@ -23,10 +23,10 @@ Returns the EMA of the close prices.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsEmaPostRequest = _api_indicators_ema_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_ema_post_request_params(period: 123)) // ApiIndicatorsEmaPostRequest | 
+let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Exponential Moving Average (EMA)
-BasicIndicatorsAPI.apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest) { (response, error) in
+BasicIndicatorsAPI.ema(emaRequest: emaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -42,7 +42,7 @@ BasicIndicatorsAPI.apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest: apiIndicato
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -59,9 +59,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIndicatorsRsiPost**
+# **rsi**
 ```swift
-    open class func apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
+    open class func rsi(emaRequest: EmaRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
 ```
 
 Calculate Relative Strength Index (RSI)
@@ -73,10 +73,10 @@ Returns the RSI of the close prices.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsEmaPostRequest = _api_indicators_ema_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_ema_post_request_params(period: 123)) // ApiIndicatorsEmaPostRequest | 
+let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Relative Strength Index (RSI)
-BasicIndicatorsAPI.apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest) { (response, error) in
+BasicIndicatorsAPI.rsi(emaRequest: emaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -92,7 +92,7 @@ BasicIndicatorsAPI.apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest: apiIndicato
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 
@@ -109,9 +109,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIndicatorsSmaPost**
+# **sma**
 ```swift
-    open class func apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest: ApiIndicatorsSmaPostRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
+    open class func sma(smaRequest: SmaRequest, completion: @escaping (_ data: [Double]?, _ error: Error?) -> Void)
 ```
 
 Calculate Simple Moving Average (SMA)
@@ -123,10 +123,10 @@ Returns the SMA of the close prices.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let apiIndicatorsSmaPostRequest = _api_indicators_sma_post_request(data: CandleData(_open: [123], high: [123], low: [123], close: [123], volume: [123]), params: _api_indicators_sma_post_request_params(period: 123)) // ApiIndicatorsSmaPostRequest | 
+let smaRequest = sma_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: sma_request_params(period: 123)) // SmaRequest | 
 
 // Calculate Simple Moving Average (SMA)
-BasicIndicatorsAPI.apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest: apiIndicatorsSmaPostRequest) { (response, error) in
+BasicIndicatorsAPI.sma(smaRequest: smaRequest) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -142,7 +142,7 @@ BasicIndicatorsAPI.apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest: apiIndicato
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsSmaPostRequest** | [**ApiIndicatorsSmaPostRequest**](ApiIndicatorsSmaPostRequest.md) |  | 
+ **smaRequest** | [**SmaRequest**](SmaRequest.md) |  | 
 
 ### Return type
 

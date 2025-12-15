@@ -4,13 +4,13 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ApiIndicatorsEmaPost**](BasicIndicatorsApi.md#apiindicatorsemapost) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA) |
-| [**ApiIndicatorsRsiPost**](BasicIndicatorsApi.md#apiindicatorsrsipost) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI) |
-| [**ApiIndicatorsSmaPost**](BasicIndicatorsApi.md#apiindicatorssmapost) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA) |
+| [**Ema**](BasicIndicatorsApi.md#ema) | **POST** /api/indicators/ema | Calculate Exponential Moving Average (EMA) |
+| [**Rsi**](BasicIndicatorsApi.md#rsi) | **POST** /api/indicators/rsi | Calculate Relative Strength Index (RSI) |
+| [**Sma**](BasicIndicatorsApi.md#sma) | **POST** /api/indicators/sma | Calculate Simple Moving Average (SMA) |
 
-<a id="apiindicatorsemapost"></a>
-# **ApiIndicatorsEmaPost**
-> List&lt;decimal&gt; ApiIndicatorsEmaPost (ApiIndicatorsEmaPostRequest apiIndicatorsEmaPostRequest)
+<a id="ema"></a>
+# **Ema**
+> List&lt;decimal&gt; Ema (EmaRequest emaRequest)
 
 Calculate Exponential Moving Average (EMA)
 
@@ -21,7 +21,7 @@ Returns the EMA of the close prices.
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  |  |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md) |  |  |
 
 ### Return type
 
@@ -41,12 +41,15 @@ Returns the EMA of the close prices.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Array of EMA values |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="apiindicatorsrsipost"></a>
-# **ApiIndicatorsRsiPost**
-> List&lt;decimal&gt; ApiIndicatorsRsiPost (ApiIndicatorsEmaPostRequest apiIndicatorsEmaPostRequest)
+<a id="rsi"></a>
+# **Rsi**
+> List&lt;decimal&gt; Rsi (EmaRequest emaRequest)
 
 Calculate Relative Strength Index (RSI)
 
@@ -57,7 +60,7 @@ Returns the RSI of the close prices.
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  |  |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md) |  |  |
 
 ### Return type
 
@@ -77,12 +80,15 @@ Returns the RSI of the close prices.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Array of RSI values |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-<a id="apiindicatorssmapost"></a>
-# **ApiIndicatorsSmaPost**
-> List&lt;decimal&gt; ApiIndicatorsSmaPost (ApiIndicatorsSmaPostRequest apiIndicatorsSmaPostRequest)
+<a id="sma"></a>
+# **Sma**
+> List&lt;decimal&gt; Sma (SmaRequest smaRequest)
 
 Calculate Simple Moving Average (SMA)
 
@@ -93,7 +99,7 @@ Returns the SMA of the close prices.
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **apiIndicatorsSmaPostRequest** | [**ApiIndicatorsSmaPostRequest**](ApiIndicatorsSmaPostRequest.md) |  |  |
+| **smaRequest** | [**SmaRequest**](SmaRequest.md) |  |  |
 
 ### Return type
 
@@ -113,6 +119,9 @@ Returns the SMA of the close prices.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Array of SMA values |  -  |
+| **400** | Invalid parameters |  -  |
+| **401** | Missing or invalid API key |  -  |
+| **500** | Server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -5,14 +5,14 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**adx**](UltraIndicatorsApi.md#adx) | **POST** /api/indicators/adx | Calculate Average Directional Index (ADX) |
-| [**apiIndicatorsAtrPost**](UltraIndicatorsApi.md#apiIndicatorsAtrPost) | **POST** /api/indicators/atr | Calculate Average True Range (ATR) |
+| [**atr**](UltraIndicatorsApi.md#atr) | **POST** /api/indicators/atr | Calculate Average True Range (ATR) |
 | [**cci**](UltraIndicatorsApi.md#cci) | **POST** /api/indicators/cci | Calculate Commodity Channel Index (CCI) |
 | [**psar**](UltraIndicatorsApi.md#psar) | **POST** /api/indicators/psar | Calculate Parabolic SAR |
 
 
 <a id="adx"></a>
 # **adx**
-> kotlin.collections.List&lt;Adx200ResponseInner&gt; adx(apiIndicatorsEmaPostRequest)
+> kotlin.collections.List&lt;Adx200ResponseInner&gt; adx(emaRequest)
 
 Calculate Average Directional Index (ADX)
 
@@ -23,9 +23,9 @@ Calculate Average Directional Index (ADX)
 //import tickcatcher.models.*
 
 val apiInstance = UltraIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<Adx200ResponseInner> = apiInstance.adx(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<Adx200ResponseInner> = apiInstance.adx(emaRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling UltraIndicatorsApi#adx")
@@ -39,7 +39,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 
@@ -57,9 +57,9 @@ Configure rapidapiKey:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="apiIndicatorsAtrPost"></a>
-# **apiIndicatorsAtrPost**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest)
+<a id="atr"></a>
+# **atr**
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; atr(emaRequest)
 
 Calculate Average True Range (ATR)
 
@@ -70,15 +70,15 @@ Calculate Average True Range (ATR)
 //import tickcatcher.models.*
 
 val apiInstance = UltraIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.atr(emaRequest)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling UltraIndicatorsApi#apiIndicatorsAtrPost")
+    println("4xx response calling UltraIndicatorsApi#atr")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling UltraIndicatorsApi#apiIndicatorsAtrPost")
+    println("5xx response calling UltraIndicatorsApi#atr")
     e.printStackTrace()
 }
 ```
@@ -86,7 +86,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 
@@ -106,7 +106,7 @@ Configure rapidapiKey:
 
 <a id="cci"></a>
 # **cci**
-> kotlin.collections.List&lt;java.math.BigDecimal&gt; cci(apiIndicatorsEmaPostRequest)
+> kotlin.collections.List&lt;java.math.BigDecimal&gt; cci(emaRequest)
 
 Calculate Commodity Channel Index (CCI)
 
@@ -117,9 +117,9 @@ Calculate Commodity Channel Index (CCI)
 //import tickcatcher.models.*
 
 val apiInstance = UltraIndicatorsApi()
-val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
+val emaRequest : EmaRequest =  // EmaRequest | 
 try {
-    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.cci(apiIndicatorsEmaPostRequest)
+    val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.cci(emaRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling UltraIndicatorsApi#cci")
@@ -133,7 +133,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md)|  | |
+| **emaRequest** | [**EmaRequest**](EmaRequest.md)|  | |
 
 ### Return type
 

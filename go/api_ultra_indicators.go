@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.0
+API version: 1.1.1
 Contact: yagiz@iskirik.com
 */
 
@@ -26,11 +26,11 @@ type UltraIndicatorsAPIService service
 type ApiAdxRequest struct {
 	ctx context.Context
 	ApiService *UltraIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiAdxRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiAdxRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiAdxRequest) EmaRequest(emaRequest EmaRequest) ApiAdxRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
@@ -71,8 +71,8 @@ func (a *UltraIndicatorsAPIService) AdxExecute(r ApiAdxRequest) ([]Adx200Respons
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -93,7 +93,7 @@ func (a *UltraIndicatorsAPIService) AdxExecute(r ApiAdxRequest) ([]Adx200Respons
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -145,29 +145,29 @@ func (a *UltraIndicatorsAPIService) AdxExecute(r ApiAdxRequest) ([]Adx200Respons
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiApiIndicatorsAtrPostRequest struct {
+type ApiAtrRequest struct {
 	ctx context.Context
 	ApiService *UltraIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiApiIndicatorsAtrPostRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiApiIndicatorsAtrPostRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiAtrRequest) EmaRequest(emaRequest EmaRequest) ApiAtrRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
-func (r ApiApiIndicatorsAtrPostRequest) Execute() ([]float32, *http.Response, error) {
-	return r.ApiService.ApiIndicatorsAtrPostExecute(r)
+func (r ApiAtrRequest) Execute() ([]float32, *http.Response, error) {
+	return r.ApiService.AtrExecute(r)
 }
 
 /*
-ApiIndicatorsAtrPost Calculate Average True Range (ATR)
+Atr Calculate Average True Range (ATR)
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiApiIndicatorsAtrPostRequest
+ @return ApiAtrRequest
 */
-func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPost(ctx context.Context) ApiApiIndicatorsAtrPostRequest {
-	return ApiApiIndicatorsAtrPostRequest{
+func (a *UltraIndicatorsAPIService) Atr(ctx context.Context) ApiAtrRequest {
+	return ApiAtrRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -175,7 +175,7 @@ func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPost(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return []float32
-func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPostExecute(r ApiApiIndicatorsAtrPostRequest) ([]float32, *http.Response, error) {
+func (a *UltraIndicatorsAPIService) AtrExecute(r ApiAtrRequest) ([]float32, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -183,7 +183,7 @@ func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPostExecute(r ApiApiIndicato
 		localVarReturnValue  []float32
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UltraIndicatorsAPIService.ApiIndicatorsAtrPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UltraIndicatorsAPIService.Atr")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -193,8 +193,8 @@ func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPostExecute(r ApiApiIndicato
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -215,7 +215,7 @@ func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPostExecute(r ApiApiIndicato
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -270,11 +270,11 @@ func (a *UltraIndicatorsAPIService) ApiIndicatorsAtrPostExecute(r ApiApiIndicato
 type ApiCciRequest struct {
 	ctx context.Context
 	ApiService *UltraIndicatorsAPIService
-	apiIndicatorsEmaPostRequest *ApiIndicatorsEmaPostRequest
+	emaRequest *EmaRequest
 }
 
-func (r ApiCciRequest) ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest ApiIndicatorsEmaPostRequest) ApiCciRequest {
-	r.apiIndicatorsEmaPostRequest = &apiIndicatorsEmaPostRequest
+func (r ApiCciRequest) EmaRequest(emaRequest EmaRequest) ApiCciRequest {
+	r.emaRequest = &emaRequest
 	return r
 }
 
@@ -315,8 +315,8 @@ func (a *UltraIndicatorsAPIService) CciExecute(r ApiCciRequest) ([]float32, *htt
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.apiIndicatorsEmaPostRequest == nil {
-		return localVarReturnValue, nil, reportError("apiIndicatorsEmaPostRequest is required and must be specified")
+	if r.emaRequest == nil {
+		return localVarReturnValue, nil, reportError("emaRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -337,7 +337,7 @@ func (a *UltraIndicatorsAPIService) CciExecute(r ApiCciRequest) ([]float32, *htt
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.apiIndicatorsEmaPostRequest
+	localVarPostBody = r.emaRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

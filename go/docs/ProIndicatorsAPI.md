@@ -4,16 +4,16 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiIndicatorsBbandsPost**](ProIndicatorsAPI.md#ApiIndicatorsBbandsPost) | **Post** /api/indicators/bbands | Calculate Bollinger Bands
-[**ApiIndicatorsMacdPost**](ProIndicatorsAPI.md#ApiIndicatorsMacdPost) | **Post** /api/indicators/macd | Calculate MACD
-[**ApiIndicatorsStochPost**](ProIndicatorsAPI.md#ApiIndicatorsStochPost) | **Post** /api/indicators/stoch | Calculate Stochastic Oscillator
-[**ApiIndicatorsVolumemaPost**](ProIndicatorsAPI.md#ApiIndicatorsVolumemaPost) | **Post** /api/indicators/volumema | Calculate Volume MA
+[**Bbands**](ProIndicatorsAPI.md#Bbands) | **Post** /api/indicators/bbands | Calculate Bollinger Bands
+[**Macd**](ProIndicatorsAPI.md#Macd) | **Post** /api/indicators/macd | Calculate MACD
+[**Stoch**](ProIndicatorsAPI.md#Stoch) | **Post** /api/indicators/stoch | Calculate Stochastic Oscillator
+[**Volumema**](ProIndicatorsAPI.md#Volumema) | **Post** /api/indicators/volumema | Calculate Volume MA
 
 
 
-## ApiIndicatorsBbandsPost
+## Bbands
 
-> []ApiIndicatorsBbandsPost200ResponseInner ApiIndicatorsBbandsPost(ctx).ApiIndicatorsBbandsPostRequest(apiIndicatorsBbandsPostRequest).Execute()
+> []Bbands200ResponseInner Bbands(ctx).BbandsRequest(bbandsRequest).Execute()
 
 Calculate Bollinger Bands
 
@@ -32,17 +32,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsBbandsPostRequest := *openapiclient.NewApiIndicatorsBbandsPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsBbandsPostRequest | 
+	bbandsRequest := *openapiclient.NewBbandsRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // BbandsRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProIndicatorsAPI.ApiIndicatorsBbandsPost(context.Background()).ApiIndicatorsBbandsPostRequest(apiIndicatorsBbandsPostRequest).Execute()
+	resp, r, err := apiClient.ProIndicatorsAPI.Bbands(context.Background()).BbandsRequest(bbandsRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.ApiIndicatorsBbandsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.Bbands``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsBbandsPost`: []ApiIndicatorsBbandsPost200ResponseInner
-	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.ApiIndicatorsBbandsPost`: %v\n", resp)
+	// response from `Bbands`: []Bbands200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.Bbands`: %v\n", resp)
 }
 ```
 
@@ -52,16 +52,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsBbandsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBbandsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsBbandsPostRequest** | [**ApiIndicatorsBbandsPostRequest**](ApiIndicatorsBbandsPostRequest.md) |  | 
+ **bbandsRequest** | [**BbandsRequest**](BbandsRequest.md) |  | 
 
 ### Return type
 
-[**[]ApiIndicatorsBbandsPost200ResponseInner**](ApiIndicatorsBbandsPost200ResponseInner.md)
+[**[]Bbands200ResponseInner**](Bbands200ResponseInner.md)
 
 ### Authorization
 
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApiIndicatorsMacdPost
+## Macd
 
-> []ApiIndicatorsMacdPost200ResponseInner ApiIndicatorsMacdPost(ctx).ApiIndicatorsMacdPostRequest(apiIndicatorsMacdPostRequest).Execute()
+> []Macd200ResponseInner Macd(ctx).MacdRequest(macdRequest).Execute()
 
 Calculate MACD
 
@@ -98,17 +98,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsMacdPostRequest := *openapiclient.NewApiIndicatorsMacdPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsMacdPostRequest | 
+	macdRequest := *openapiclient.NewMacdRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // MacdRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProIndicatorsAPI.ApiIndicatorsMacdPost(context.Background()).ApiIndicatorsMacdPostRequest(apiIndicatorsMacdPostRequest).Execute()
+	resp, r, err := apiClient.ProIndicatorsAPI.Macd(context.Background()).MacdRequest(macdRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.ApiIndicatorsMacdPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.Macd``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsMacdPost`: []ApiIndicatorsMacdPost200ResponseInner
-	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.ApiIndicatorsMacdPost`: %v\n", resp)
+	// response from `Macd`: []Macd200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.Macd`: %v\n", resp)
 }
 ```
 
@@ -118,16 +118,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsMacdPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMacdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsMacdPostRequest** | [**ApiIndicatorsMacdPostRequest**](ApiIndicatorsMacdPostRequest.md) |  | 
+ **macdRequest** | [**MacdRequest**](MacdRequest.md) |  | 
 
 ### Return type
 
-[**[]ApiIndicatorsMacdPost200ResponseInner**](ApiIndicatorsMacdPost200ResponseInner.md)
+[**[]Macd200ResponseInner**](Macd200ResponseInner.md)
 
 ### Authorization
 
@@ -143,9 +143,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApiIndicatorsStochPost
+## Stoch
 
-> []ApiIndicatorsStochPost200ResponseInner ApiIndicatorsStochPost(ctx).ApiIndicatorsStochPostRequest(apiIndicatorsStochPostRequest).Execute()
+> []Stoch200ResponseInner Stoch(ctx).StochRequest(stochRequest).Execute()
 
 Calculate Stochastic Oscillator
 
@@ -164,17 +164,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsStochPostRequest := *openapiclient.NewApiIndicatorsStochPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsStochPostRequest | 
+	stochRequest := *openapiclient.NewStochRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // StochRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProIndicatorsAPI.ApiIndicatorsStochPost(context.Background()).ApiIndicatorsStochPostRequest(apiIndicatorsStochPostRequest).Execute()
+	resp, r, err := apiClient.ProIndicatorsAPI.Stoch(context.Background()).StochRequest(stochRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.ApiIndicatorsStochPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.Stoch``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsStochPost`: []ApiIndicatorsStochPost200ResponseInner
-	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.ApiIndicatorsStochPost`: %v\n", resp)
+	// response from `Stoch`: []Stoch200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.Stoch`: %v\n", resp)
 }
 ```
 
@@ -184,16 +184,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsStochPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiStochRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsStochPostRequest** | [**ApiIndicatorsStochPostRequest**](ApiIndicatorsStochPostRequest.md) |  | 
+ **stochRequest** | [**StochRequest**](StochRequest.md) |  | 
 
 ### Return type
 
-[**[]ApiIndicatorsStochPost200ResponseInner**](ApiIndicatorsStochPost200ResponseInner.md)
+[**[]Stoch200ResponseInner**](Stoch200ResponseInner.md)
 
 ### Authorization
 
@@ -209,9 +209,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ApiIndicatorsVolumemaPost
+## Volumema
 
-> []float32 ApiIndicatorsVolumemaPost(ctx).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+> []float32 Volumema(ctx).EmaRequest(emaRequest).Execute()
 
 Calculate Volume MA
 
@@ -230,17 +230,17 @@ import (
 )
 
 func main() {
-	apiIndicatorsEmaPostRequest := *openapiclient.NewApiIndicatorsEmaPostRequest(*openapiclient.NewCandleData([]float32{float32(123)})) // ApiIndicatorsEmaPostRequest | 
+	emaRequest := *openapiclient.NewEmaRequest([]openapiclient.Candle{*openapiclient.NewCandle()}) // EmaRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ProIndicatorsAPI.ApiIndicatorsVolumemaPost(context.Background()).ApiIndicatorsEmaPostRequest(apiIndicatorsEmaPostRequest).Execute()
+	resp, r, err := apiClient.ProIndicatorsAPI.Volumema(context.Background()).EmaRequest(emaRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.ApiIndicatorsVolumemaPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ProIndicatorsAPI.Volumema``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApiIndicatorsVolumemaPost`: []float32
-	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.ApiIndicatorsVolumemaPost`: %v\n", resp)
+	// response from `Volumema`: []float32
+	fmt.Fprintf(os.Stdout, "Response from `ProIndicatorsAPI.Volumema`: %v\n", resp)
 }
 ```
 
@@ -250,12 +250,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApiIndicatorsVolumemaPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiVolumemaRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiIndicatorsEmaPostRequest** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | 
+ **emaRequest** | [**EmaRequest**](EmaRequest.md) |  | 
 
 ### Return type
 

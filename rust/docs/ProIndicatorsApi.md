@@ -4,16 +4,16 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_indicators_bbands_post**](ProIndicatorsApi.md#api_indicators_bbands_post) | **POST** /api/indicators/bbands | Calculate Bollinger Bands
-[**api_indicators_macd_post**](ProIndicatorsApi.md#api_indicators_macd_post) | **POST** /api/indicators/macd | Calculate MACD
-[**api_indicators_stoch_post**](ProIndicatorsApi.md#api_indicators_stoch_post) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator
-[**api_indicators_volumema_post**](ProIndicatorsApi.md#api_indicators_volumema_post) | **POST** /api/indicators/volumema | Calculate Volume MA
+[**bbands**](ProIndicatorsApi.md#bbands) | **POST** /api/indicators/bbands | Calculate Bollinger Bands
+[**macd**](ProIndicatorsApi.md#macd) | **POST** /api/indicators/macd | Calculate MACD
+[**stoch**](ProIndicatorsApi.md#stoch) | **POST** /api/indicators/stoch | Calculate Stochastic Oscillator
+[**volumema**](ProIndicatorsApi.md#volumema) | **POST** /api/indicators/volumema | Calculate Volume MA
 
 
 
-## api_indicators_bbands_post
+## bbands
 
-> Vec<models::ApiIndicatorsBbandsPost200ResponseInner> api_indicators_bbands_post(api_indicators_bbands_post_request)
+> Vec<models::Bbands200ResponseInner> bbands(bbands_request)
 Calculate Bollinger Bands
 
 Returns Upper, Middle, and Lower bands.
@@ -23,11 +23,11 @@ Returns Upper, Middle, and Lower bands.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_bbands_post_request** | [**ApiIndicatorsBbandsPostRequest**](ApiIndicatorsBbandsPostRequest.md) |  | [required] |
+**bbands_request** | [**BbandsRequest**](BbandsRequest.md) |  | [required] |
 
 ### Return type
 
-[**Vec<models::ApiIndicatorsBbandsPost200ResponseInner>**](_api_indicators_bbands_post_200_response_inner.md)
+[**Vec<models::Bbands200ResponseInner>**](bbands_200_response_inner.md)
 
 ### Authorization
 
@@ -41,9 +41,9 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## api_indicators_macd_post
+## macd
 
-> Vec<models::ApiIndicatorsMacdPost200ResponseInner> api_indicators_macd_post(api_indicators_macd_post_request)
+> Vec<models::Macd200ResponseInner> macd(macd_request)
 Calculate MACD
 
 Returns MACD, Signal, and Histogram.
@@ -53,11 +53,11 @@ Returns MACD, Signal, and Histogram.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_macd_post_request** | [**ApiIndicatorsMacdPostRequest**](ApiIndicatorsMacdPostRequest.md) |  | [required] |
+**macd_request** | [**MacdRequest**](MacdRequest.md) |  | [required] |
 
 ### Return type
 
-[**Vec<models::ApiIndicatorsMacdPost200ResponseInner>**](_api_indicators_macd_post_200_response_inner.md)
+[**Vec<models::Macd200ResponseInner>**](macd_200_response_inner.md)
 
 ### Authorization
 
@@ -71,9 +71,9 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## api_indicators_stoch_post
+## stoch
 
-> Vec<models::ApiIndicatorsStochPost200ResponseInner> api_indicators_stoch_post(api_indicators_stoch_post_request)
+> Vec<models::Stoch200ResponseInner> stoch(stoch_request)
 Calculate Stochastic Oscillator
 
 Returns %K and %D lines.
@@ -83,11 +83,11 @@ Returns %K and %D lines.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_stoch_post_request** | [**ApiIndicatorsStochPostRequest**](ApiIndicatorsStochPostRequest.md) |  | [required] |
+**stoch_request** | [**StochRequest**](StochRequest.md) |  | [required] |
 
 ### Return type
 
-[**Vec<models::ApiIndicatorsStochPost200ResponseInner>**](_api_indicators_stoch_post_200_response_inner.md)
+[**Vec<models::Stoch200ResponseInner>**](stoch_200_response_inner.md)
 
 ### Authorization
 
@@ -101,9 +101,9 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## api_indicators_volumema_post
+## volumema
 
-> Vec<f64> api_indicators_volumema_post(api_indicators_ema_post_request)
+> Vec<f64> volumema(ema_request)
 Calculate Volume MA
 
 Returns Simple Moving Average of Volume.
@@ -113,7 +113,7 @@ Returns Simple Moving Average of Volume.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**api_indicators_ema_post_request** | [**ApiIndicatorsEmaPostRequest**](ApiIndicatorsEmaPostRequest.md) |  | [required] |
+**ema_request** | [**EmaRequest**](EmaRequest.md) |  | [required] |
 
 ### Return type
 

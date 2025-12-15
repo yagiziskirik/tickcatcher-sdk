@@ -226,7 +226,7 @@ example().catch(console.error);
 
 ## williamsr
 
-> Array&lt;number&gt; williamsr(apiIndicatorsEmaPostRequest)
+> Array&lt;number&gt; williamsr(emaRequest)
 
 Calculate Williams %R
 
@@ -248,8 +248,8 @@ async function example() {
   const api = new MegaIndicatorsApi(config);
 
   const body = {
-    // ApiIndicatorsEmaPostRequest
-    apiIndicatorsEmaPostRequest: ...,
+    // EmaRequest
+    emaRequest: ...,
   } satisfies WilliamsrRequest;
 
   try {
@@ -269,7 +269,7 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **apiIndicatorsEmaPostRequest** | [ApiIndicatorsEmaPostRequest](ApiIndicatorsEmaPostRequest.md) |  | |
+| **emaRequest** | [EmaRequest](EmaRequest.md) |  | |
 
 ### Return type
 

@@ -15,13 +15,13 @@ open class ProIndicatorsAPI {
     /**
      Calculate Bollinger Bands
      
-     - parameter apiIndicatorsBbandsPostRequest: (body)  
+     - parameter bbandsRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest: ApiIndicatorsBbandsPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [ApiIndicatorsBbandsPost200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsBbandsPostWithRequestBuilder(apiIndicatorsBbandsPostRequest: apiIndicatorsBbandsPostRequest).execute(apiResponseQueue) { result in
+    open class func bbands(bbandsRequest: BbandsRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Bbands200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
+        return bbandsWithRequestBuilder(bbandsRequest: bbandsRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -38,13 +38,13 @@ open class ProIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsBbandsPostRequest: (body)  
-     - returns: RequestBuilder<[ApiIndicatorsBbandsPost200ResponseInner]> 
+     - parameter bbandsRequest: (body)  
+     - returns: RequestBuilder<[Bbands200ResponseInner]> 
      */
-    open class func apiIndicatorsBbandsPostWithRequestBuilder(apiIndicatorsBbandsPostRequest: ApiIndicatorsBbandsPostRequest) -> RequestBuilder<[ApiIndicatorsBbandsPost200ResponseInner]> {
+    open class func bbandsWithRequestBuilder(bbandsRequest: BbandsRequest) -> RequestBuilder<[Bbands200ResponseInner]> {
         let localVariablePath = "/api/indicators/bbands"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsBbandsPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: bbandsRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -54,7 +54,7 @@ open class ProIndicatorsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[ApiIndicatorsBbandsPost200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[Bbands200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -62,13 +62,13 @@ open class ProIndicatorsAPI {
     /**
      Calculate MACD
      
-     - parameter apiIndicatorsMacdPostRequest: (body)  
+     - parameter macdRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest: ApiIndicatorsMacdPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [ApiIndicatorsMacdPost200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsMacdPostWithRequestBuilder(apiIndicatorsMacdPostRequest: apiIndicatorsMacdPostRequest).execute(apiResponseQueue) { result in
+    open class func macd(macdRequest: MacdRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Macd200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
+        return macdWithRequestBuilder(macdRequest: macdRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -85,13 +85,13 @@ open class ProIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsMacdPostRequest: (body)  
-     - returns: RequestBuilder<[ApiIndicatorsMacdPost200ResponseInner]> 
+     - parameter macdRequest: (body)  
+     - returns: RequestBuilder<[Macd200ResponseInner]> 
      */
-    open class func apiIndicatorsMacdPostWithRequestBuilder(apiIndicatorsMacdPostRequest: ApiIndicatorsMacdPostRequest) -> RequestBuilder<[ApiIndicatorsMacdPost200ResponseInner]> {
+    open class func macdWithRequestBuilder(macdRequest: MacdRequest) -> RequestBuilder<[Macd200ResponseInner]> {
         let localVariablePath = "/api/indicators/macd"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsMacdPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: macdRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -101,7 +101,7 @@ open class ProIndicatorsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[ApiIndicatorsMacdPost200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[Macd200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -109,13 +109,13 @@ open class ProIndicatorsAPI {
     /**
      Calculate Stochastic Oscillator
      
-     - parameter apiIndicatorsStochPostRequest: (body)  
+     - parameter stochRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsStochPost(apiIndicatorsStochPostRequest: ApiIndicatorsStochPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [ApiIndicatorsStochPost200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsStochPostWithRequestBuilder(apiIndicatorsStochPostRequest: apiIndicatorsStochPostRequest).execute(apiResponseQueue) { result in
+    open class func stoch(stochRequest: StochRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Stoch200ResponseInner]?, _ error: Error?) -> Void)) -> RequestTask {
+        return stochWithRequestBuilder(stochRequest: stochRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -132,13 +132,13 @@ open class ProIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsStochPostRequest: (body)  
-     - returns: RequestBuilder<[ApiIndicatorsStochPost200ResponseInner]> 
+     - parameter stochRequest: (body)  
+     - returns: RequestBuilder<[Stoch200ResponseInner]> 
      */
-    open class func apiIndicatorsStochPostWithRequestBuilder(apiIndicatorsStochPostRequest: ApiIndicatorsStochPostRequest) -> RequestBuilder<[ApiIndicatorsStochPost200ResponseInner]> {
+    open class func stochWithRequestBuilder(stochRequest: StochRequest) -> RequestBuilder<[Stoch200ResponseInner]> {
         let localVariablePath = "/api/indicators/stoch"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsStochPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: stochRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -148,7 +148,7 @@ open class ProIndicatorsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<[ApiIndicatorsStochPost200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[Stoch200ResponseInner]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }
@@ -156,13 +156,13 @@ open class ProIndicatorsAPI {
     /**
      Calculate Volume MA
      
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
-        return apiIndicatorsVolumemaPostWithRequestBuilder(apiIndicatorsEmaPostRequest: apiIndicatorsEmaPostRequest).execute(apiResponseQueue) { result in
+    open class func volumema(emaRequest: EmaRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Double]?, _ error: Error?) -> Void)) -> RequestTask {
+        return volumemaWithRequestBuilder(emaRequest: emaRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -179,13 +179,13 @@ open class ProIndicatorsAPI {
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
-     - parameter apiIndicatorsEmaPostRequest: (body)  
+     - parameter emaRequest: (body)  
      - returns: RequestBuilder<[Double]> 
      */
-    open class func apiIndicatorsVolumemaPostWithRequestBuilder(apiIndicatorsEmaPostRequest: ApiIndicatorsEmaPostRequest) -> RequestBuilder<[Double]> {
+    open class func volumemaWithRequestBuilder(emaRequest: EmaRequest) -> RequestBuilder<[Double]> {
         let localVariablePath = "/api/indicators/volumema"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: apiIndicatorsEmaPostRequest)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: emaRequest)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
