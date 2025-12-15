@@ -583,6 +583,7 @@ paths:
                       type: integer
                       default: 14
                       description: The period for calculating SMA.
+      operationId: sma
       responses:
         '200':
           description: Array of SMA values
@@ -592,6 +593,12 @@ paths:
                 type: array
                 items:
                   type: number
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
 
   /api/indicators/ema:
     post:
@@ -614,6 +621,7 @@ paths:
                     period:
                       type: integer
                       default: 14
+      operationId: ema
       responses:
         '200':
           description: Array of EMA values
@@ -623,6 +631,12 @@ paths:
                 type: array
                 items:
                   type: number
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
 
   /api/indicators/rsi:
     post:
@@ -645,6 +659,7 @@ paths:
                     period:
                       type: integer
                       default: 14
+      operationId: rsi
       responses:
         '200':
           description: Array of RSI values
@@ -654,6 +669,12 @@ paths:
                 type: array
                 items:
                   type: number
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
 
   /api/indicators/macd:
     post:
@@ -682,6 +703,7 @@ paths:
                     signalPeriod:
                       type: integer
                       default: 9
+      operationId: macd
       responses:
         '200':
           description: MACD result
@@ -698,6 +720,12 @@ paths:
                       type: number
                     histogram:
                       type: number
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
 
   /api/indicators/stoch:
     post:
@@ -723,6 +751,7 @@ paths:
                     signalPeriod:
                       type: integer
                       default: 3
+      operationId: stoch
       responses:
         '200':
           description: Stochastic result
@@ -737,6 +766,12 @@ paths:
                       type: number
                     stochD:
                       type: number
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
 
   /api/indicators/bbands:
     post:
@@ -762,6 +797,7 @@ paths:
                     stdDev:
                       type: number
                       default: 2
+      operationId: bbands
       responses:
         '200':
           description: Bollinger Bands result
@@ -778,10 +814,17 @@ paths:
                       type: number
                     lower:
                       type: number
+        "400":
+          description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
+        "500":
+          description: Server error
 
   /api/indicators/volumema:
     post:
       summary: Calculate Volume MA
+      operationId: volumema
       description: Returns Simple Moving Average of Volume.
       tags: [Pro Indicators]
       requestBody:
@@ -817,6 +860,7 @@ paths:
   /api/indicators/atr:
     post:
       summary: Calculate Average True Range (ATR)
+      operationId: atr
       tags: [Ultra Indicators]
       requestBody:
         required: true
@@ -1285,5 +1329,7 @@ paths:
                       type: [number, "null"]
         "400":
           description: Invalid parameters
+        "401":
+          description: Missing or invalid API key
         "500":
           description: Server error
