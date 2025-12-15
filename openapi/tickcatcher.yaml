@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Tickcatcher API
-  version: 1.1.0
+  version: 1.1.1
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -183,30 +183,9 @@ components:
           type: [string, "null"]
 
     CandleData:
-      type: object
-      properties:
-        open:
-          type: array
-          items:
-            type: number
-        high:
-          type: array
-          items:
-            type: number
-        low:
-          type: array
-          items:
-            type: number
-        close:
-          type: array
-          items:
-            type: number
-        volume:
-          type: array
-          items:
-            type: number
-      required:
-        - close
+      type: array
+      items:
+        $ref: "#/components/schemas/Candle"
 
 security:
   - rapidapiKey: []
