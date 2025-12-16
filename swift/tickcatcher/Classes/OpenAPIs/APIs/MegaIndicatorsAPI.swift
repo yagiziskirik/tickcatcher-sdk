@@ -20,7 +20,7 @@ open class MegaIndicatorsAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func heikenashi(heikenashiRequest: HeikenashiRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: Heikenashi200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func heikenashi(heikenashiRequest: HeikenashiRequest, apiResponseQueue: DispatchQueue = tickcatcherAPI.apiResponseQueue, completion: @escaping ((_ data: [Candle]?, _ error: Error?) -> Void)) -> RequestTask {
         return heikenashiWithRequestBuilder(heikenashiRequest: heikenashiRequest).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -38,9 +38,9 @@ open class MegaIndicatorsAPI {
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter heikenashiRequest: (body)  
-     - returns: RequestBuilder<Heikenashi200Response> 
+     - returns: RequestBuilder<[Candle]> 
      */
-    open class func heikenashiWithRequestBuilder(heikenashiRequest: HeikenashiRequest) -> RequestBuilder<Heikenashi200Response> {
+    open class func heikenashiWithRequestBuilder(heikenashiRequest: HeikenashiRequest) -> RequestBuilder<[Candle]> {
         let localVariablePath = "/api/indicators/heikenashi"
         let localVariableURLString = tickcatcherAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: heikenashiRequest)
@@ -53,7 +53,7 @@ open class MegaIndicatorsAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<Heikenashi200Response>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<[Candle]>.Type = tickcatcherAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: true)
     }

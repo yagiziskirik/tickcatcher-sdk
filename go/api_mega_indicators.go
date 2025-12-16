@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.1
+API version: 1.1.2
 Contact: yagiz@iskirik.com
 */
 
@@ -34,7 +34,7 @@ func (r ApiHeikenashiRequest) HeikenashiRequest(heikenashiRequest HeikenashiRequ
 	return r
 }
 
-func (r ApiHeikenashiRequest) Execute() (*Heikenashi200Response, *http.Response, error) {
+func (r ApiHeikenashiRequest) Execute() ([]Candle, *http.Response, error) {
 	return r.ApiService.HeikenashiExecute(r)
 }
 
@@ -52,13 +52,13 @@ func (a *MegaIndicatorsAPIService) Heikenashi(ctx context.Context) ApiHeikenashi
 }
 
 // Execute executes the request
-//  @return Heikenashi200Response
-func (a *MegaIndicatorsAPIService) HeikenashiExecute(r ApiHeikenashiRequest) (*Heikenashi200Response, *http.Response, error) {
+//  @return []Candle
+func (a *MegaIndicatorsAPIService) HeikenashiExecute(r ApiHeikenashiRequest) ([]Candle, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Heikenashi200Response
+		localVarReturnValue  []Candle
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MegaIndicatorsAPIService.Heikenashi")

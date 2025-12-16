@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **heikenashi**
-> Heikenashi200Response heikenashi(heikenashi_request)
+> List[Candle] heikenashi(heikenashi_request)
 
 Calculate Heiken Ashi
 
@@ -21,7 +21,7 @@ Calculate Heiken Ashi
 
 ```python
 import tickcatcher
-from tickcatcher.models.heikenashi200_response import Heikenashi200Response
+from tickcatcher.models.candle import Candle
 from tickcatcher.models.heikenashi_request import HeikenashiRequest
 from tickcatcher.rest import ApiException
 from pprint import pprint
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Heikenashi200Response**](Heikenashi200Response.md)
+[**List[Candle]**](Candle.md)
 
 ### Authorization
 

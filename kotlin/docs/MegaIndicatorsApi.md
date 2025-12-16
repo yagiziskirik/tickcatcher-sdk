@@ -12,7 +12,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 <a id="heikenashi"></a>
 # **heikenashi**
-> Heikenashi200Response heikenashi(heikenashiRequest)
+> kotlin.collections.List&lt;Candle&gt; heikenashi(heikenashiRequest)
 
 Calculate Heiken Ashi
 
@@ -25,7 +25,7 @@ Calculate Heiken Ashi
 val apiInstance = MegaIndicatorsApi()
 val heikenashiRequest : HeikenashiRequest =  // HeikenashiRequest | 
 try {
-    val result : Heikenashi200Response = apiInstance.heikenashi(heikenashiRequest)
+    val result : kotlin.collections.List<Candle> = apiInstance.heikenashi(heikenashiRequest)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MegaIndicatorsApi#heikenashi")
@@ -43,7 +43,7 @@ try {
 
 ### Return type
 
-[**Heikenashi200Response**](Heikenashi200Response.md)
+[**kotlin.collections.List&lt;Candle&gt;**](Candle.md)
 
 ### Authorization
 

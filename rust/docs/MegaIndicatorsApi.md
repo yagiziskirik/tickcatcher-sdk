@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## heikenashi
 
-> models::Heikenashi200Response heikenashi(heikenashi_request)
+> Vec<models::Candle> heikenashi(heikenashi_request)
 Calculate Heiken Ashi
 
 ### Parameters
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::Heikenashi200Response**](heikenashi_200_response.md)
+[**Vec<models::Candle>**](Candle.md)
 
 ### Authorization
 

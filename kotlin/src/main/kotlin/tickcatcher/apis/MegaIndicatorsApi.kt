@@ -19,8 +19,8 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
+import tickcatcher.models.Candle
 import tickcatcher.models.EmaRequest
-import tickcatcher.models.Heikenashi200Response
 import tickcatcher.models.HeikenashiRequest
 import tickcatcher.models.Ichimoku200ResponseInner
 import tickcatcher.models.IchimokuRequest
@@ -56,7 +56,7 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * Calculate Heiken Ashi
      * 
      * @param heikenashiRequest 
-     * @return Heikenashi200Response
+     * @return kotlin.collections.List<Candle>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -65,11 +65,11 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun heikenashi(heikenashiRequest: HeikenashiRequest) : Heikenashi200Response {
+    fun heikenashi(heikenashiRequest: HeikenashiRequest) : kotlin.collections.List<Candle> {
         val localVarResponse = heikenashiWithHttpInfo(heikenashiRequest = heikenashiRequest)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as Heikenashi200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Candle>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -88,16 +88,16 @@ class MegaIndicatorsApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * Calculate Heiken Ashi
      * 
      * @param heikenashiRequest 
-     * @return ApiResponse<Heikenashi200Response?>
+     * @return ApiResponse<kotlin.collections.List<Candle>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun heikenashiWithHttpInfo(heikenashiRequest: HeikenashiRequest) : ApiResponse<Heikenashi200Response?> {
+    fun heikenashiWithHttpInfo(heikenashiRequest: HeikenashiRequest) : ApiResponse<kotlin.collections.List<Candle>?> {
         val localVariableConfig = heikenashiRequestConfig(heikenashiRequest = heikenashiRequest)
 
-        return request<HeikenashiRequest, Heikenashi200Response>(
+        return request<HeikenashiRequest, kotlin.collections.List<Candle>>(
             localVariableConfig
         )
     }

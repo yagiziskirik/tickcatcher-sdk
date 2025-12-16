@@ -8,7 +8,6 @@ export * from './CalendarEvent';
 export * from './Candle';
 export * from './EmaRequest';
 export * from './EmaRequestParams';
-export * from './Heikenashi200Response';
 export * from './HeikenashiRequest';
 export * from './Ichimoku200ResponseInner';
 export * from './IchimokuRequest';

@@ -7,7 +7,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.1.1
+  version: 1.1.2
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
@@ -883,7 +883,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/heikenashi_200_response"
+                items:
+                  $ref: "#/components/schemas/Candle"
+                type: array
           description: Heiken Ashi candles
         "400":
           description: Invalid parameters
@@ -1474,37 +1476,6 @@ components:
           type: array
       required:
       - data
-    heikenashi_200_response:
-      example:
-        high:
-        - 6.027456183070403
-        - 6.027456183070403
-        low:
-        - 1.4658129805029452
-        - 1.4658129805029452
-        close:
-        - 5.962133916683182
-        - 5.962133916683182
-        open:
-        - 0.8008281904610115
-        - 0.8008281904610115
-      properties:
-        open:
-          items:
-            type: number
-          type: array
-        high:
-          items:
-            type: number
-          type: array
-        low:
-          items:
-            type: number
-          type: array
-        close:
-          items:
-            type: number
-          type: array
     keltner_request_params:
       properties:
         period:

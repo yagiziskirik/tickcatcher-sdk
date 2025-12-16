@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## Heikenashi
 
-> Heikenashi200Response Heikenashi(ctx).HeikenashiRequest(heikenashiRequest).Execute()
+> []Candle Heikenashi(ctx).HeikenashiRequest(heikenashiRequest).Execute()
 
 Calculate Heiken Ashi
 
@@ -39,7 +39,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `MegaIndicatorsAPI.Heikenashi``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Heikenashi`: Heikenashi200Response
+	// response from `Heikenashi`: []Candle
 	fmt.Fprintf(os.Stdout, "Response from `MegaIndicatorsAPI.Heikenashi`: %v\n", resp)
 }
 ```
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Heikenashi200Response**](Heikenashi200Response.md)
+[**[]Candle**](Candle.md)
 
 ### Authorization
 

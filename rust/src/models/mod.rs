@@ -14,8 +14,6 @@ pub mod ema_request;
 pub use self::ema_request::EmaRequest;
 pub mod ema_request_params;
 pub use self::ema_request_params::EmaRequestParams;
-pub mod heikenashi_200_response;
-pub use self::heikenashi_200_response::Heikenashi200Response;
 pub mod heikenashi_request;
 pub use self::heikenashi_request::HeikenashiRequest;
 pub mod ichimoku_200_response_inner;

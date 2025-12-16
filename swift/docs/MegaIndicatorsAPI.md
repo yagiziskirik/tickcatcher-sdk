@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **heikenashi**
 ```swift
-    open class func heikenashi(heikenashiRequest: HeikenashiRequest, completion: @escaping (_ data: Heikenashi200Response?, _ error: Error?) -> Void)
+    open class func heikenashi(heikenashiRequest: HeikenashiRequest, completion: @escaping (_ data: [Candle]?, _ error: Error?) -> Void)
 ```
 
 Calculate Heiken Ashi
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Heikenashi200Response**](Heikenashi200Response.md)
+[**[Candle]**](Candle.md)
 
 ### Authorization
 

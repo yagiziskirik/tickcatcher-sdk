@@ -11,7 +11,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 <a id="heikenashi"></a>
 # **Heikenashi**
-> Heikenashi200Response Heikenashi (HeikenashiRequest heikenashiRequest)
+> List&lt;Candle&gt; Heikenashi (HeikenashiRequest heikenashiRequest)
 
 Calculate Heiken Ashi
 
@@ -24,7 +24,7 @@ Calculate Heiken Ashi
 
 ### Return type
 
-[**Heikenashi200Response**](Heikenashi200Response.md)
+[**List&lt;Candle&gt;**](Candle.md)
 
 ### Authorization
 

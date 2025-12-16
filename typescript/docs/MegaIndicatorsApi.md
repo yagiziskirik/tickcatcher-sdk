@@ -13,7 +13,7 @@ All URIs are relative to *https://tickcatcher.p.rapidapi.com*
 
 ## heikenashi
 
-> Heikenashi200Response heikenashi(heikenashiRequest)
+> Array&lt;Candle&gt; heikenashi(heikenashiRequest)
 
 Calculate Heiken Ashi
 
@@ -60,7 +60,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**Heikenashi200Response**](Heikenashi200Response.md)
+[**Array&lt;Candle&gt;**](Candle.md)
 
 ### Authorization
 
