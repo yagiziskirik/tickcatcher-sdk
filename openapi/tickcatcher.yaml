@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Tickcatcher API
-  version: 1.1.1
+  version: 1.1.2
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -1161,24 +1161,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  open:
-                    type: array
-                    items:
-                       type: number
-                  high:
-                    type: array
-                    items:
-                       type: number
-                  low:
-                    type: array
-                    items:
-                       type: number
-                  close:
-                    type: array
-                    items:
-                       type: number
+                type: array
+                items:
+                  $ref: "#/components/schemas/Candle"
         "400":
           description: Invalid parameters
         "500":
