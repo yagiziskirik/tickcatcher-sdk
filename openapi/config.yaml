@@ -1,7 +1,7 @@
 # Project metadata
 projectName: tickcatcher
 packageName: tickcatcher
-packageVersion: 1.1.4
+packageVersion: 1.1.5
 packageDescription: "Tickcatcher SDK — Unified access to Tickcatcher API"
 packageUrl: "https://github.com/yagiziskirik/tickcatcher-sdk"
 infoEmail: "yagiz@iskirik.com"
@@ -15,13 +15,13 @@ gitRepoId: tickcatcher-sdk
 # Shared generator properties
 additionalProperties:
   npmName: tickcatcher
-  npmVersion: 1.1.4
+  npmVersion: 1.1.5
   packageName: tickcatcher
   supportsES6: true
   hideGenerationTimestamp: true
   artifactId: tickcatcher
   groupId: com.tickcatcher
-  artifactVersion: 1.1.4
+  artifactVersion: 1.1.5
   projectName: tickcatcher
 
   # Swift-specific metadata

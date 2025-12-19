@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Tickcatcher API
-  version: 1.1.4
+  version: 1.1.5
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -177,7 +177,7 @@ components:
           type: number
           description: A number of importance, can be -1, 0 or 1.
         ts:
-          type: number
+          type: string
           description: Unix timestamp (ms)
         scale:
           type: [string, "null"]
@@ -186,6 +186,243 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Candle"
+
+    SmaRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+              description: The period for calculating SMA.
+    EmaRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    RsiRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    MacdRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            fastPeriod:
+              type: integer
+              default: 12
+            slowPeriod:
+              type: integer
+              default: 26
+            signalPeriod:
+              type: integer
+              default: 9
+    StochRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+            signalPeriod:
+              type: integer
+              default: 3
+    BbandsRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+            stdDev:
+              type: number
+              default: 2
+    VolumemaRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    AtrRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    AdxRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    CciRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    PsarRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            step:
+              type: number
+              default: 0.02
+            max:
+              type: number
+              default: 0.2
+    IchimokuRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            conversionPeriod:
+              type: integer
+              default: 9
+            basePeriod:
+              type: integer
+              default: 26
+            spanPeriod:
+              type: integer
+              default: 52
+            displacement:
+              type: integer
+              default: 26
+    WilliamsrRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 14
+    SupertrendRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 10
+            multiplier:
+              type: number
+              default: 3
+    HeikenashiRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+    KeltnerRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            period:
+              type: integer
+              default: 20
+            multiplier:
+              type: number
+              default: 1
+    VwapRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+          description: Requires volume data
+    ZigzagRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
+    PivotRequest:
+      type: object
+      required: [data]
+      properties:
+        data:
+          $ref: '#/components/schemas/CandleData'
 
 security:
   - rapidapiKey: []
@@ -565,24 +802,13 @@ paths:
     post:
       summary: Calculate Simple Moving Average (SMA)
       description: Returns the SMA of the close prices.
-      tags: [Basic Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
-                      description: The period for calculating SMA.
+              $ref: "#/components/schemas/SmaRequest"
       operationId: sma
       responses:
         '200':
@@ -604,23 +830,13 @@ paths:
     post:
       summary: Calculate Exponential Moving Average (EMA)
       description: Returns the EMA of the close prices.
-      tags: [Basic Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/EmaRequest"
       operationId: ema
       responses:
         '200':
@@ -642,23 +858,13 @@ paths:
     post:
       summary: Calculate Relative Strength Index (RSI)
       description: Returns the RSI of the close prices.
-      tags: [Basic Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/RsiRequest"
       operationId: rsi
       responses:
         '200':
@@ -680,29 +886,13 @@ paths:
     post:
       summary: Calculate MACD
       description: Returns MACD, Signal, and Histogram.
-      tags: [Pro Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    fastPeriod:
-                      type: integer
-                      default: 12
-                    slowPeriod:
-                      type: integer
-                      default: 26
-                    signalPeriod:
-                      type: integer
-                      default: 9
+              $ref: "#/components/schemas/MacdRequest"
       operationId: macd
       responses:
         '200':
@@ -731,26 +921,13 @@ paths:
     post:
       summary: Calculate Stochastic Oscillator
       description: Returns %K and %D lines.
-      tags: [Pro Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
-                    signalPeriod:
-                      type: integer
-                      default: 3
+              $ref: "#/components/schemas/StochRequest"
       operationId: stoch
       responses:
         '200':
@@ -777,26 +954,13 @@ paths:
     post:
       summary: Calculate Bollinger Bands
       description: Returns Upper, Middle, and Lower bands.
-      tags: [Pro Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
-                    stdDev:
-                      type: number
-                      default: 2
+              $ref: "#/components/schemas/BbandsRequest"
       operationId: bbands
       responses:
         '200':
@@ -826,23 +990,13 @@ paths:
       summary: Calculate Volume MA
       operationId: volumema
       description: Returns Simple Moving Average of Volume.
-      tags: [Pro Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/VolumemaRequest"
       responses:
         '200':
           description: Array of Volume MA values
@@ -861,23 +1015,13 @@ paths:
     post:
       summary: Calculate Average True Range (ATR)
       operationId: atr
-      tags: [Ultra Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/AtrRequest"
       responses:
         '200':
           description: ATR values
@@ -896,23 +1040,13 @@ paths:
     post:
       summary: Calculate Average Directional Index (ADX)
       operationId: adx
-      tags: [Ultra Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/AdxRequest"
       responses:
         '200':
           description: ADX result
@@ -938,23 +1072,13 @@ paths:
     post:
       summary: Calculate Commodity Channel Index (CCI)
       operationId: cci
-      tags: [Ultra Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/CciRequest"
       responses:
         '200':
           description: CCI values
@@ -973,26 +1097,13 @@ paths:
     post:
       summary: Calculate Parabolic SAR
       operationId: psar
-      tags: [Ultra Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    step:
-                      type: number
-                      default: 0.02
-                    max:
-                      type: number
-                      default: 0.2
+              $ref: "#/components/schemas/PsarRequest"
       responses:
         '200':
           description: Parabolic SAR values
@@ -1011,32 +1122,13 @@ paths:
     post:
       summary: Calculate Ichimoku Cloud
       operationId: ichimoku
-      tags: [Mega Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    conversionPeriod:
-                      type: integer
-                      default: 9
-                    basePeriod:
-                      type: integer
-                      default: 26
-                    spanPeriod:
-                      type: integer
-                      default: 52
-                    displacement:
-                      type: integer
-                      default: 26
+              $ref: "#/components/schemas/IchimokuRequest"
       responses:
         '200':
           description: Ichimoku result
@@ -1066,23 +1158,13 @@ paths:
     post:
       summary: Calculate Williams %R
       operationId: williamsr
-      tags: [Mega Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 14
+              $ref: "#/components/schemas/WilliamsrRequest"
       responses:
         '200':
           description: Williams %R values
@@ -1101,26 +1183,13 @@ paths:
     post:
       summary: Calculate SuperTrend
       operationId: supertrend
-      tags: [Mega Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 10
-                    multiplier:
-                      type: number
-                      default: 3
+              $ref: "#/components/schemas/SupertrendRequest"
       responses:
         '200':
           description: SuperTrend result
@@ -1144,17 +1213,13 @@ paths:
     post:
       summary: Calculate Heiken Ashi
       operationId: heikenashi
-      tags: [Mega Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
+              $ref: "#/components/schemas/HeikenashiRequest"
       responses:
         '200':
           description: Heiken Ashi candles
@@ -1173,26 +1238,13 @@ paths:
     post:
       summary: Calculate Keltner Channels
       operationId: keltner
-      tags: [Enterprise Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                params:
-                  type: object
-                  properties:
-                    period:
-                      type: integer
-                      default: 20
-                    multiplier:
-                      type: number
-                      default: 1
+              $ref: "#/components/schemas/KeltnerRequest"
       responses:
         '200':
           description: Keltner Channel values
@@ -1218,18 +1270,13 @@ paths:
     post:
       summary: Calculate VWAP
       operationId: vwap
-      tags: [Enterprise Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
-                  description: Requires volume data
+              $ref: "#/components/schemas/VwapRequest"
       responses:
         '200':
           description: VWAP values
@@ -1248,17 +1295,13 @@ paths:
     post:
       summary: Calculate ZigZag Indicator
       operationId: zigzag
-      tags: [Enterprise Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
+              $ref: "#/components/schemas/ZigzagRequest"
       responses:
         '200':
           description: ZigZag values
@@ -1277,17 +1320,13 @@ paths:
     post:
       summary: Calculate Pivot Points
       operationId: pivot
-      tags: [Enterprise Indicators]
+      tags: [Indicators]
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              required: [data]
-              properties:
-                data:
-                  $ref: '#/components/schemas/CandleData'
+              $ref: "#/components/schemas/PivotRequest"
       responses:
         '200':
           description: Pivot Points
