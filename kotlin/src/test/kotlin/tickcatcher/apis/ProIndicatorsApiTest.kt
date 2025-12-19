@@ -19,48 +19,48 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.apis.ProIndicatorsApi
-import tickcatcher.models.ApiIndicatorsBbandsPost200ResponseInner
-import tickcatcher.models.ApiIndicatorsBbandsPostRequest
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
-import tickcatcher.models.ApiIndicatorsMacdPost200ResponseInner
-import tickcatcher.models.ApiIndicatorsMacdPostRequest
-import tickcatcher.models.ApiIndicatorsStochPost200ResponseInner
-import tickcatcher.models.ApiIndicatorsStochPostRequest
+import tickcatcher.models.Bbands200ResponseInner
+import tickcatcher.models.BbandsRequest
+import tickcatcher.models.EmaRequest
+import tickcatcher.models.Macd200ResponseInner
+import tickcatcher.models.MacdRequest
+import tickcatcher.models.Stoch200ResponseInner
+import tickcatcher.models.StochRequest
 
 class ProIndicatorsApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of ProIndicatorsApi
         //val apiInstance = ProIndicatorsApi()
 
-        // to test apiIndicatorsBbandsPost
-        should("test apiIndicatorsBbandsPost") {
-            // uncomment below to test apiIndicatorsBbandsPost
-            //val apiIndicatorsBbandsPostRequest : ApiIndicatorsBbandsPostRequest =  // ApiIndicatorsBbandsPostRequest | 
-            //val result : kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner> = apiInstance.apiIndicatorsBbandsPost(apiIndicatorsBbandsPostRequest)
+        // to test bbands
+        should("test bbands") {
+            // uncomment below to test bbands
+            //val bbandsRequest : BbandsRequest =  // BbandsRequest | 
+            //val result : kotlin.collections.List<Bbands200ResponseInner> = apiInstance.bbands(bbandsRequest)
             //result shouldBe ("TODO")
         }
 
-        // to test apiIndicatorsMacdPost
-        should("test apiIndicatorsMacdPost") {
-            // uncomment below to test apiIndicatorsMacdPost
-            //val apiIndicatorsMacdPostRequest : ApiIndicatorsMacdPostRequest =  // ApiIndicatorsMacdPostRequest | 
-            //val result : kotlin.collections.List<ApiIndicatorsMacdPost200ResponseInner> = apiInstance.apiIndicatorsMacdPost(apiIndicatorsMacdPostRequest)
+        // to test macd
+        should("test macd") {
+            // uncomment below to test macd
+            //val macdRequest : MacdRequest =  // MacdRequest | 
+            //val result : kotlin.collections.List<Macd200ResponseInner> = apiInstance.macd(macdRequest)
             //result shouldBe ("TODO")
         }
 
-        // to test apiIndicatorsStochPost
-        should("test apiIndicatorsStochPost") {
-            // uncomment below to test apiIndicatorsStochPost
-            //val apiIndicatorsStochPostRequest : ApiIndicatorsStochPostRequest =  // ApiIndicatorsStochPostRequest | 
-            //val result : kotlin.collections.List<ApiIndicatorsStochPost200ResponseInner> = apiInstance.apiIndicatorsStochPost(apiIndicatorsStochPostRequest)
+        // to test stoch
+        should("test stoch") {
+            // uncomment below to test stoch
+            //val stochRequest : StochRequest =  // StochRequest | 
+            //val result : kotlin.collections.List<Stoch200ResponseInner> = apiInstance.stoch(stochRequest)
             //result shouldBe ("TODO")
         }
 
-        // to test apiIndicatorsVolumemaPost
-        should("test apiIndicatorsVolumemaPost") {
-            // uncomment below to test apiIndicatorsVolumemaPost
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsVolumemaPost(apiIndicatorsEmaPostRequest)
+        // to test volumema
+        should("test volumema") {
+            // uncomment below to test volumema
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.volumema(emaRequest)
             //result shouldBe ("TODO")
         }
 

@@ -19,8 +19,8 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.apis.MegaIndicatorsApi
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
-import tickcatcher.models.Heikenashi200Response
+import tickcatcher.models.Candle
+import tickcatcher.models.EmaRequest
 import tickcatcher.models.HeikenashiRequest
 import tickcatcher.models.Ichimoku200ResponseInner
 import tickcatcher.models.IchimokuRequest
@@ -36,7 +36,7 @@ class MegaIndicatorsApiTest : ShouldSpec() {
         should("test heikenashi") {
             // uncomment below to test heikenashi
             //val heikenashiRequest : HeikenashiRequest =  // HeikenashiRequest | 
-            //val result : Heikenashi200Response = apiInstance.heikenashi(heikenashiRequest)
+            //val result : kotlin.collections.List<Candle> = apiInstance.heikenashi(heikenashiRequest)
             //result shouldBe ("TODO")
         }
 
@@ -59,8 +59,8 @@ class MegaIndicatorsApiTest : ShouldSpec() {
         // to test williamsr
         should("test williamsr") {
             // uncomment below to test williamsr
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.williamsr(apiIndicatorsEmaPostRequest)
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.williamsr(emaRequest)
             //result shouldBe ("TODO")
         }
 

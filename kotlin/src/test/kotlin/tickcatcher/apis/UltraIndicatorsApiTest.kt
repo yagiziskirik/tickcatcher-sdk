@@ -20,7 +20,7 @@ import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.apis.UltraIndicatorsApi
 import tickcatcher.models.Adx200ResponseInner
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
+import tickcatcher.models.EmaRequest
 import tickcatcher.models.PsarRequest
 
 class UltraIndicatorsApiTest : ShouldSpec() {
@@ -31,24 +31,24 @@ class UltraIndicatorsApiTest : ShouldSpec() {
         // to test adx
         should("test adx") {
             // uncomment below to test adx
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<Adx200ResponseInner> = apiInstance.adx(apiIndicatorsEmaPostRequest)
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<Adx200ResponseInner> = apiInstance.adx(emaRequest)
             //result shouldBe ("TODO")
         }
 
-        // to test apiIndicatorsAtrPost
-        should("test apiIndicatorsAtrPost") {
-            // uncomment below to test apiIndicatorsAtrPost
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsAtrPost(apiIndicatorsEmaPostRequest)
+        // to test atr
+        should("test atr") {
+            // uncomment below to test atr
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.atr(emaRequest)
             //result shouldBe ("TODO")
         }
 
         // to test cci
         should("test cci") {
             // uncomment below to test cci
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.cci(apiIndicatorsEmaPostRequest)
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.cci(emaRequest)
             //result shouldBe ("TODO")
         }
 

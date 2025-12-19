@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.models.PsarRequest
-import tickcatcher.models.CandleData
+import tickcatcher.models.Candle
 import tickcatcher.models.PsarRequestParams
 
 class PsarRequestTest : ShouldSpec() {

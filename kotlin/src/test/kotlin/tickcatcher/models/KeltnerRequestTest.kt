@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.models.KeltnerRequest
-import tickcatcher.models.CandleData
+import tickcatcher.models.Candle
 import tickcatcher.models.KeltnerRequestParams
 
 class KeltnerRequestTest : ShouldSpec() {

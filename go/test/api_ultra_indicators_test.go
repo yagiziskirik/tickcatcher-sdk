@@ -34,11 +34,11 @@ func Test_tickcatcher_UltraIndicatorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test UltraIndicatorsAPIService ApiIndicatorsAtrPost", func(t *testing.T) {
+	t.Run("Test UltraIndicatorsAPIService Atr", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.UltraIndicatorsAPI.ApiIndicatorsAtrPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.UltraIndicatorsAPI.Atr(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

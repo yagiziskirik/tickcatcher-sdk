@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.models.HeikenashiRequest
-import tickcatcher.models.CandleData
+import tickcatcher.models.Candle
 
 class HeikenashiRequestTest : ShouldSpec() {
     init {

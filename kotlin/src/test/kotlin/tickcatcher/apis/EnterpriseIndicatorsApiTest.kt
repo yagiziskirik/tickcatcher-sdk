@@ -19,7 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.apis.EnterpriseIndicatorsApi
-import tickcatcher.models.ApiIndicatorsBbandsPost200ResponseInner
+import tickcatcher.models.Bbands200ResponseInner
 import tickcatcher.models.HeikenashiRequest
 import tickcatcher.models.KeltnerRequest
 import tickcatcher.models.Pivot200ResponseInner
@@ -33,7 +33,7 @@ class EnterpriseIndicatorsApiTest : ShouldSpec() {
         should("test keltner") {
             // uncomment below to test keltner
             //val keltnerRequest : KeltnerRequest =  // KeltnerRequest | 
-            //val result : kotlin.collections.List<ApiIndicatorsBbandsPost200ResponseInner> = apiInstance.keltner(keltnerRequest)
+            //val result : kotlin.collections.List<Bbands200ResponseInner> = apiInstance.keltner(keltnerRequest)
             //result shouldBe ("TODO")
         }
 

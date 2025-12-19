@@ -22,11 +22,11 @@ func Test_tickcatcher_BasicIndicatorsAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test BasicIndicatorsAPIService ApiIndicatorsEmaPost", func(t *testing.T) {
+	t.Run("Test BasicIndicatorsAPIService Ema", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.BasicIndicatorsAPI.ApiIndicatorsEmaPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.BasicIndicatorsAPI.Ema(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_tickcatcher_BasicIndicatorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test BasicIndicatorsAPIService ApiIndicatorsRsiPost", func(t *testing.T) {
+	t.Run("Test BasicIndicatorsAPIService Rsi", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.BasicIndicatorsAPI.ApiIndicatorsRsiPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.BasicIndicatorsAPI.Rsi(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_tickcatcher_BasicIndicatorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test BasicIndicatorsAPIService ApiIndicatorsSmaPost", func(t *testing.T) {
+	t.Run("Test BasicIndicatorsAPIService Sma", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.BasicIndicatorsAPI.ApiIndicatorsSmaPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.BasicIndicatorsAPI.Sma(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

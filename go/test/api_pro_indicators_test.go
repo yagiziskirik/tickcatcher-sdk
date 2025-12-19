@@ -22,11 +22,11 @@ func Test_tickcatcher_ProIndicatorsAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test ProIndicatorsAPIService ApiIndicatorsBbandsPost", func(t *testing.T) {
+	t.Run("Test ProIndicatorsAPIService Bbands", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ProIndicatorsAPI.ApiIndicatorsBbandsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProIndicatorsAPI.Bbands(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_tickcatcher_ProIndicatorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ProIndicatorsAPIService ApiIndicatorsMacdPost", func(t *testing.T) {
+	t.Run("Test ProIndicatorsAPIService Macd", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ProIndicatorsAPI.ApiIndicatorsMacdPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProIndicatorsAPI.Macd(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_tickcatcher_ProIndicatorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ProIndicatorsAPIService ApiIndicatorsStochPost", func(t *testing.T) {
+	t.Run("Test ProIndicatorsAPIService Stoch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ProIndicatorsAPI.ApiIndicatorsStochPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProIndicatorsAPI.Stoch(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -58,11 +58,11 @@ func Test_tickcatcher_ProIndicatorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ProIndicatorsAPIService ApiIndicatorsVolumemaPost", func(t *testing.T) {
+	t.Run("Test ProIndicatorsAPIService Volumema", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ProIndicatorsAPI.ApiIndicatorsVolumemaPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProIndicatorsAPI.Volumema(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

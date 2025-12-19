@@ -19,35 +19,35 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.apis.BasicIndicatorsApi
-import tickcatcher.models.ApiIndicatorsEmaPostRequest
-import tickcatcher.models.ApiIndicatorsSmaPostRequest
+import tickcatcher.models.EmaRequest
+import tickcatcher.models.SmaRequest
 
 class BasicIndicatorsApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of BasicIndicatorsApi
         //val apiInstance = BasicIndicatorsApi()
 
-        // to test apiIndicatorsEmaPost
-        should("test apiIndicatorsEmaPost") {
-            // uncomment below to test apiIndicatorsEmaPost
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsEmaPost(apiIndicatorsEmaPostRequest)
+        // to test ema
+        should("test ema") {
+            // uncomment below to test ema
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.ema(emaRequest)
             //result shouldBe ("TODO")
         }
 
-        // to test apiIndicatorsRsiPost
-        should("test apiIndicatorsRsiPost") {
-            // uncomment below to test apiIndicatorsRsiPost
-            //val apiIndicatorsEmaPostRequest : ApiIndicatorsEmaPostRequest =  // ApiIndicatorsEmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsRsiPost(apiIndicatorsEmaPostRequest)
+        // to test rsi
+        should("test rsi") {
+            // uncomment below to test rsi
+            //val emaRequest : EmaRequest =  // EmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.rsi(emaRequest)
             //result shouldBe ("TODO")
         }
 
-        // to test apiIndicatorsSmaPost
-        should("test apiIndicatorsSmaPost") {
-            // uncomment below to test apiIndicatorsSmaPost
-            //val apiIndicatorsSmaPostRequest : ApiIndicatorsSmaPostRequest =  // ApiIndicatorsSmaPostRequest | 
-            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.apiIndicatorsSmaPost(apiIndicatorsSmaPostRequest)
+        // to test sma
+        should("test sma") {
+            // uncomment below to test sma
+            //val smaRequest : SmaRequest =  // SmaRequest | 
+            //val result : kotlin.collections.List<java.math.BigDecimal> = apiInstance.sma(smaRequest)
             //result shouldBe ("TODO")
         }
 
