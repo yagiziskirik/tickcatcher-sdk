@@ -3,6 +3,9 @@ set -e
 INPUT=openapi/tickcatcher.yaml
 CONFIG=openapi/config.yaml
 
+# Clean previous builds
+rm -rf typescript python swift kotlin go csharp rust
+
 # TypeScript
 openapi-generator-cli generate -i $INPUT -g typescript-fetch -o typescript -c $CONFIG
 
