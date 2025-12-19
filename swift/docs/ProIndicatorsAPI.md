@@ -24,7 +24,7 @@ Returns Upper, Middle, and Lower bands.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let bbandsRequest = bbands_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: bbands_request_params(period: 123, stdDev: 123)) // BbandsRequest | 
+let bbandsRequest = bbands_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: bbands_request_params(period: 123, stdDev: 123)) // BbandsRequest | 
 
 // Calculate Bollinger Bands
 ProIndicatorsAPI.bbands(bbandsRequest: bbandsRequest) { (response, error) in
@@ -74,7 +74,7 @@ Returns MACD, Signal, and Histogram.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let macdRequest = macd_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: macd_request_params(fastPeriod: 123, slowPeriod: 123, signalPeriod: 123)) // MacdRequest | 
+let macdRequest = macd_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: macd_request_params(fastPeriod: 123, slowPeriod: 123, signalPeriod: 123)) // MacdRequest | 
 
 // Calculate MACD
 ProIndicatorsAPI.macd(macdRequest: macdRequest) { (response, error) in
@@ -124,7 +124,7 @@ Returns %K and %D lines.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let stochRequest = stoch_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: stoch_request_params(period: 123, signalPeriod: 123)) // StochRequest | 
+let stochRequest = stoch_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: stoch_request_params(period: 123, signalPeriod: 123)) // StochRequest | 
 
 // Calculate Stochastic Oscillator
 ProIndicatorsAPI.stoch(stochRequest: stochRequest) { (response, error) in
@@ -174,7 +174,7 @@ Returns Simple Moving Average of Volume.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Volume MA
 ProIndicatorsAPI.volumema(emaRequest: emaRequest) { (response, error) in

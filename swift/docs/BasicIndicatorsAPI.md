@@ -23,7 +23,7 @@ Returns the EMA of the close prices.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Exponential Moving Average (EMA)
 BasicIndicatorsAPI.ema(emaRequest: emaRequest) { (response, error) in
@@ -73,7 +73,7 @@ Returns the RSI of the close prices.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Relative Strength Index (RSI)
 BasicIndicatorsAPI.rsi(emaRequest: emaRequest) { (response, error) in
@@ -123,7 +123,7 @@ Returns the SMA of the close prices.
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let smaRequest = sma_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: sma_request_params(period: 123)) // SmaRequest | 
+let smaRequest = sma_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: sma_request_params(period: 123)) // SmaRequest | 
 
 // Calculate Simple Moving Average (SMA)
 BasicIndicatorsAPI.sma(smaRequest: smaRequest) { (response, error) in

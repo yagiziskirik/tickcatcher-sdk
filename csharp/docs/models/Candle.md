@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ts** | **int** | Unix timestamp in milliseconds | [optional] 
+**Ts** | **string** | Unix timestamp in milliseconds | [optional] 
 **Open** | **decimal** | Opening price | [optional] 
 **High** | **decimal** | Highest price | [optional] 
 **Low** | **decimal** | Lowest price | [optional] 

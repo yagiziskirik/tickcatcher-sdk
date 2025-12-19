@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.3
+API version: 1.1.4
 Contact: yagiz@iskirik.com
 */
 
@@ -21,7 +21,7 @@ var _ MappedNullable = &Candle{}
 // Candle struct for Candle
 type Candle struct {
 	// Unix timestamp in milliseconds
-	Ts *int32 `json:"ts,omitempty"`
+	Ts *string `json:"ts,omitempty"`
 	// Opening price
 	Open *float32 `json:"open,omitempty"`
 	// Highest price
@@ -52,9 +52,9 @@ func NewCandleWithDefaults() *Candle {
 }
 
 // GetTs returns the Ts field value if set, zero value otherwise.
-func (o *Candle) GetTs() int32 {
+func (o *Candle) GetTs() string {
 	if o == nil || IsNil(o.Ts) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Ts
@@ -62,7 +62,7 @@ func (o *Candle) GetTs() int32 {
 
 // GetTsOk returns a tuple with the Ts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Candle) GetTsOk() (*int32, bool) {
+func (o *Candle) GetTsOk() (*string, bool) {
 	if o == nil || IsNil(o.Ts) {
 		return nil, false
 	}
@@ -78,8 +78,8 @@ func (o *Candle) HasTs() bool {
 	return false
 }
 
-// SetTs gets a reference to the given int32 and assigns it to the Ts field.
-func (o *Candle) SetTs(v int32) {
+// SetTs gets a reference to the given string and assigns it to the Ts field.
+func (o *Candle) SetTs(v string) {
 	o.Ts = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ts** | Option<**i32**> | Unix timestamp in milliseconds | [optional]
+**ts** | Option<**String**> | Unix timestamp in milliseconds | [optional]
 **open** | Option<**f64**> | Opening price | [optional]
 **high** | Option<**f64**> | Highest price | [optional]
 **low** | Option<**f64**> | Lowest price | [optional]

@@ -13,7 +13,7 @@ import AnyCodable
 public struct Candle: Codable, JSONEncodable, Hashable {
 
     /** Unix timestamp in milliseconds */
-    public var ts: Int?
+    public var ts: String?
     /** Opening price */
     public var _open: Double?
     /** Highest price */
@@ -25,7 +25,7 @@ public struct Candle: Codable, JSONEncodable, Hashable {
     /** Volume traded */
     public var volume: Double?
 
-    public init(ts: Int? = nil, _open: Double? = nil, high: Double? = nil, low: Double? = nil, close: Double? = nil, volume: Double? = nil) {
+    public init(ts: String? = nil, _open: Double? = nil, high: Double? = nil, low: Double? = nil, close: Double? = nil, volume: Double? = nil) {
         self.ts = ts
         self._open = _open
         self.high = high

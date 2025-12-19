@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ts** | Pointer to **int32** | Unix timestamp in milliseconds | [optional] 
+**Ts** | Pointer to **string** | Unix timestamp in milliseconds | [optional] 
 **Open** | Pointer to **float32** | Opening price | [optional] 
 **High** | Pointer to **float32** | Highest price | [optional] 
 **Low** | Pointer to **float32** | Lowest price | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTs
 
-`func (o *Candle) GetTs() int32`
+`func (o *Candle) GetTs() string`
 
 GetTs returns the Ts field if non-nil, zero value otherwise.
 
 ### GetTsOk
 
-`func (o *Candle) GetTsOk() (*int32, bool)`
+`func (o *Candle) GetTsOk() (*string, bool)`
 
 GetTsOk returns a tuple with the Ts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTs
 
-`func (o *Candle) SetTs(v int32)`
+`func (o *Candle) SetTs(v string)`
 
 SetTs sets Ts field to given value.
 

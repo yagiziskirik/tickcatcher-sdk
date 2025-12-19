@@ -35,7 +35,7 @@ data class Candle (
 
     /* Unix timestamp in milliseconds */
     @Json(name = "ts")
-    val ts: kotlin.Int? = null,
+    val ts: kotlin.String? = null,
 
     /* Opening price */
     @Json(name = "open")

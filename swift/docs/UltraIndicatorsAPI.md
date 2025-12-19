@@ -22,7 +22,7 @@ Calculate Average Directional Index (ADX)
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Average Directional Index (ADX)
 UltraIndicatorsAPI.adx(emaRequest: emaRequest) { (response, error) in
@@ -70,7 +70,7 @@ Calculate Average True Range (ATR)
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Average True Range (ATR)
 UltraIndicatorsAPI.atr(emaRequest: emaRequest) { (response, error) in
@@ -118,7 +118,7 @@ Calculate Commodity Channel Index (CCI)
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Commodity Channel Index (CCI)
 UltraIndicatorsAPI.cci(emaRequest: emaRequest) { (response, error) in
@@ -166,7 +166,7 @@ Calculate Parabolic SAR
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let psarRequest = psar_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: psar_request_params(step: 123, max: 123)) // PsarRequest | 
+let psarRequest = psar_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: psar_request_params(step: 123, max: 123)) // PsarRequest | 
 
 // Calculate Parabolic SAR
 UltraIndicatorsAPI.psar(psarRequest: psarRequest) { (response, error) in

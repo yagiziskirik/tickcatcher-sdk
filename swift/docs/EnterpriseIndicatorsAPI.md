@@ -22,7 +22,7 @@ Calculate Keltner Channels
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let keltnerRequest = keltner_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: keltner_request_params(period: 123, multiplier: 123)) // KeltnerRequest | 
+let keltnerRequest = keltner_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: keltner_request_params(period: 123, multiplier: 123)) // KeltnerRequest | 
 
 // Calculate Keltner Channels
 EnterpriseIndicatorsAPI.keltner(keltnerRequest: keltnerRequest) { (response, error) in
@@ -70,7 +70,7 @@ Calculate Pivot Points
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let heikenashiRequest = heikenashi_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
+let heikenashiRequest = heikenashi_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
 
 // Calculate Pivot Points
 EnterpriseIndicatorsAPI.pivot(heikenashiRequest: heikenashiRequest) { (response, error) in
@@ -118,7 +118,7 @@ Calculate VWAP
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let heikenashiRequest = heikenashi_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
+let heikenashiRequest = heikenashi_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
 
 // Calculate VWAP
 EnterpriseIndicatorsAPI.vwap(heikenashiRequest: heikenashiRequest) { (response, error) in
@@ -166,7 +166,7 @@ Calculate ZigZag Indicator
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let heikenashiRequest = heikenashi_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
+let heikenashiRequest = heikenashi_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
 
 // Calculate ZigZag Indicator
 EnterpriseIndicatorsAPI.zigzag(heikenashiRequest: heikenashiRequest) { (response, error) in

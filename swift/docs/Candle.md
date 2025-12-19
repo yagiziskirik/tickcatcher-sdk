@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ts** | **Int** | Unix timestamp in milliseconds | [optional] 
+**ts** | **String** | Unix timestamp in milliseconds | [optional] 
 **_open** | **Double** | Opening price | [optional] 
 **high** | **Double** | Highest price | [optional] 
 **low** | **Double** | Lowest price | [optional] 

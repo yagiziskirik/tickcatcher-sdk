@@ -22,7 +22,7 @@ Calculate Heiken Ashi
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let heikenashiRequest = heikenashi_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
+let heikenashiRequest = heikenashi_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // HeikenashiRequest | 
 
 // Calculate Heiken Ashi
 MegaIndicatorsAPI.heikenashi(heikenashiRequest: heikenashiRequest) { (response, error) in
@@ -70,7 +70,7 @@ Calculate Ichimoku Cloud
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let ichimokuRequest = ichimoku_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ichimoku_request_params(conversionPeriod: 123, basePeriod: 123, spanPeriod: 123, displacement: 123)) // IchimokuRequest | 
+let ichimokuRequest = ichimoku_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ichimoku_request_params(conversionPeriod: 123, basePeriod: 123, spanPeriod: 123, displacement: 123)) // IchimokuRequest | 
 
 // Calculate Ichimoku Cloud
 MegaIndicatorsAPI.ichimoku(ichimokuRequest: ichimokuRequest) { (response, error) in
@@ -118,7 +118,7 @@ Calculate SuperTrend
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let supertrendRequest = supertrend_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: supertrend_request_params(period: 123, multiplier: 123)) // SupertrendRequest | 
+let supertrendRequest = supertrend_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: supertrend_request_params(period: 123, multiplier: 123)) // SupertrendRequest | 
 
 // Calculate SuperTrend
 MegaIndicatorsAPI.supertrend(supertrendRequest: supertrendRequest) { (response, error) in
@@ -166,7 +166,7 @@ Calculate Williams %R
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let emaRequest = ema_request(data: [Candle(ts: 123, _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
+let emaRequest = ema_request(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ema_request_params(period: 123)) // EmaRequest | 
 
 // Calculate Williams %R
 MegaIndicatorsAPI.williamsr(emaRequest: emaRequest) { (response, error) in

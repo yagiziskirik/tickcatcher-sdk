@@ -6,7 +6,7 @@
 
 Name | Type
 ------------ | -------------
-`ts` | number
+`ts` | string
 `open` | number
 `high` | number
 `low` | number

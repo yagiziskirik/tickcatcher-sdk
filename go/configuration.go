@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.3
+API version: 1.1.4
 Contact: yagiz@iskirik.com
 */
 
@@ -90,7 +90,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/1.1.3/go",
+		UserAgent:        "OpenAPI-Generator/1.1.4/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
