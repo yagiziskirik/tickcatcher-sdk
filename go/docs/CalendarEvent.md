@@ -23,14 +23,14 @@ Name | Type | Description | Notes
 **Currency** | Pointer to **NullableString** |  | [optional] 
 **Unit** | Pointer to **NullableString** |  | [optional] 
 **Importance** | **float32** | A number of importance, can be -1, 0 or 1. | 
-**Ts** | **float32** | Unix timestamp (ms) | 
+**Ts** | **string** | Unix timestamp (ms) | 
 **Scale** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
 ### NewCalendarEvent
 
-`func NewCalendarEvent(title string, country string, importance float32, ts float32, ) *CalendarEvent`
+`func NewCalendarEvent(title string, country string, importance float32, ts string, ) *CalendarEvent`
 
 NewCalendarEvent instantiates a new CalendarEvent object
 This constructor will assign default values to properties that have it defined,
@@ -667,20 +667,20 @@ SetImportance sets Importance field to given value.
 
 ### GetTs
 
-`func (o *CalendarEvent) GetTs() float32`
+`func (o *CalendarEvent) GetTs() string`
 
 GetTs returns the Ts field if non-nil, zero value otherwise.
 
 ### GetTsOk
 
-`func (o *CalendarEvent) GetTsOk() (*float32, bool)`
+`func (o *CalendarEvent) GetTsOk() (*string, bool)`
 
 GetTsOk returns a tuple with the Ts field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTs
 
-`func (o *CalendarEvent) SetTs(v float32)`
+`func (o *CalendarEvent) SetTs(v string)`
 
 SetTs sets Ts field to given value.
 

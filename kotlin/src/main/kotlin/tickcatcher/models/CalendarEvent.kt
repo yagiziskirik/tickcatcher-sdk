@@ -60,7 +60,7 @@ data class CalendarEvent (
 
     /* Unix timestamp (ms) */
     @Json(name = "ts")
-    val ts: java.math.BigDecimal,
+    val ts: kotlin.String,
 
     @Json(name = "indicator")
     val indicator: kotlin.String? = null,

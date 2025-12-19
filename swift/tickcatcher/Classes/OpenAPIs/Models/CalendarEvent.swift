@@ -33,10 +33,10 @@ public struct CalendarEvent: Codable, JSONEncodable, Hashable {
     /** A number of importance, can be -1, 0 or 1. */
     public var importance: Double
     /** Unix timestamp (ms) */
-    public var ts: Double
+    public var ts: String
     public var scale: String?
 
-    public init(title: String, country: String, indicator: String? = nil, ticker: String? = nil, comment: String? = nil, category: String? = nil, period: String? = nil, referenceDate: String? = nil, source: String? = nil, sourceUrl: String? = nil, actual: Double? = nil, previous: Double? = nil, forecast: Double? = nil, actualRaw: Double? = nil, previousRaw: Double? = nil, forecastRaw: Double? = nil, currency: String? = nil, unit: String? = nil, importance: Double, ts: Double, scale: String? = nil) {
+    public init(title: String, country: String, indicator: String? = nil, ticker: String? = nil, comment: String? = nil, category: String? = nil, period: String? = nil, referenceDate: String? = nil, source: String? = nil, sourceUrl: String? = nil, actual: Double? = nil, previous: Double? = nil, forecast: Double? = nil, actualRaw: Double? = nil, previousRaw: Double? = nil, forecastRaw: Double? = nil, currency: String? = nil, unit: String? = nil, importance: Double, ts: String, scale: String? = nil) {
         self.title = title
         self.country = country
         self.indicator = indicator

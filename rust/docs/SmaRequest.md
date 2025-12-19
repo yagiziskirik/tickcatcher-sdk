@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**Vec<models::Candle>**](Candle.md) |  | 
-**params** | Option<[**models::SmaRequestParams**](sma_request_params.md)> |  | [optional]
+**params** | Option<[**models::SmaRequestParams**](SmaRequest_params.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

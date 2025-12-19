@@ -7,7 +7,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.1.4
+  version: 1.1.5
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
@@ -508,7 +508,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/sma_request"
+              $ref: "#/components/schemas/SmaRequest"
         required: true
       responses:
         "200":
@@ -527,7 +527,7 @@ paths:
           description: Server error
       summary: Calculate Simple Moving Average (SMA)
       tags:
-      - Basic Indicators
+      - Indicators
   /api/indicators/ema:
     post:
       description: Returns the EMA of the close prices.
@@ -536,7 +536,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/EmaRequest"
         required: true
       responses:
         "200":
@@ -555,7 +555,7 @@ paths:
           description: Server error
       summary: Calculate Exponential Moving Average (EMA)
       tags:
-      - Basic Indicators
+      - Indicators
   /api/indicators/rsi:
     post:
       description: Returns the RSI of the close prices.
@@ -564,7 +564,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/RsiRequest"
         required: true
       responses:
         "200":
@@ -583,7 +583,7 @@ paths:
           description: Server error
       summary: Calculate Relative Strength Index (RSI)
       tags:
-      - Basic Indicators
+      - Indicators
   /api/indicators/macd:
     post:
       description: "Returns MACD, Signal, and Histogram."
@@ -592,7 +592,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/macd_request"
+              $ref: "#/components/schemas/MacdRequest"
         required: true
       responses:
         "200":
@@ -611,7 +611,7 @@ paths:
           description: Server error
       summary: Calculate MACD
       tags:
-      - Pro Indicators
+      - Indicators
   /api/indicators/stoch:
     post:
       description: Returns %K and %D lines.
@@ -620,7 +620,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/stoch_request"
+              $ref: "#/components/schemas/StochRequest"
         required: true
       responses:
         "200":
@@ -639,7 +639,7 @@ paths:
           description: Server error
       summary: Calculate Stochastic Oscillator
       tags:
-      - Pro Indicators
+      - Indicators
   /api/indicators/bbands:
     post:
       description: "Returns Upper, Middle, and Lower bands."
@@ -648,7 +648,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bbands_request"
+              $ref: "#/components/schemas/BbandsRequest"
         required: true
       responses:
         "200":
@@ -667,7 +667,7 @@ paths:
           description: Server error
       summary: Calculate Bollinger Bands
       tags:
-      - Pro Indicators
+      - Indicators
   /api/indicators/volumema:
     post:
       description: Returns Simple Moving Average of Volume.
@@ -676,7 +676,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/VolumemaRequest"
         required: true
       responses:
         "200":
@@ -693,7 +693,7 @@ paths:
           description: Server error
       summary: Calculate Volume MA
       tags:
-      - Pro Indicators
+      - Indicators
   /api/indicators/atr:
     post:
       operationId: atr
@@ -701,7 +701,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/AtrRequest"
         required: true
       responses:
         "200":
@@ -718,7 +718,7 @@ paths:
           description: Server error
       summary: Calculate Average True Range (ATR)
       tags:
-      - Ultra Indicators
+      - Indicators
   /api/indicators/adx:
     post:
       operationId: adx
@@ -726,7 +726,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/AdxRequest"
         required: true
       responses:
         "200":
@@ -743,7 +743,7 @@ paths:
           description: Server error
       summary: Calculate Average Directional Index (ADX)
       tags:
-      - Ultra Indicators
+      - Indicators
   /api/indicators/cci:
     post:
       operationId: cci
@@ -751,7 +751,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/CciRequest"
         required: true
       responses:
         "200":
@@ -768,7 +768,7 @@ paths:
           description: Server error
       summary: Calculate Commodity Channel Index (CCI)
       tags:
-      - Ultra Indicators
+      - Indicators
   /api/indicators/psar:
     post:
       operationId: psar
@@ -776,7 +776,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/psar_request"
+              $ref: "#/components/schemas/PsarRequest"
         required: true
       responses:
         "200":
@@ -793,7 +793,7 @@ paths:
           description: Server error
       summary: Calculate Parabolic SAR
       tags:
-      - Ultra Indicators
+      - Indicators
   /api/indicators/ichimoku:
     post:
       operationId: ichimoku
@@ -801,7 +801,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ichimoku_request"
+              $ref: "#/components/schemas/IchimokuRequest"
         required: true
       responses:
         "200":
@@ -818,7 +818,7 @@ paths:
           description: Server error
       summary: Calculate Ichimoku Cloud
       tags:
-      - Mega Indicators
+      - Indicators
   /api/indicators/williamsr:
     post:
       operationId: williamsr
@@ -826,7 +826,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ema_request"
+              $ref: "#/components/schemas/WilliamsrRequest"
         required: true
       responses:
         "200":
@@ -843,7 +843,7 @@ paths:
           description: Server error
       summary: Calculate Williams %R
       tags:
-      - Mega Indicators
+      - Indicators
   /api/indicators/supertrend:
     post:
       operationId: supertrend
@@ -851,7 +851,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/supertrend_request"
+              $ref: "#/components/schemas/SupertrendRequest"
         required: true
       responses:
         "200":
@@ -868,7 +868,7 @@ paths:
           description: Server error
       summary: Calculate SuperTrend
       tags:
-      - Mega Indicators
+      - Indicators
   /api/indicators/heikenashi:
     post:
       operationId: heikenashi
@@ -876,7 +876,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/heikenashi_request"
+              $ref: "#/components/schemas/HeikenashiRequest"
         required: true
       responses:
         "200":
@@ -893,7 +893,7 @@ paths:
           description: Server error
       summary: Calculate Heiken Ashi
       tags:
-      - Mega Indicators
+      - Indicators
   /api/indicators/keltner:
     post:
       operationId: keltner
@@ -901,7 +901,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/keltner_request"
+              $ref: "#/components/schemas/KeltnerRequest"
         required: true
       responses:
         "200":
@@ -918,7 +918,7 @@ paths:
           description: Server error
       summary: Calculate Keltner Channels
       tags:
-      - Enterprise Indicators
+      - Indicators
   /api/indicators/vwap:
     post:
       operationId: vwap
@@ -926,7 +926,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/heikenashi_request"
+              $ref: "#/components/schemas/VwapRequest"
         required: true
       responses:
         "200":
@@ -943,7 +943,7 @@ paths:
           description: Server error
       summary: Calculate VWAP
       tags:
-      - Enterprise Indicators
+      - Indicators
   /api/indicators/zigzag:
     post:
       operationId: zigzag
@@ -951,7 +951,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/heikenashi_request"
+              $ref: "#/components/schemas/ZigzagRequest"
         required: true
       responses:
         "200":
@@ -969,7 +969,7 @@ paths:
           description: Server error
       summary: Calculate ZigZag Indicator
       tags:
-      - Enterprise Indicators
+      - Indicators
   /api/indicators/pivot:
     post:
       operationId: pivot
@@ -977,7 +977,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/heikenashi_request"
+              $ref: "#/components/schemas/PivotRequest"
         required: true
       responses:
         "200":
@@ -996,7 +996,7 @@ paths:
           description: Server error
       summary: Calculate Pivot Points
       tags:
-      - Enterprise Indicators
+      - Indicators
 components:
   schemas:
     Candle:
@@ -1176,7 +1176,7 @@ components:
         currency: currency
         reference_date: reference_date
         category: category
-        ts: 9.301444243932576
+        ts: ts
       properties:
         title:
           type: string
@@ -1235,7 +1235,7 @@ components:
           type: number
         ts:
           description: Unix timestamp (ms)
-          type: number
+          type: string
         scale:
           nullable: true
           type: string
@@ -1248,56 +1248,492 @@ components:
       items:
         $ref: "#/components/schemas/Candle"
       type: array
-    sma_request_params:
-      properties:
-        period:
-          default: 14
-          description: The period for calculating SMA.
-          type: integer
-    sma_request:
+    SmaRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
       properties:
         data:
           items:
             $ref: "#/components/schemas/Candle"
           type: array
         params:
-          $ref: "#/components/schemas/sma_request_params"
+          $ref: "#/components/schemas/SmaRequest_params"
       required:
       - data
-    ema_request_params:
-      properties:
-        period:
-          default: 14
-          type: integer
-    ema_request:
+    EmaRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
       properties:
         data:
           items:
             $ref: "#/components/schemas/Candle"
           type: array
         params:
-          $ref: "#/components/schemas/ema_request_params"
+          $ref: "#/components/schemas/EmaRequest_params"
       required:
       - data
-    macd_request_params:
-      properties:
-        fastPeriod:
-          default: 12
-          type: integer
-        slowPeriod:
-          default: 26
-          type: integer
-        signalPeriod:
-          default: 9
-          type: integer
-    macd_request:
+    RsiRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
       properties:
         data:
           items:
             $ref: "#/components/schemas/Candle"
           type: array
         params:
-          $ref: "#/components/schemas/macd_request_params"
+          $ref: "#/components/schemas/EmaRequest_params"
+      required:
+      - data
+    MacdRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          signalPeriod: 1
+          fastPeriod: 0
+          slowPeriod: 6
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/MacdRequest_params"
+      required:
+      - data
+    StochRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+          signalPeriod: 6
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/StochRequest_params"
+      required:
+      - data
+    BbandsRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+          stdDev: 6.027456183070403
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/BbandsRequest_params"
+      required:
+      - data
+    VolumemaRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/EmaRequest_params"
+      required:
+      - data
+    AtrRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/EmaRequest_params"
+      required:
+      - data
+    AdxRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/EmaRequest_params"
+      required:
+      - data
+    CciRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/EmaRequest_params"
+      required:
+      - data
+    PsarRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          max: 6.027456183070403
+          step: 0.8008281904610115
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/PsarRequest_params"
+      required:
+      - data
+    IchimokuRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          basePeriod: 6
+          conversionPeriod: 0
+          displacement: 5
+          spanPeriod: 1
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/IchimokuRequest_params"
+      required:
+      - data
+    WilliamsrRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/EmaRequest_params"
+      required:
+      - data
+    SupertrendRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+          multiplier: 6.027456183070403
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/SupertrendRequest_params"
+      required:
+      - data
+    HeikenashiRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+      required:
+      - data
+    KeltnerRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        params:
+          period: 0
+          multiplier: 6.027456183070403
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+        params:
+          $ref: "#/components/schemas/KeltnerRequest_params"
+      required:
+      - data
+    VwapRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+      required:
+      - data
+    ZigzagRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
+      required:
+      - data
+    PivotRequest:
+      example:
+        data:
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+        - volume: 5.637376656633329
+          high: 6.027456183070403
+          low: 1.4658129805029452
+          close: 5.962133916683182
+          open: 0.8008281904610115
+          ts: ts
+      properties:
+        data:
+          items:
+            $ref: "#/components/schemas/Candle"
+          type: array
       required:
       - data
     macd_200_response_inner:
@@ -1312,24 +1748,6 @@ components:
           type: number
         histogram:
           type: number
-    stoch_request_params:
-      properties:
-        period:
-          default: 14
-          type: integer
-        signalPeriod:
-          default: 3
-          type: integer
-    stoch_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-        params:
-          $ref: "#/components/schemas/stoch_request_params"
-      required:
-      - data
     stoch_200_response_inner:
       example:
         stochD: 6.027456183070403
@@ -1339,24 +1757,6 @@ components:
           type: number
         stochD:
           type: number
-    bbands_request_params:
-      properties:
-        period:
-          default: 14
-          type: integer
-        stdDev:
-          default: 2
-          type: number
-    bbands_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-        params:
-          $ref: "#/components/schemas/bbands_request_params"
-      required:
-      - data
     bbands_200_response_inner:
       example:
         middle: 6.027456183070403
@@ -1381,48 +1781,6 @@ components:
           type: number
         mdi:
           type: number
-    psar_request_params:
-      properties:
-        step:
-          default: 0.02
-          type: number
-        max:
-          default: 0.2
-          type: number
-    psar_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-        params:
-          $ref: "#/components/schemas/psar_request_params"
-      required:
-      - data
-    ichimoku_request_params:
-      properties:
-        conversionPeriod:
-          default: 9
-          type: integer
-        basePeriod:
-          default: 26
-          type: integer
-        spanPeriod:
-          default: 52
-          type: integer
-        displacement:
-          default: 26
-          type: integer
-    ichimoku_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-        params:
-          $ref: "#/components/schemas/ichimoku_request_params"
-      required:
-      - data
     ichimoku_200_response_inner:
       example:
         spanB: 5.962133916683182
@@ -1441,24 +1799,6 @@ components:
           type: number
         lagging:
           type: number
-    supertrend_request_params:
-      properties:
-        period:
-          default: 10
-          type: integer
-        multiplier:
-          default: 3
-          type: number
-    supertrend_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-        params:
-          $ref: "#/components/schemas/supertrend_request_params"
-      required:
-      - data
     supertrend_200_response_inner:
       example:
         trend: 6.027456183070403
@@ -1468,32 +1808,6 @@ components:
           type: number
         trend:
           type: number
-    heikenashi_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-      required:
-      - data
-    keltner_request_params:
-      properties:
-        period:
-          default: 20
-          type: integer
-        multiplier:
-          default: 1
-          type: number
-    keltner_request:
-      properties:
-        data:
-          items:
-            $ref: "#/components/schemas/Candle"
-          type: array
-        params:
-          $ref: "#/components/schemas/keltner_request_params"
-      required:
-      - data
     pivot_200_response_inner:
       example:
         p: 0.8008281904610115
@@ -1524,6 +1838,110 @@ components:
           type: number
         s3:
           nullable: true
+          type: number
+    SmaRequest_params:
+      example:
+        period: 0
+      properties:
+        period:
+          default: 14
+          description: The period for calculating SMA.
+          type: integer
+    EmaRequest_params:
+      example:
+        period: 0
+      properties:
+        period:
+          default: 14
+          type: integer
+    MacdRequest_params:
+      example:
+        signalPeriod: 1
+        fastPeriod: 0
+        slowPeriod: 6
+      properties:
+        fastPeriod:
+          default: 12
+          type: integer
+        slowPeriod:
+          default: 26
+          type: integer
+        signalPeriod:
+          default: 9
+          type: integer
+    StochRequest_params:
+      example:
+        period: 0
+        signalPeriod: 6
+      properties:
+        period:
+          default: 14
+          type: integer
+        signalPeriod:
+          default: 3
+          type: integer
+    BbandsRequest_params:
+      example:
+        period: 0
+        stdDev: 6.027456183070403
+      properties:
+        period:
+          default: 14
+          type: integer
+        stdDev:
+          default: 2
+          type: number
+    PsarRequest_params:
+      example:
+        max: 6.027456183070403
+        step: 0.8008281904610115
+      properties:
+        step:
+          default: 0.02
+          type: number
+        max:
+          default: 0.2
+          type: number
+    IchimokuRequest_params:
+      example:
+        basePeriod: 6
+        conversionPeriod: 0
+        displacement: 5
+        spanPeriod: 1
+      properties:
+        conversionPeriod:
+          default: 9
+          type: integer
+        basePeriod:
+          default: 26
+          type: integer
+        spanPeriod:
+          default: 52
+          type: integer
+        displacement:
+          default: 26
+          type: integer
+    SupertrendRequest_params:
+      example:
+        period: 0
+        multiplier: 6.027456183070403
+      properties:
+        period:
+          default: 10
+          type: integer
+        multiplier:
+          default: 3
+          type: number
+    KeltnerRequest_params:
+      example:
+        period: 0
+        multiplier: 6.027456183070403
+      properties:
+        period:
+          default: 20
+          type: integer
+        multiplier:
+          default: 1
           type: number
   securitySchemes:
     rapidapiKey:

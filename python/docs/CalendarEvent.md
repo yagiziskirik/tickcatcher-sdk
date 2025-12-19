@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **currency** | **str** |  | [optional] 
 **unit** | **str** |  | [optional] 
 **importance** | **float** | A number of importance, can be -1, 0 or 1. | 
-**ts** | **float** | Unix timestamp (ms) | 
+**ts** | **str** | Unix timestamp (ms) | 
 **scale** | **str** |  | [optional] 
 
 ## Example

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**Vec<models::Candle>**](Candle.md) |  | 
-**params** | Option<[**models::PsarRequestParams**](psar_request_params.md)> |  | [optional]
+**params** | Option<[**models::PsarRequestParams**](PsarRequest_params.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

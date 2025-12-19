@@ -1,11 +1,14 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './Adx200ResponseInner';
+export * from './AdxRequest';
+export * from './AtrRequest';
 export * from './Bbands200ResponseInner';
 export * from './BbandsRequest';
 export * from './BbandsRequestParams';
 export * from './CalendarEvent';
 export * from './Candle';
+export * from './CciRequest';
 export * from './EmaRequest';
 export * from './EmaRequestParams';
 export * from './HeikenashiRequest';
@@ -20,8 +23,10 @@ export * from './MacdRequest';
 export * from './MacdRequestParams';
 export * from './Metadata';
 export * from './Pivot200ResponseInner';
+export * from './PivotRequest';
 export * from './PsarRequest';
 export * from './PsarRequestParams';
+export * from './RsiRequest';
 export * from './SearchResult';
 export * from './SmaRequest';
 export * from './SmaRequestParams';
@@ -31,3 +36,7 @@ export * from './StochRequestParams';
 export * from './Supertrend200ResponseInner';
 export * from './SupertrendRequest';
 export * from './SupertrendRequestParams';
+export * from './VolumemaRequest';
+export * from './VwapRequest';
+export * from './WilliamsrRequest';
+export * from './ZigzagRequest';

@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.4
+API version: 1.1.5
 Contact: yagiz@iskirik.com
 */
 
@@ -43,7 +43,7 @@ type CalendarEvent struct {
 	// A number of importance, can be -1, 0 or 1.
 	Importance float32 `json:"importance"`
 	// Unix timestamp (ms)
-	Ts float32 `json:"ts"`
+	Ts string `json:"ts"`
 	Scale NullableString `json:"scale,omitempty"`
 }
 
@@ -53,7 +53,7 @@ type _CalendarEvent CalendarEvent
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCalendarEvent(title string, country string, importance float32, ts float32) *CalendarEvent {
+func NewCalendarEvent(title string, country string, importance float32, ts string) *CalendarEvent {
 	this := CalendarEvent{}
 	this.Title = title
 	this.Country = country
@@ -815,9 +815,9 @@ func (o *CalendarEvent) SetImportance(v float32) {
 }
 
 // GetTs returns the Ts field value
-func (o *CalendarEvent) GetTs() float32 {
+func (o *CalendarEvent) GetTs() string {
 	if o == nil {
-		var ret float32
+		var ret string
 		return ret
 	}
 
@@ -826,7 +826,7 @@ func (o *CalendarEvent) GetTs() float32 {
 
 // GetTsOk returns a tuple with the Ts field value
 // and a boolean to check if the value has been set.
-func (o *CalendarEvent) GetTsOk() (*float32, bool) {
+func (o *CalendarEvent) GetTsOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -834,7 +834,7 @@ func (o *CalendarEvent) GetTsOk() (*float32, bool) {
 }
 
 // SetTs sets field value
-func (o *CalendarEvent) SetTs(v float32) {
+func (o *CalendarEvent) SetTs(v string) {
 	o.Ts = v
 }
 

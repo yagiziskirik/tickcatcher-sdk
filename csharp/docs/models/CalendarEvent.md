@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Title** | **string** |  | 
 **Country** | **string** |  | 
 **Importance** | **decimal** | A number of importance, can be -1, 0 or 1. | 
-**Ts** | **decimal** | Unix timestamp (ms) | 
+**Ts** | **string** | Unix timestamp (ms) | 
 **Indicator** | **string** |  | [optional] 
 **Ticker** | **string** |  | [optional] 
 **Comment** | **string** |  | [optional] 

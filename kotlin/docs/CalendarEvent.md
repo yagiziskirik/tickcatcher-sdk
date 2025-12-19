@@ -7,7 +7,7 @@
 | **title** | **kotlin.String** |  |  |
 | **country** | **kotlin.String** |  |  |
 | **importance** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | A number of importance, can be -1, 0 or 1. |  |
-| **ts** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Unix timestamp (ms) |  |
+| **ts** | **kotlin.String** | Unix timestamp (ms) |  |
 | **indicator** | **kotlin.String** |  |  [optional] |
 | **ticker** | **kotlin.String** |  |  [optional] |
 | **comment** | **kotlin.String** |  |  [optional] |

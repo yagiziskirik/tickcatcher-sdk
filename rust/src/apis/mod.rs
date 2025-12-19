@@ -111,13 +111,9 @@ impl From<&str> for ContentType {
     }
 }
 
-pub mod basic_indicators_api;
 pub mod calendar_api;
 pub mod candles_api;
-pub mod enterprise_indicators_api;
 pub mod general_api;
-pub mod mega_indicators_api;
-pub mod pro_indicators_api;
-pub mod ultra_indicators_api;
+pub mod indicators_api;
 
 pub mod configuration;

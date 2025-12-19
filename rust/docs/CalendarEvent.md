@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **currency** | Option<**String**> |  | [optional]
 **unit** | Option<**String**> |  | [optional]
 **importance** | **f64** | A number of importance, can be -1, 0 or 1. | 
-**ts** | **f64** | Unix timestamp (ms) | 
+**ts** | **String** | Unix timestamp (ms) | 
 **scale** | Option<**String**> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

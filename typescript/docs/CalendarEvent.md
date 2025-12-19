@@ -25,7 +25,7 @@ Name | Type
 `currency` | string
 `unit` | string
 `importance` | number
-`ts` | number
+`ts` | string
 `scale` | string
 
 ## Example
