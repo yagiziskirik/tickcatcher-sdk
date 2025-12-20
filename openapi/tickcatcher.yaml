@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Tickcatcher API
-  version: 1.1.5
+  version: 1.1.6
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -417,6 +417,13 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/CandleData'
+        params:
+          type: object
+          properties:
+            deviation:
+              type: number
+              default: 1
+              description: Deviation percentage for ZigZag calculation.
     PivotRequest:
       type: object
       required: [data]
