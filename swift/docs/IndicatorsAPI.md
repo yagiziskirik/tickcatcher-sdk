@@ -915,7 +915,7 @@ Calculate ZigZag Indicator
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import tickcatcher
 
-let zigzagRequest = ZigzagRequest(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)]) // ZigzagRequest | 
+let zigzagRequest = ZigzagRequest(data: [Candle(ts: "ts_example", _open: 123, high: 123, low: 123, close: 123, volume: 123)], params: ZigzagRequest_params(deviation: 123)) // ZigzagRequest | 
 
 // Calculate ZigZag Indicator
 IndicatorsAPI.zigzag(zigzagRequest: zigzagRequest) { (response, error) in

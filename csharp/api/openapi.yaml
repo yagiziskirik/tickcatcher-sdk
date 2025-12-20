@@ -7,7 +7,7 @@ info:
     name: MIT
     url: https://opensource.org/licenses/MIT
   title: Tickcatcher API
-  version: 1.1.5
+  version: 1.1.6
 servers:
 - description: RapidAPI Gateway
   url: https://tickcatcher.p.rapidapi.com
@@ -1707,11 +1707,15 @@ components:
           close: 5.962133916683182
           open: 0.8008281904610115
           ts: ts
+        params:
+          deviation: 0.8008281904610115
       properties:
         data:
           items:
             $ref: "#/components/schemas/Candle"
           type: array
+        params:
+          $ref: "#/components/schemas/ZigzagRequest_params"
       required:
       - data
     PivotRequest:
@@ -1942,6 +1946,14 @@ components:
           type: integer
         multiplier:
           default: 1
+          type: number
+    ZigzagRequest_params:
+      example:
+        deviation: 0.8008281904610115
+      properties:
+        deviation:
+          default: 1
+          description: Deviation percentage for ZigZag calculation.
           type: number
   securitySchemes:
     rapidapiKey:

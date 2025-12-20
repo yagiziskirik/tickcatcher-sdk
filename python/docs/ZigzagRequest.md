@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**List[Candle]**](Candle.md) |  | 
+**params** | [**ZigzagRequestParams**](ZigzagRequestParams.md) |  | [optional] 
 
 ## Example
 

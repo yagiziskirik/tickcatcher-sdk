@@ -13,13 +13,16 @@ import AnyCodable
 public struct ZigzagRequest: Codable, JSONEncodable, Hashable {
 
     public var data: [Candle]
+    public var params: ZigzagRequestParams?
 
-    public init(data: [Candle]) {
+    public init(data: [Candle], params: ZigzagRequestParams? = nil) {
         self.data = data
+        self.params = params
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case data
+        case params
     }
 
     // Encodable protocol methods
@@ -27,6 +30,7 @@ public struct ZigzagRequest: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(data, forKey: .data)
+        try container.encodeIfPresent(params, forKey: .params)
     }
 }
 

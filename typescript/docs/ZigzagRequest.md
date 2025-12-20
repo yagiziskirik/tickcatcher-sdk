@@ -7,6 +7,7 @@
 Name | Type
 ------------ | -------------
 `data` | [Array&lt;Candle&gt;](Candle.md)
+`params` | [ZigzagRequestParams](ZigzagRequestParams.md)
 
 ## Example
 
@@ -16,6 +17,7 @@ import type { ZigzagRequest } from 'tickcatcher'
 // TODO: Update the object below with actual values
 const example = {
   "data": null,
+  "params": null,
 } satisfies ZigzagRequest
 
 console.log(example)

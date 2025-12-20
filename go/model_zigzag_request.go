@@ -3,7 +3,7 @@ Tickcatcher API
 
 The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
 
-API version: 1.1.5
+API version: 1.1.6
 Contact: yagiz@iskirik.com
 */
 
@@ -23,6 +23,7 @@ var _ MappedNullable = &ZigzagRequest{}
 // ZigzagRequest struct for ZigzagRequest
 type ZigzagRequest struct {
 	Data []Candle `json:"data"`
+	Params *ZigzagRequestParams `json:"params,omitempty"`
 }
 
 type _ZigzagRequest ZigzagRequest
@@ -69,6 +70,38 @@ func (o *ZigzagRequest) SetData(v []Candle) {
 	o.Data = v
 }
 
+// GetParams returns the Params field value if set, zero value otherwise.
+func (o *ZigzagRequest) GetParams() ZigzagRequestParams {
+	if o == nil || IsNil(o.Params) {
+		var ret ZigzagRequestParams
+		return ret
+	}
+	return *o.Params
+}
+
+// GetParamsOk returns a tuple with the Params field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ZigzagRequest) GetParamsOk() (*ZigzagRequestParams, bool) {
+	if o == nil || IsNil(o.Params) {
+		return nil, false
+	}
+	return o.Params, true
+}
+
+// HasParams returns a boolean if a field has been set.
+func (o *ZigzagRequest) HasParams() bool {
+	if o != nil && !IsNil(o.Params) {
+		return true
+	}
+
+	return false
+}
+
+// SetParams gets a reference to the given ZigzagRequestParams and assigns it to the Params field.
+func (o *ZigzagRequest) SetParams(v ZigzagRequestParams) {
+	o.Params = &v
+}
+
 func (o ZigzagRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -80,6 +113,9 @@ func (o ZigzagRequest) MarshalJSON() ([]byte, error) {
 func (o ZigzagRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["data"] = o.Data
+	if !IsNil(o.Params) {
+		toSerialize["params"] = o.Params
+	}
 	return toSerialize, nil
 }
 

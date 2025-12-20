@@ -78,3 +78,5 @@ pub mod williamsr_request;
 pub use self::williamsr_request::WilliamsrRequest;
 pub mod zigzag_request;
 pub use self::zigzag_request::ZigzagRequest;
+pub mod zigzag_request_params;
+pub use self::zigzag_request_params::ZigzagRequestParams;

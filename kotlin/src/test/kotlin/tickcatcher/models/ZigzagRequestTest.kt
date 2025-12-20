@@ -20,6 +20,7 @@ import io.kotlintest.specs.ShouldSpec
 
 import tickcatcher.models.ZigzagRequest
 import tickcatcher.models.Candle
+import tickcatcher.models.ZigzagRequestParams
 
 class ZigzagRequestTest : ShouldSpec() {
     init {
@@ -30,6 +31,12 @@ class ZigzagRequestTest : ShouldSpec() {
         should("test `data`") {
             // uncomment below to test the property
             //modelInstance.`data` shouldBe ("TODO")
+        }
+
+        // to test the property `params`
+        should("test params") {
+            // uncomment below to test the property
+            //modelInstance.params shouldBe ("TODO")
         }
 
     }

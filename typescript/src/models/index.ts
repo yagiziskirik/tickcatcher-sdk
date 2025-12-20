@@ -40,3 +40,4 @@ export * from './VolumemaRequest';
 export * from './VwapRequest';
 export * from './WilliamsrRequest';
 export * from './ZigzagRequest';
+export * from './ZigzagRequestParams';

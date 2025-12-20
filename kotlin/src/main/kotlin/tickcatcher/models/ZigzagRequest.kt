@@ -16,6 +16,7 @@
 package tickcatcher.models
 
 import tickcatcher.models.Candle
+import tickcatcher.models.ZigzagRequestParams
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
@@ -24,13 +25,17 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param `data` 
+ * @param params 
  */
 
 
 data class ZigzagRequest (
 
     @Json(name = "data")
-    val `data`: kotlin.collections.List<Candle>
+    val `data`: kotlin.collections.List<Candle>,
+
+    @Json(name = "params")
+    val params: ZigzagRequestParams? = null
 
 ) {
 
