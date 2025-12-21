@@ -1,9 +1,9 @@
 /*
 Tickcatcher API
 
-The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
+The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key or TickCatcher Direct Key. 
 
-API version: 1.1.6
+API version: 1.1.7
 Contact: yagiz@iskirik.com
 */
 

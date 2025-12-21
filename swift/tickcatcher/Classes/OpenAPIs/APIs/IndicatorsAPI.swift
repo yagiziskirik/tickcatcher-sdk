@@ -35,6 +35,9 @@ open class IndicatorsAPI {
      Calculate Average Directional Index (ADX)
      - POST /api/indicators/adx
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter adxRequest: (body)  
@@ -80,6 +83,9 @@ open class IndicatorsAPI {
     /**
      Calculate Average True Range (ATR)
      - POST /api/indicators/atr
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -128,6 +134,9 @@ open class IndicatorsAPI {
      - POST /api/indicators/bbands
      - Returns Upper, Middle, and Lower bands.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter bbandsRequest: (body)  
@@ -173,6 +182,9 @@ open class IndicatorsAPI {
     /**
      Calculate Commodity Channel Index (CCI)
      - POST /api/indicators/cci
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -221,6 +233,9 @@ open class IndicatorsAPI {
      - POST /api/indicators/ema
      - Returns the EMA of the close prices.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter emaRequest: (body)  
@@ -266,6 +281,9 @@ open class IndicatorsAPI {
     /**
      Calculate Heiken Ashi
      - POST /api/indicators/heikenashi
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -313,6 +331,9 @@ open class IndicatorsAPI {
      Calculate Ichimoku Cloud
      - POST /api/indicators/ichimoku
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter ichimokuRequest: (body)  
@@ -358,6 +379,9 @@ open class IndicatorsAPI {
     /**
      Calculate Keltner Channels
      - POST /api/indicators/keltner
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -406,6 +430,9 @@ open class IndicatorsAPI {
      - POST /api/indicators/macd
      - Returns MACD, Signal, and Histogram.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter macdRequest: (body)  
@@ -452,6 +479,9 @@ open class IndicatorsAPI {
      Calculate Pivot Points
      - POST /api/indicators/pivot
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter pivotRequest: (body)  
@@ -497,6 +527,9 @@ open class IndicatorsAPI {
     /**
      Calculate Parabolic SAR
      - POST /api/indicators/psar
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -545,6 +578,9 @@ open class IndicatorsAPI {
      - POST /api/indicators/rsi
      - Returns the RSI of the close prices.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter rsiRequest: (body)  
@@ -591,6 +627,9 @@ open class IndicatorsAPI {
      Calculate Simple Moving Average (SMA)
      - POST /api/indicators/sma
      - Returns the SMA of the close prices.
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -639,6 +678,9 @@ open class IndicatorsAPI {
      - POST /api/indicators/stoch
      - Returns %K and %D lines.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter stochRequest: (body)  
@@ -684,6 +726,9 @@ open class IndicatorsAPI {
     /**
      Calculate SuperTrend
      - POST /api/indicators/supertrend
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -732,6 +777,9 @@ open class IndicatorsAPI {
      - POST /api/indicators/volumema
      - Returns Simple Moving Average of Volume.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter volumemaRequest: (body)  
@@ -777,6 +825,9 @@ open class IndicatorsAPI {
     /**
      Calculate VWAP
      - POST /api/indicators/vwap
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -824,6 +875,9 @@ open class IndicatorsAPI {
      Calculate Williams %R
      - POST /api/indicators/williamsr
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter williamsrRequest: (body)  
@@ -869,6 +923,9 @@ open class IndicatorsAPI {
     /**
      Calculate ZigZag Indicator
      - POST /api/indicators/zigzag
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey

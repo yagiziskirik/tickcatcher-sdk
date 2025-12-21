@@ -1,9 +1,9 @@
 /*
 Tickcatcher API
 
-The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
+The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key or TickCatcher Direct Key. 
 
-API version: 1.1.6
+API version: 1.1.7
 Contact: yagiz@iskirik.com
 */
 
@@ -94,6 +94,20 @@ func (a *IndicatorsAPIService) AdxExecute(r ApiAdxRequest) ([]Adx200ResponseInne
 	}
 	// body params
 	localVarPostBody = r.adxRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -216,6 +230,20 @@ func (a *IndicatorsAPIService) AtrExecute(r ApiAtrRequest) ([]float32, *http.Res
 	}
 	// body params
 	localVarPostBody = r.atrRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -343,6 +371,20 @@ func (a *IndicatorsAPIService) BbandsExecute(r ApiBbandsRequest) ([]Bbands200Res
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -462,6 +504,20 @@ func (a *IndicatorsAPIService) CciExecute(r ApiCciRequest) ([]float32, *http.Res
 	}
 	// body params
 	localVarPostBody = r.cciRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -589,6 +645,20 @@ func (a *IndicatorsAPIService) EmaExecute(r ApiEmaRequest) ([]float32, *http.Res
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -708,6 +778,20 @@ func (a *IndicatorsAPIService) HeikenashiExecute(r ApiHeikenashiRequest) ([]Cand
 	}
 	// body params
 	localVarPostBody = r.heikenashiRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -833,6 +917,20 @@ func (a *IndicatorsAPIService) IchimokuExecute(r ApiIchimokuRequest) ([]Ichimoku
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -952,6 +1050,20 @@ func (a *IndicatorsAPIService) KeltnerExecute(r ApiKeltnerRequest) ([]Bbands200R
 	}
 	// body params
 	localVarPostBody = r.keltnerRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1079,6 +1191,20 @@ func (a *IndicatorsAPIService) MacdExecute(r ApiMacdRequest) ([]Macd200ResponseI
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -1201,6 +1327,20 @@ func (a *IndicatorsAPIService) PivotExecute(r ApiPivotRequest) ([]Pivot200Respon
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -1320,6 +1460,20 @@ func (a *IndicatorsAPIService) PsarExecute(r ApiPsarRequest) ([]float32, *http.R
 	}
 	// body params
 	localVarPostBody = r.psarRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1447,6 +1601,20 @@ func (a *IndicatorsAPIService) RsiExecute(r ApiRsiRequest) ([]float32, *http.Res
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -1568,6 +1736,20 @@ func (a *IndicatorsAPIService) SmaExecute(r ApiSmaRequest) ([]float32, *http.Res
 	}
 	// body params
 	localVarPostBody = r.smaRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1695,6 +1877,20 @@ func (a *IndicatorsAPIService) StochExecute(r ApiStochRequest) ([]Stoch200Respon
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -1814,6 +2010,20 @@ func (a *IndicatorsAPIService) SupertrendExecute(r ApiSupertrendRequest) ([]Supe
 	}
 	// body params
 	localVarPostBody = r.supertrendRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -1941,6 +2151,20 @@ func (a *IndicatorsAPIService) VolumemaExecute(r ApiVolumemaRequest) ([]float32,
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -2060,6 +2284,20 @@ func (a *IndicatorsAPIService) VwapExecute(r ApiVwapRequest) ([]float32, *http.R
 	}
 	// body params
 	localVarPostBody = r.vwapRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -2185,6 +2423,20 @@ func (a *IndicatorsAPIService) WilliamsrExecute(r ApiWilliamsrRequest) ([]float3
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
 			if apiKey, ok := auth["rapidapiKey"]; ok {
 				var key string
 				if apiKey.Prefix != "" {
@@ -2304,6 +2556,20 @@ func (a *IndicatorsAPIService) ZigzagExecute(r ApiZigzagRequest) ([]*float32, *h
 	}
 	// body params
 	localVarPostBody = r.zigzagRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
+	}
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

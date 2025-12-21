@@ -1,6 +1,6 @@
 # \CandlesAPI
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

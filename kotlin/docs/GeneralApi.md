@@ -1,6 +1,6 @@
 # GeneralApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -46,6 +46,9 @@ This endpoint does not need any parameter.
 ### Authorization
 
 
+Configure directToken:
+    ApiClient.apiKey["X-TickCatcher-Key"] = ""
+    ApiClient.apiKeyPrefix["X-TickCatcher-Key"] = ""
 Configure rapidapiKey:
     ApiClient.apiKey["X-RapidAPI-Key"] = ""
     ApiClient.apiKeyPrefix["X-RapidAPI-Key"] = ""
@@ -97,6 +100,9 @@ try {
 ### Authorization
 
 
+Configure directToken:
+    ApiClient.apiKey["X-TickCatcher-Key"] = ""
+    ApiClient.apiKeyPrefix["X-TickCatcher-Key"] = ""
 Configure rapidapiKey:
     ApiClient.apiKey["X-RapidAPI-Key"] = ""
     ApiClient.apiKeyPrefix["X-RapidAPI-Key"] = ""
@@ -146,6 +152,9 @@ try {
 ### Authorization
 
 
+Configure directToken:
+    ApiClient.apiKey["X-TickCatcher-Key"] = ""
+    ApiClient.apiKeyPrefix["X-TickCatcher-Key"] = ""
 Configure rapidapiKey:
     ApiClient.apiKey["X-RapidAPI-Key"] = ""
     ApiClient.apiKeyPrefix["X-RapidAPI-Key"] = ""

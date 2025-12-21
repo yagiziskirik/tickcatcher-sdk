@@ -1,6 +1,6 @@
 # tickcatcher.Api.GeneralApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -25,7 +25,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -65,7 +65,7 @@ Retrieve metadata for a specific symbol and timeframe.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -105,7 +105,7 @@ If your queries don't work correctly, you can search the database with the coin 
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

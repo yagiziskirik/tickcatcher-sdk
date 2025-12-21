@@ -1,9 +1,9 @@
 /*
 Tickcatcher API
 
-The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
+The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key or TickCatcher Direct Key. 
 
-API version: 1.1.6
+API version: 1.1.7
 Contact: yagiz@iskirik.com
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Tickcatcher API API v1.1.6
+// APIClient manages communication with the Tickcatcher API API v1.1.7
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration

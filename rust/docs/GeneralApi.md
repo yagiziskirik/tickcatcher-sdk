@@ -1,6 +1,6 @@
 # \GeneralApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,7 +27,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Required | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 # tickcatcher.GeneralApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,7 @@ Get your current RapidAPI package, which coins you can use, maximum candles that
 
 ### Example
 
+* Api Key Authentication (directToken):
 * Api Key Authentication (rapidapiKey):
 
 ```python
@@ -26,16 +27,22 @@ from tickcatcher.models.info import Info
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
+# Defining the host is optional and defaults to https://api.tickcatcher.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tickcatcher.Configuration(
-    host = "https://tickcatcher.p.rapidapi.com"
+    host = "https://api.tickcatcher.com"
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: directToken
+configuration.api_key['directToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['directToken'] = 'Bearer'
 
 # Configure API key authorization: rapidapiKey
 configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
@@ -69,7 +76,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -96,6 +103,7 @@ Retrieve metadata for a specific symbol and timeframe.
 
 ### Example
 
+* Api Key Authentication (directToken):
 * Api Key Authentication (rapidapiKey):
 
 ```python
@@ -104,16 +112,22 @@ from tickcatcher.models.metadata import Metadata
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
+# Defining the host is optional and defaults to https://api.tickcatcher.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tickcatcher.Configuration(
-    host = "https://tickcatcher.p.rapidapi.com"
+    host = "https://api.tickcatcher.com"
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: directToken
+configuration.api_key['directToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['directToken'] = 'Bearer'
 
 # Configure API key authorization: rapidapiKey
 configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
@@ -153,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -181,6 +195,7 @@ If your queries don't work correctly, you can search the database with the coin 
 
 ### Example
 
+* Api Key Authentication (directToken):
 * Api Key Authentication (rapidapiKey):
 
 ```python
@@ -189,16 +204,22 @@ from tickcatcher.models.search_result import SearchResult
 from tickcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://tickcatcher.p.rapidapi.com
+# Defining the host is optional and defaults to https://api.tickcatcher.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = tickcatcher.Configuration(
-    host = "https://tickcatcher.p.rapidapi.com"
+    host = "https://api.tickcatcher.com"
 )
 
 # The client must configure the authentication and authorization parameters
 # in accordance with the API server security policy.
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
+
+# Configure API key authorization: directToken
+configuration.api_key['directToken'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['directToken'] = 'Bearer'
 
 # Configure API key authorization: rapidapiKey
 configuration.api_key['rapidapiKey'] = os.environ["API_KEY"]
@@ -236,7 +257,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

@@ -35,6 +35,9 @@ open class GeneralAPI {
      - GET /api/info
      - Get your current RapidAPI package, which coins you can use, maximum candles that you can request, etc.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - returns: RequestBuilder<Info> 
@@ -93,6 +96,9 @@ open class GeneralAPI {
      - GET /api/metadata
      - Retrieve metadata for a specific symbol and timeframe.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter symbol: (query)  
@@ -144,6 +150,9 @@ open class GeneralAPI {
      Search through the list of symbols to use correct one in the query
      - GET /api/search
      - If your queries don't work correctly, you can search the database with the coin name to get the correct symbol(s).
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey

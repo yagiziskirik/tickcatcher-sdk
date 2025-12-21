@@ -1,6 +1,6 @@
 # tickcatcher.Api.CandlesApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -33,7 +33,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -76,7 +76,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -119,7 +119,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -160,7 +160,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -203,7 +203,7 @@ Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

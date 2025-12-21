@@ -259,6 +259,15 @@ open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClie
                 }
             }
         }
+        if (requestConfig.headers["X-TickCatcher-Key"].isNullOrEmpty()) {
+            if (apiKey["X-TickCatcher-Key"] != null) {
+                if (apiKeyPrefix["X-TickCatcher-Key"] != null) {
+                    requestConfig.headers["X-TickCatcher-Key"] = apiKeyPrefix["X-TickCatcher-Key"]!! + " " + apiKey["X-TickCatcher-Key"]!!
+                } else {
+                    requestConfig.headers["X-TickCatcher-Key"] = apiKey["X-TickCatcher-Key"]!!
+                }
+            }
+        }
     }
 
     protected inline fun <reified I, reified T: Any?> request(requestConfig: RequestConfig<I>): ApiResponse<T?> {

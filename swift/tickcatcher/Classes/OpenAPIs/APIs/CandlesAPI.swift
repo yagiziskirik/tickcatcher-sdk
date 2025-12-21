@@ -48,6 +48,9 @@ open class CandlesAPI {
      - GET /api/bcandles
      - Retrieve OHLCV data for a specific symbol and timeframe for Basic package.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter symbol: (query)  
@@ -126,6 +129,9 @@ open class CandlesAPI {
      Get candlestick data
      - GET /api/ecandles
      - Retrieve OHLCV data for a specific symbol and timeframe for Enterprise package.
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
@@ -210,6 +216,9 @@ open class CandlesAPI {
      - GET /api/mcandles
      - Retrieve OHLCV data for a specific symbol and timeframe for Mega package.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter symbol: (query)  
@@ -281,6 +290,9 @@ open class CandlesAPI {
      - GET /api/pcandles
      - Retrieve OHLCV data for a specific symbol and timeframe for Pro package.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter symbol: (query)  
@@ -349,6 +361,9 @@ open class CandlesAPI {
      Get candlestick data
      - GET /api/ucandles
      - Retrieve OHLCV data for a specific symbol and timeframe for Ultra package.
+     - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
      - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey

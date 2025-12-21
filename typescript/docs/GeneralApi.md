@@ -1,6 +1,6 @@
 # GeneralApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -30,6 +30,8 @@ import type { InfoRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -57,7 +59,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -96,6 +98,8 @@ import type { MetadataRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -134,7 +138,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -174,6 +178,8 @@ import type { SearchRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -209,7 +215,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

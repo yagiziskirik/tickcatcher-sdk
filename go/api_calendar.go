@@ -1,9 +1,9 @@
 /*
 Tickcatcher API
 
-The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key. 
+The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators. All requests require authentication using your RapidAPI key or TickCatcher Direct Key. 
 
-API version: 1.1.6
+API version: 1.1.7
 Contact: yagiz@iskirik.com
 */
 
@@ -104,6 +104,20 @@ func (a *CalendarAPIService) CalendarExecute(r ApiCalendarRequest) ([]CalendarEv
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["directToken"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["X-TickCatcher-Key"] = key
+			}
+		}
 	}
 	if r.ctx != nil {
 		// API Key Authentication

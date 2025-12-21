@@ -1,6 +1,6 @@
 # IndicatorsApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -44,6 +44,8 @@ import type { AdxOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -79,7 +81,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -115,6 +117,8 @@ import type { AtrOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -150,7 +154,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -188,6 +192,8 @@ import type { BbandsOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -223,7 +229,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -260,6 +266,8 @@ import type { CciOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -295,7 +303,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -333,6 +341,8 @@ import type { EmaOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -368,7 +378,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -405,6 +415,8 @@ import type { HeikenashiOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -440,7 +452,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -476,6 +488,8 @@ import type { IchimokuOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -511,7 +525,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -547,6 +561,8 @@ import type { KeltnerOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -582,7 +598,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -620,6 +636,8 @@ import type { MacdOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -655,7 +673,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -692,6 +710,8 @@ import type { PivotOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -727,7 +747,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -764,6 +784,8 @@ import type { PsarOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -799,7 +821,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -837,6 +859,8 @@ import type { RsiOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -872,7 +896,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -911,6 +935,8 @@ import type { SmaOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -946,7 +972,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -985,6 +1011,8 @@ import type { StochOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -1020,7 +1048,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -1057,6 +1085,8 @@ import type { SupertrendOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -1092,7 +1122,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -1130,6 +1160,8 @@ import type { VolumemaOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -1165,7 +1197,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -1201,6 +1233,8 @@ import type { VwapOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -1236,7 +1270,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -1272,6 +1306,8 @@ import type { WilliamsrOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -1307,7 +1343,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -1343,6 +1379,8 @@ import type { ZigzagOperationRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -1378,7 +1416,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

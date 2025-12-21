@@ -41,7 +41,7 @@ class CandlesApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://tickcatcher.p.rapidapi.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.tickcatcher.com")
         }
     }
 

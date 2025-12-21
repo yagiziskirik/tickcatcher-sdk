@@ -1,6 +1,6 @@
 # CandlesApi
 
-All URIs are relative to *https://tickcatcher.p.rapidapi.com*
+All URIs are relative to *https://api.tickcatcher.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -32,6 +32,8 @@ import type { BasicCandlesRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -73,7 +75,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -112,6 +114,8 @@ import type { EnterpriseCandlesRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -159,7 +163,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -198,6 +202,8 @@ import type { MegaCandlesRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -245,7 +251,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -284,6 +290,8 @@ import type { ProCandlesRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -325,7 +333,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 
@@ -364,6 +372,8 @@ import type { UltraCandlesRequest } from 'tickcatcher';
 async function example() {
   console.log("🚀 Testing tickcatcher SDK...");
   const config = new Configuration({ 
+    // To configure API key authorization: directToken
+    apiKey: "YOUR API KEY",
     // To configure API key authorization: rapidapiKey
     apiKey: "YOUR API KEY",
   });
@@ -411,7 +421,7 @@ example().catch(console.error);
 
 ### Authorization
 
-[rapidapiKey](../README.md#rapidapiKey)
+[directToken](../README.md#directToken), [rapidapiKey](../README.md#rapidapiKey)
 
 ### HTTP request headers
 

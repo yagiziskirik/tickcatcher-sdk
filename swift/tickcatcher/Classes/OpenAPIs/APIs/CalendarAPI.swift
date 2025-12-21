@@ -37,6 +37,9 @@ open class CalendarAPI {
      - GET /api/calendar
      - Fetch economic calendar for event based trading simulations. If no dates entered, data will be from -3 days from today to +3 days.
      - API Key:
+       - type: apiKey X-TickCatcher-Key (HEADER)
+       - name: directToken
+     - API Key:
        - type: apiKey X-RapidAPI-Key (HEADER)
        - name: rapidapiKey
      - parameter startDate: (query) Javascript style epoch time with milliseconds (i.e. 1762194992000). (optional)

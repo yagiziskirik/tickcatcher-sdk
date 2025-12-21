@@ -41,7 +41,7 @@ class CalendarApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://tickcatcher.p.rapidapi.com")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.tickcatcher.com")
         }
     }
 
