@@ -1,15 +1,17 @@
 openapi: 3.1.0
 info:
   title: Tickcatcher API
-  version: 1.1.6
+  version: 1.1.7
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
   description: |
     The Tickcatcher API provides access to cryptocurrency market data including candlesticks, symbols, and indicators.
-    All requests require authentication using your RapidAPI key.
+    All requests require authentication using your RapidAPI key or TickCatcher Direct Key.
 
 servers:
+  - url: https://api.tickcatcher.com
+    description: Direct API
   - url: https://tickcatcher.p.rapidapi.com
     description: RapidAPI Gateway
 
@@ -19,6 +21,10 @@ components:
       type: apiKey
       in: header
       name: X-RapidAPI-Key
+    directToken:
+      type: apiKey
+      in: header
+      name: X-TickCatcher-Key
 
   schemas:
     Candle:
@@ -433,6 +439,7 @@ components:
 
 security:
   - rapidapiKey: []
+  - directToken: []
 
 paths:
   /api/bcandles:
